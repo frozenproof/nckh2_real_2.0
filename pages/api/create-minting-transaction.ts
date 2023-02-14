@@ -9,7 +9,7 @@ export default function handler(
   res: NextApiResponse) {
 
     const koiosProvider = new KoiosProvider('<api|preview|preprod|guild>');
-
+    const recipentAddress=req.body.recipentAddress;
     
     const wallet = new AppWallet({
       networkId: 0,
