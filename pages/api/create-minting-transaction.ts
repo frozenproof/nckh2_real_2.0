@@ -4,7 +4,7 @@ import { AppWallet, KoiosProvider, ForgeScript, AssetMetadata, Mint, largestFirs
 
 
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse) {
 
