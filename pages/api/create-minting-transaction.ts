@@ -61,8 +61,10 @@ export default async function handler(
   tx.mintAsset(forgingScript, targetedNFTasset);
   tx.sendLovelace(paymentWalletAddress, costLovelace);
   tx.setChangeAddress(recipentAddress);
-  const unsignedTx = await tx.build();
+  const _unsignedTx = await tx.build();
+  const unsignedTx = appWallet.signTx(_unsignedTx);
 
 
-  res.status(200).json({})
+
+  res.status(200).json({unsignedTx:unsignedTx})
 }
