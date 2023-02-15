@@ -1,4 +1,4 @@
-import { createTransaction } from '@/backend';
+import { createTransaction, pinataAxios, pinataConfig } from '@/backend';
 import { CardanoWallet, useWallet } from '@meshsdk/react';
 
 export default function Home() {
@@ -26,12 +26,17 @@ export default function Home() {
       console.log("Error", error);
     }
   }
+  async function testAPIPinata() {
+    const res = await pinataAxios(pinataConfig);
+    console.log(res.data);
+  }
   return (
     <>
       <CardanoWallet />
       <br></br>
       <br></br>
       <br></br>
+
       <br></br>
       <br></br>
       <br></br>
@@ -42,7 +47,8 @@ export default function Home() {
       <br></br>
       <br></br>
       <br></br>
-      <button onClick={() => test()}>Test</button>
+      {/* <button onClick={() => test()}>Test</button> */}
+      <button onClick={() => testAPIPinata()}>Test</button>
     </>
   )
 }
