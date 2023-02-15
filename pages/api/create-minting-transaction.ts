@@ -9,7 +9,7 @@ export default async function handler(
   res: NextApiResponse) {
 
   //Using KoiosProvider as the API
-  const koiosProvider = new KoiosProvider('<api|preview|preprod|guild>');
+  const koiosProvider = new KoiosProvider("preprod");
   //const variable to transfer to back end
   const recipentAddress = req.body.recipentAddress;
   const utxos = req.body.utxos;
@@ -53,7 +53,7 @@ export default async function handler(
   //Variable for payment collection
   const selectedUtxos = largestFirst(costLovelace, utxos, true);
   //Variable for payment wallet-our wallet for the app
-  const paymentWalletAddress = 'addr_test1qzmwuzc0qjenaljs2ytquyx8y8x02en3qxswlfcldwetaeuvldqg2n2p8y4kyjm8sqfyg0tpq9042atz0fr8c3grjmysm5e6yx';
+  const paymentWalletAddress = 'addr_test1qq6h3euhg0jg6x0zaayvvmqqxvs7havrr650nuzawmp6w93uj2whl9s7hdgz0twpsedn90zv2ndxackqy864mnz70gpql6c5gp';
 
   //Transaction
   const tx = new Transaction({ initiator: appWallet });
@@ -62,9 +62,7 @@ export default async function handler(
   tx.sendLovelace(paymentWalletAddress, costLovelace);
   tx.setChangeAddress(recipentAddress);
   const _unsignedTx = await tx.build();
-  const unsignedTx = appWallet.signTx(_unsignedTx);
-
-
+  const unsignedTx = await appWallet.signTx(_unsignedTx,true);
 
   res.status(200).json({unsignedTx:unsignedTx})
 }

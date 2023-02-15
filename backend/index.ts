@@ -3,9 +3,8 @@ import axios from "axios"
 
 //create a new instance of axios, from url api because there is folder api inside pages folder
 const instance = axios.create({
-    baseURL: '/api/',
+    baseURL: `/api/`,
     withCredentials: true,
-
 });
 
 export function post(route: string, body = {}) {
@@ -21,8 +20,8 @@ export function post(route: string, body = {}) {
 
 //This function pass the address , and the utxos, call the post function , and pass the parameters to the back end
 export async function createTransaction(
-recipentAddress: string,
-utxos: UTxO[],
+    recipentAddress: string,
+    utxos: UTxO[],
 ) {
-return await post('Create mining transaction',{recipentAddress,utxos});
+    return await post(`create-minting-transaction`, { recipentAddress, utxos });
 }
