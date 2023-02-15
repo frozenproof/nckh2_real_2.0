@@ -1,3 +1,4 @@
+import { createTransaction } from '@/backend';
 import { CardanoWallet,useWallet  } from '@meshsdk/react';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     const utxos = await wallet.getUtxos();
     console.log("Here is the utxos",utxos);
     
+    const transaction= createTransaction(changeAddress,utxos);
   }
   return (
     <>
