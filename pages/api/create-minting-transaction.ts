@@ -42,7 +42,7 @@ export default async function handler(
   //NFT final assesments
   const targetedNFTasset: Mint = {
     assetName: assetName,
-    assetQuantity: '1',
+    assetQuantity: '100',
     metadata: assetMetadata,
     label: '721',
     recipient: recipentAddress,
