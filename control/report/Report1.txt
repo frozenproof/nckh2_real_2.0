@@ -1,5 +1,0 @@
-
-Currently running with Meshjs , current progress is 20%.
-Current customization is merely 1%.
-
-Currently working in Website app, mobile app is being developed and will be pushed later.
