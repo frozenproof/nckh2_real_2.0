@@ -1,6 +1,7 @@
 import { UTxO } from "@meshsdk/core";
 import axios from "axios"
 
+
 //create a new instance of axios, from url api because there is folder api inside pages folder
 const instance = axios.create({
     baseURL: `/api/`,
@@ -26,15 +27,15 @@ export async function createTransaction(
     return await post(`create-minting-transaction`, { recipentAddress, utxos });
 }
 
-  
 //New instance of Axios for Pinata
 export var pinataAxios = require('axios');
 //Pinata Configuration for api key
 export var pinataConfig = {
-  method: 'get',
-  url: 'https://api.pinata.cloud/data/testAuthentication',
- headers: { 
-    'Authorization': 'Bearer '+process.env.Pinata_Bearer_JWT,
-   },
+    method: 'get',
+    url: 'https://api.pinata.cloud/data/testAuthentication',
+    headers: {
+        'Authorization': 'Bearer ' + process.env.Pinata_Bearer_JWT,
+    },
 };
+
 
