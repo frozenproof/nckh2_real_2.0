@@ -27,6 +27,7 @@ export default function Home() {
     }
   }
   async function testAPIPinata() {
+    console.log("Env",process.env.Pinata_Bearer_JWT);
     const res = await pinataAxios(pinataConfig);
     console.log(res.data);
   }
@@ -37,11 +38,6 @@ export default function Home() {
       <br></br>
       <br></br>
 
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <br></br>
       <br></br>
       <br></br>

@@ -8,5 +8,8 @@ const nextConfig = {
     };
     return config;
   },
+  env: {
+    Pinata_Bearer_JWT: process.env.Pinata_Bearer_JWT,
+  }
 };
 module.exports = nextConfig;
