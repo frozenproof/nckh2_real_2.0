@@ -27,15 +27,4 @@ export async function createTransaction(
     return await post(`create-minting-transaction`, { recipentAddress, utxos });
 }
 
-//New instance of Axios for Pinata
-export var pinataAxios = require('axios');
-//Pinata Configuration for api key
-export var pinataConfig = {
-    method: 'get',
-    url: 'https://api.pinata.cloud/data/testAuthentication',
-    headers: {
-        'Authorization': 'Bearer ' + process.env.Pinata_Bearer_JWT,
-    },
-};
-
 

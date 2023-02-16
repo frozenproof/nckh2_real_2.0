@@ -22,8 +22,3 @@ export async function test() {
         console.log("Error", error);
     }
 }
-export async function testAPIPinata() {
-    console.log("Env", process.env.Pinata_Bearer_JWT);
-    const res = await pinataAxios(pinataConfig);
-    console.log(res.data);
-}
