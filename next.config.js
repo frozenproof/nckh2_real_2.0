@@ -4,12 +4,13 @@ const nextConfig = {
   webpack: function (config, { isServer }) {
     config.experiments = {
       asyncWebAssembly: true,
+      topLevelAwait: true,
       layers: true,
     };
     if (!isServer) {
       // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
       config.resolve.fallback = {
-          fs: false
+          fs: false,
       }
   }
     return config;
