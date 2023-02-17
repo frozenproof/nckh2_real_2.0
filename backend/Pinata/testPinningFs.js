@@ -1,7 +1,7 @@
 const axios = require('axios')
 const FormData = require('form-data')
 const JWT = 'Bearer ' + process.env.Pinata_Bearer_JWT
-const fs = require("fs/promises");
+const fs = require("fs");
 
 const options = JSON.stringify({
     cidVersion: 0,
@@ -29,7 +29,7 @@ export const pinFileToIPFS = async () => {
     try {
         const res = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
             maxBodyLength: "Infinity",
-            headers: {
+            headers: {m7,
                 'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
                 Authorization: JWT
             }
