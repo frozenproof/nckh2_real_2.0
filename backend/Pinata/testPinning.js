@@ -9,13 +9,14 @@ const options = JSON.stringify({
 const metadata = JSON.stringify({
     name: 'File name',
 });
+
 const src = "temp/img/download.jpg";
 const file = fs.createReadStream(src, {encoding:'utf8'});
 
 const [fileImg, setFileImg] = useState(null);
     const [name, setName] = useState("")
     const [desc, setDesc] = useState("")
-    
+
 export const pinFileToIPFS = async () => {
     
     const formData = new FormData();
