@@ -1,16 +1,17 @@
 const axios = require("axios");
-const axiosRetry = require("axios-retry");
+// const axiosRetry = require("axios-retry");
 const FormData = require("form-data");
-const JWT = `Bearer PASTE_YOUR_JWT`
+const JWT = 'Bearer ' + process.env.Pinata_Bearer_JWT
 
-const uploadToPinata = async (sourceUrl) => {
+// export const uploadToPinata = async (sourceUrl) => {
+  export const uploadToPinata = async () => {
 
   const axiosInstance = axios.create();
 
-  axiosRetry(axiosInstance, { retries: 5 });
+  // axiosRetry(axiosInstance, { retries: 5 });
   const data = new FormData();
 
-  const response = await axiosInstance(sourceUrl, {
+  const response = await axiosInstance("", {
     method: "GET",
     responseType: "stream",
   });
@@ -30,4 +31,3 @@ const uploadToPinata = async (sourceUrl) => {
   }
 };
 
-uploadToPinata("https://example.com/1.png")

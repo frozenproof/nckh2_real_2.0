@@ -1,7 +1,8 @@
 import { CardanoWallet, useWallet } from '@meshsdk/react';
 import { testAPIPinata } from '@/backend/Pinata/testAuth'
-import { pinFileToIPFS } from '@/backend/Pinata/testPinning'
+import { pinFileToIPFS } from '@/backend/Pinata/testPinningFs'
 // import {pinDirectoryToPinata} from '@/backend/Pinata/testPinning2'
+import {uploadToPinata} from '@/backend/Pinata/testPinningHtml4'
 
 export default function Home() {
   const { wallet, connected, disconnect, error } = useWallet();
@@ -20,15 +21,10 @@ export default function Home() {
       <br></br>
       <br></br>
       {/* <button onClick={() => testAPIPinata()}>Test</button> */}
-      <button onClick={() => pinFileToIPFS()}>Test</button>
-      {/* <button onClick={() => pinDirectoryToPinata()}>Test</button> */}
-      {/* <div>
-        <label>File (Images, Audio or Video)</label>
-        <span>
-          <div>It will be store on IPFS</div>
-        </span>
-        <input type="file" placeholder="file you want to create"></input>
-      </div> */}
+      {/* <button onClick={() => pinFileToIPFS()}>Test</button> */}
+      {/* <button onClick={() => pinFileToIPFS()}>Test</button> */}
+      <button onClick={() => uploadToPinata()}>Test</button>
+      <img src="../backend/Pinata/download.jpg" alt=""></img>
     </>
   )
 }
