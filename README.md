@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Welcome to our project of NCKH2, as you can see , the project is clearly vectored and built from Next.js. 
 We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth.
 
-Days until the project is completed : 44 days.
+Days until the project is completed : 43 days.
 
 Read the current status of the project in /control/report
 
@@ -11,8 +11,6 @@ Read the current status of the project in /control/report
 
 The client machines (Customers) first send the requests along with data (encrypted), the server side will receive the request , parse it and paste it into temporary folder on the server. The data is then minted into the NFTs through smart contract, we extract the fee and gas fees from the client utxos and keep it in our wallet .
 The remaining UTXOs are passed over to a new UTXOs, and sent back into the client wallet address. After minting , the digital assets on the server will be deleted permanently to protect privacy of the customers.
-
-
 
 
 

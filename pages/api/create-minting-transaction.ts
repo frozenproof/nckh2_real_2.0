@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { AppWallet, KoiosProvider, ForgeScript, AssetMetadata, Mint, largestFirst, Transaction } from '@meshsdk/core';
-
+import { key1 } from '@/secretWalletkey_test/key1';
 
 
 export default async function handler(
@@ -21,7 +21,7 @@ export default async function handler(
     submitter: koiosProvider,
     key: {
       type: 'mnemonic',
-      words: ["solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution"],
+      words: key1,
     },
   });
 

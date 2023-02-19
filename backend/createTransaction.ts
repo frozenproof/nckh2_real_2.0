@@ -24,7 +24,7 @@ export async function createTransaction(
     recipentAddress: string,
     utxos: UTxO[],
 ) {
-    return await post(`create-minting-transaction`, { recipentAddress, utxos });
+    return await post(`dynamic-minting`, { recipentAddress, utxos });
 }
 
 

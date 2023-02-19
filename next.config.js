@@ -17,6 +17,7 @@ const nextConfig = {
   },
   env: {
     Pinata_Bearer_JWT: process.env.Pinata_Bearer_JWT,
+    paymentWalletAddress: process.env.paymentWalletAddress,
   },
 };
 module.exports = nextConfig;
