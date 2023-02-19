@@ -1,4 +1,0 @@
-Feb 16 2023
-Intergrated Pinata API.
-REST API being implanted to repair bug.
-Pinata API authentication is working properly, need to repair bug about is not a function due to calling back end function in front end directly.
