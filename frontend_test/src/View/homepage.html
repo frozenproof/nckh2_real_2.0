@@ -9,7 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test uploading page</title>
+    <link rel="shortcut icon" href="https://trungquandev.com/wp-content/uploads/2016/11/LOGO.png" />
+    <title>Node.js multiple upload files</title>
 
     <!-- Get bootstrap from CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -26,8 +27,7 @@
             <div class="col-sm-8">
                 <br>
                 <h4>
-                    You have been warned 
-                    The current limit for files transfering is 64 files per submission - <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank">Rickroll</a>
+                    Node.js multiple upload files - <a href="https://trungquandev.com" target="blank">FUCK YOU </a>
                 </h4>
                 <div class=""></div>
                 <form action="/multiple-upload" method="POST" enctype="multipart/form-data">
@@ -47,9 +47,11 @@
         </div>
     </div>
 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Multiple images preview in browser - template from trungquandev.com
+            // Multiple images preview in browser - trungquandev.com
             let imagesPreview = function(input, placeToInsertImagePreview) {
                 if (input.files) {
                     let filesAmount = input.files.length;
@@ -62,6 +64,7 @@
                     }
                 }
             };
+
             $("#input-many-files").on("change", function() {
                 imagesPreview(this, "div.preview-images");
             });
