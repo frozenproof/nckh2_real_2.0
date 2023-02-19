@@ -12,8 +12,13 @@ Read the current status of the project in /control/report
 The client machines (Customers) first send the requests along with data (encrypted), the server side will receive the request , parse it and paste it into temporary folder on the server. The data is then minted into the NFTs through smart contract, we extract the fee and gas fees from the client utxos and keep it in our wallet .
 The remaining UTXOs are passed over to a new UTXOs, and sent back into the client wallet address. After minting , the digital assets on the server will be deleted permanently to protect privacy of the customers.
 
+##How to run the project
+
+Please refer to following code in the project:
+```node server/testServer.js ```
 
 ##Current progress:
+
 - Completed minting (static demo): Static minting by creating NFT from IPFS uploaded with Pinata service.
 - Completed files transfering demo using post method with Rest API
 - Currently making dynamic minting
