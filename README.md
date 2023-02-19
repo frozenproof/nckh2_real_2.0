@@ -9,8 +9,9 @@ Read the current status of the project in /control/report
 
 ##The general flow of the data 
 
-The client machines (Customers) first send the requests along with data (encrypted), the server side will receive the request , parse it and paste it into temporary folder on the server. The data is then minted into the NFTs through smart contract, we extract the fee and gas fees from the client utxos and keep it in our wallet .
-The remaining UTXOs are passed over to a new UTXOs, and sent back into the client wallet address. After minting , the digital assets on the server will be deleted permanently to protect privacy of the customers.
+The client machines (Customers) first send the requests along with data (encrypted), the server side will receive the request , parse it and paste it into temporary folder on the server. The data is then minted into the NFTs through smart contract, we extract the mint fee and gas fee from the client utxos and keep it in our wallet .
+
+The remaining UTXOs are passed over to a new UTXOs, and sent back into the client wallet address along with the minted NFT. After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
 
 ##How to run the project
 
