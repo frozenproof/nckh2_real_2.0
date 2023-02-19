@@ -22,7 +22,7 @@ Please refer to following command , type it in terminal and run:
 
 - Completed minting (static demo): Static minting by creating NFT from IPFS uploaded with Pinata service.
 - Completed multiple files transferring on Rest APi (Originally used formiddable , now switching to multer )
-
+- Currently trying to async between file uploads and minting functions.
 
 
 ##Side by side projects##

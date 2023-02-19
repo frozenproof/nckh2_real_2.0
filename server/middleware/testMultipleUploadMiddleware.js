@@ -7,6 +7,7 @@ const multer = require("multer");
 
 // Khởi tạo biến cấu hình cho việc lưu trữ file upload
 let storage = multer.diskStorage({
+  
   // Định nghĩa nơi file upload sẽ được lưu lại
   destination: (req, file, callback) => {
     callback(null, path.join(`${__dirname}/../../frontend_test/uploaded_test`));
@@ -23,6 +24,8 @@ let storage = multer.diskStorage({
     // Tên của file thì mình nối thêm một cái nhãn thời gian để tránh bị trùng tên file.
     let filename = `${Date.now()}-nckh2-${file.originalname}`;
     callback(null, filename);
+
+    //
   }
 });
 
