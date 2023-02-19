@@ -17,7 +17,7 @@ The remaining UTXOs are passed over to a new UTXOs, and sent back into the clien
 - Completed minting (static demo): Static minting by creating NFT from IPFS uploaded with Pinata service.
 - Completed files transfering demo using post method with Rest API
 - Currently making dynamic minting
-
+- Completed testing for multiple files transferring on Rest APi (Originally used formiddable , now switching to multer )
 
 
 ##Side by side projects##
