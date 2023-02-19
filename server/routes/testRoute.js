@@ -1,6 +1,5 @@
 /**
- * Created by trungquandev.com's author on 17/08/2019.
- * routes/web.js
+ * Retyped by frozenproof, Feb 19 2023
  */
 const express = require("express");
 const router = express.Router();
