@@ -14,7 +14,7 @@ The remaining UTXOs are passed over to a new UTXOs, and sent back into the clien
 
 ##How to run the project
 
-Please refer to following code in the project:
+Please refer to following command , type it in terminal and run:
 ```node server/testServer.js ```
 
 ##Current progress:
