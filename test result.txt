@@ -1,0 +1,6 @@
+{
+  IpfsHash: 'QmayudkV2LLit7QEaxcPKn4nCnmqY3DsfigJFR15CxKgAs',
+  PinSize: 119833,
+  Timestamp: '2023-02-19T11:37:03.442Z',
+  isDuplicate: true
+}
