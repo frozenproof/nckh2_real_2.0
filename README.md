@@ -4,7 +4,7 @@ Welcome to our project of NCKH2, as you can see , the project is clearly vectore
 
 We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth. Also , original plan was cut short , and time was reduced, but we made sure that the progress will be sufficient for a preview after the deadline.
 
-Days until the project is completed : 39 days.
+Days until the project is completed : 38 days.
 
 ##The general flow of the data 
 
@@ -22,6 +22,7 @@ Please refer to following command , type it in terminal and run:
 - Completed minting (static demo): Static minting by creating NFT from IPFS uploaded with Pinata service.
 - Completed multiple files transferring on Rest APi (Originally used formiddable , now switching to multer )
 - Integrated multiple files transfering interfaces. Tests ran successfully.
+- Updated and repaired broken part due to statis pathing issues.
 - Currently trying to async between file uploads and minting functions.
 
 
