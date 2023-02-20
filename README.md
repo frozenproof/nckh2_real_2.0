@@ -2,7 +2,9 @@ This WAS a [Next.js](https://nextjs.org/) project bootstrapped with [`create-nex
 
 Welcome to our project of NCKH2, as you can see , the project is clearly vectored and built from Next.js original idea. However, we made many changes , and basically have diverted very far from the original snippet. 
 
-We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth. Also , original plan was cut short , and time was reduced, but we made sure that the progress will be sufficient for a preview after the deadline.
+We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth. Also , original plan was cut short , and time was reduced, but we made sure that the progress will be sufficient for a preview after the deadline. 
+
+The project will remain open source until further notices. 
 
 Days until the project is completed : 38 days.
 
