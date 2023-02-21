@@ -1,7 +1,6 @@
 import { UTxO } from "@meshsdk/core";
 import axios from "axios"
 
-
 //create a new instance of axios, from url api because there is folder api inside pages folder
 const instance = axios.create({
     baseURL: `/api/`,
@@ -20,11 +19,18 @@ export function post(route: string, body = {}) {
 }
 
 //This function pass the address , and the utxos, call the post function , and pass the parameters to the back end
-export async function createTransaction(
+export async function sendingDataTobackend(
     recipentAddress: string,
     utxos: UTxO[],
 ) {
-    return await post(`dynamic-minting`, { recipentAddress, utxos });
+    console.log("Before sending request to backend");
+    try {
+        let result = await post(`dynamic-minting`, { recipentAddress, utxos });
+        console.log("Sent request to back end");
+        return result;
+    }
+    catch(err: unknown) {
+        console.log(err); //Object is of type 'unknown'
+    }
 }
-
 

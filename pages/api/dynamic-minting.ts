@@ -2,17 +2,20 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import { AppWallet, KoiosProvider, ForgeScript, AssetMetadata, Mint, largestFirst, Transaction } from '@meshsdk/core';
 import { key1 } from '@/secretWalletkey_test/key1';
 
-
-
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse) {
+      console.log("In the spot before possible bug");
   
     //Using KoiosProvider as the API
     const koiosProvider = new KoiosProvider("preprod");
     //const variable to transfer to back end
+      console.log("In the spot before possible bug");
     const recipentAddress = req.body.recipentAddress;
     const utxos = req.body.utxos;
+    // console.log("temp wallet",{ recipentAddress});
+    // console.log("temp utxos",{  utxos});
+    console.log("In the spot after possible bug");
   
     //create a new wallet to output the utxos 
     const appWallet = new AppWallet({
@@ -42,7 +45,7 @@ export default async function handler(
     //NFT final assesments
     const targetedNFTasset: Mint = {
       assetName: assetName,
-      assetQuantity: '100',
+      assetQuantity: '1000',
       metadata: assetMetadata,
       label: '721',
       recipient: recipentAddress,
@@ -64,5 +67,6 @@ export default async function handler(
     const unsignedTx = await appWallet.signTx(_unsignedTx,true);
   
     res.status(200).json({unsignedTx:unsignedTx})
+   
   }
   
