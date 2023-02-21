@@ -1,8 +1,6 @@
 const axios = require('axios')
 const FormData = require('form-data')
 const fs = require("fs");
-// const src = `${__dirname}/../../backend/download.jpg`;
-// const src = `${__dirname}/../../images/uyu.jpg`;
 const src = `${__dirname}/../../images`;
 var path = require('path');
 
@@ -10,12 +8,12 @@ const Pinata_Bearer_JWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3Jt
 const JWT = 'Bearer ' + Pinata_Bearer_JWT;
 var fileArray = 0;
 
-const pinFileToIPFS = async () => {
-  const files = await fs.promises.readdir(src);
+const pinFileToIPFS = async (tesrc) => {
+  const files = await fs.promises.readdir(tesrc);
 
   for (const name of files) {
   const formData = new FormData();
-  const fromPath = path.join(src, name);
+  const fromPath = path.join(tesrc, name);
 
     //Append the file to form
     const file = fs.createReadStream(fromPath);
@@ -52,4 +50,4 @@ const pinFileToIPFS = async () => {
 }
 
 // pinFileToIPFS (src);
-pinFileToIPFS();
+pinFileToIPFS(src);
