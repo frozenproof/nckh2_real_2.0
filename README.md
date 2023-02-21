@@ -6,7 +6,7 @@ The project will remain open source until further notices.
 
 Days until the project is completed : 38 days.
 
-## Why the project need so long ? 
+## Why doest the project take so long ? 
 
 We are a group of junior developer , with no prior experiences in working with Typescript , or API.
 In fact , we are learning as we go ! 
@@ -17,7 +17,11 @@ I would be impressed too if the project actually came out fine !
 It's a secret ! But here is our motto. 
 
 ```
-We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth. Also , original plan was cut short , and time was reduced, but we made sure that the progress will be sufficient for a preview after the deadline. 
+We are glad to show you the result of our working as soon as possible .
+
+As we believe only working hard will bring good results .
+
+Even if it sound typical , its truth as old as the earth.
 ```
 
 ## The general flow of the data ##
