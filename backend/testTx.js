@@ -1,5 +1,5 @@
-import { createTransaction, pinataAxios, pinataConfig } from '@/backend';
-export async function test() {
+import { createTransaction} from '@/backend/createTransaction';
+export async function testTx() {
     // console.log("Test is good");
     const changeAddress = await wallet.getChangeAddress();
     console.log("Here is the Change address", changeAddress);

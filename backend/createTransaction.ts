@@ -21,13 +21,14 @@ export function post(route: string, body = {}) {
 //This function pass the address , and the utxos, call the post function , and pass the parameters to the back end
 export async function sendingDataTobackend(
     recipentAddress: string,
-    utxos: UTxO[],
+    utxos: UTxO[]
 ) {
     console.log("Before sending request to backend");
     try {
-        let result = await post(`dynamic-minting`, { recipentAddress, utxos });
-        console.log("Sent request to back end");
-        return result;
+        console.log("Running",recipentAddress,utxos);
+        return await post(`dynamic-minting`, { recipentAddress, utxos });
+        // const result= await post(`dynamic-minting`, { recipentAddress, utxos });
+        // return result;
     }
     catch(err: unknown) {
         console.log(err); //Object is of type 'unknown'
