@@ -95,16 +95,17 @@ Even if it sound typical , its truth as old as the earth.
 ## 3rd: Crafting the transaction:
 -> Wait for transaction build
 
+## 4th: Open a new window for the user to enter their spending password and sign the transaction.
 
+## 5th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
 
-## 
-
-5th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
-
-##How to run the project
+## How to run the project
 
 Please refer to following command , type it in terminal and run:
 ```node server/testServer.js ```
+
+- Testing for multiple files upload, result in the TestRes2.txt:
+```node backend/mult/testMultipleFiles.js |cat >> backend/mult/restest/TestRes2.txt```
 
 ## Current progress: ##
 
