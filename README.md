@@ -48,8 +48,8 @@ Days until the project is completed : 38 days.
     + Recipient Address
 
 ## 3rd: Crafting the transaction:
--> Use the data and follow standard procudure:
--> Extract the mint fee and gas fee from the client utxos and keep it in our wallet . The remaining  UTXOs are passed over to the new wallet, and sent back into the client wallet address along with the minted NFT.
+-> Wait for transaction build
+
 
 
 ## 

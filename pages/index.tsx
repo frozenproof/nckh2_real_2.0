@@ -1,16 +1,10 @@
 import { useState } from "react";
 import type { NextPage } from "next";
 import { CardanoWallet, useWallet } from '@meshsdk/react';
-// import {createTransaction} from '@/backend'
 import { sendingDataTobackend } from '@/backend/createTransaction';
+
 export default function Home() {
   const { wallet, connected, disconnect, error } = useWallet();
-  async function testAddress() {
-    const recipientAddress = await wallet.getChangeAddress();
-    const utxos = await wallet.getUtxos();
-    console.log("Change address", recipientAddress);
-    console.log("Change address", utxos);
-  };
   async function testTx() {
     // console.log("Test is good");
     const changeAddress = await wallet.getChangeAddress();
@@ -19,7 +13,7 @@ export default function Home() {
     const utxos = await wallet.getUtxos();
     console.log("Here is the utxos", utxos);
 
-    // try {
+    try {
       const { unsignedTx } = await sendingDataTobackend(changeAddress, utxos);
       console.log("Result of unsigned Tx", unsignedTx);
 
@@ -29,10 +23,10 @@ export default function Home() {
       const txHash = await wallet.submitTx(signedTx);
       console.log('Txhash', txHash);
 
-    // }
-    // catch (error) {
-    //   console.log("Error", error);
-    // };
+    }
+    catch (error) {
+      console.log("Error", error);
+    };
   }
   return (
     <>
@@ -45,9 +39,6 @@ export default function Home() {
       <br></br>
       <br></br>
       <br></br>
-      {/* <button onClick={() => testAPIPinata()}>Test</button> */}
-      {/* <button onClick={() => pinFileToIPFS()}>Test</button> */}
-      {/* <button onClick={() => testAddress()}>Test Adress</button> */}
       <button onClick={() => testTx()}>Test Mint</button>
     </>
   )
