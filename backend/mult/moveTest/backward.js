@@ -4,8 +4,8 @@ var path = require('path');
 var process = require("process");
  
 var fileNames = [];
-var moveFrom = `${__dirname}/../begin`;
-var moveTo = `${__dirname}/../end`;
+var moveTo = `${__dirname}/../begin`;
+var moveFrom = `${__dirname}/../end`;
 
 // Make an async function that gets executed immediately
 const transfer = async ()=>{

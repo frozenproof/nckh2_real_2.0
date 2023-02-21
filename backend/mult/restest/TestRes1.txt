@@ -8,3 +8,11 @@
 '/home/kirigiri/nckh2_real/backend/mult/begin/test2.txt' is a file.
 Moved file '/home/kirigiri/nckh2_real/backend/mult/begin/test1.txt' to '/home/kirigiri/nckh2_real/backend/mult/end/test1.txt'.
 Moved file '/home/kirigiri/nckh2_real/backend/mult/begin/test2.txt' to '/home/kirigiri/nckh2_real/backend/mult/end/test2.txt'.
+'/home/kirigiri/nckh2_real/backend/mult/begin/test1.txt' is a file.
+Moved '/home/kirigiri/nckh2_real/backend/mult/begin/test1.txt'->'/home/kirigiri/nckh2_real/backend/mult/end/test1.txt'
+'/home/kirigiri/nckh2_real/backend/mult/begin/test2.txt' is a file.
+Moved '/home/kirigiri/nckh2_real/backend/mult/begin/test2.txt'->'/home/kirigiri/nckh2_real/backend/mult/end/test2.txt'
+'/home/kirigiri/nckh2_real/backend/mult/begin/test1.txt' is a file.
+Moved '/home/kirigiri/nckh2_real/backend/mult/begin/test1.txt'->'/home/kirigiri/nckh2_real/backend/mult/end/test1.txt'
+'/home/kirigiri/nckh2_real/backend/mult/begin/test2.txt' is a file.
+Moved '/home/kirigiri/nckh2_real/backend/mult/begin/test2.txt'->'/home/kirigiri/nckh2_real/backend/mult/end/test2.txt'

@@ -13,7 +13,7 @@ const pinFileToIPFS = async () => {
     
     const file = fs.createReadStream(src)
     formData.append('file', file)
-    
+    console.log(file);
     const metadata = JSON.stringify({
       name: 'File name',
     });
