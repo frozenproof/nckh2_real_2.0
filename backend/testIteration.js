@@ -1,5 +1,5 @@
 const fs = require("fs");
-const src = "/home/kirigiri/nckh2_real/Images/";
+const src = "/../../Images/";
 
 
 const folderRead = async() =>{
