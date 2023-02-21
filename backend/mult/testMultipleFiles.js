@@ -11,11 +11,11 @@ const JWT = 'Bearer ' + Pinata_Bearer_JWT;
 var fileArray = 0;
 
 const pinFileToIPFS = async () => {
-  const formData = new FormData();
   const files = await fs.promises.readdir(src);
 
   for (const name of files) {
-    const fromPath = path.join(src, name);
+  const formData = new FormData();
+  const fromPath = path.join(src, name);
 
     //Append the file to form
     const file = fs.createReadStream(fromPath);
