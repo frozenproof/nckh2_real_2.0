@@ -8,8 +8,7 @@ import {
 } from "@meshsdk/core";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { KoiosProvider } from "@meshsdk/core";
-// import { key1test } from "@/secretWalletkey_test/key1";
-// import { key1 } from '@/secretWalletkey_test/key1';
+
 
 export default async function handler(
     req: NextApiRequest,
@@ -22,10 +21,8 @@ export default async function handler(
     //const variable to transfer to back end
     const recipentAddress = req.body.recipentAddress;
     const utxos = req.body.utxos;
-   
     console.log("In the spot after possible bug");
   
-    // console.log("Key test",key1test);
     //create a new wallet to output the utxos 
     const appWallet = new AppWallet({
       networkId: 0,
@@ -33,32 +30,8 @@ export default async function handler(
       submitter: koiosProvider,
       key: {
         type: "mnemonic",
-        words: [
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-          "solution",
-        ],
+        // words: process.env.walletKey,
+        words: ["solution", "solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution","solution",],
       },
     });
   
