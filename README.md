@@ -101,10 +101,10 @@ Even if it sound typical , its truth as old as the earth.
 
 ## How to run the project
 
-Please refer to following command , type it in terminal and run:
+- Please refer to following command , type it in terminal and run:
 ```node server/testServer.js ```
 
-- Testing for multiple files upload, result in the TestRes2.txt:
+- Testing for multiple files pinning:
 ```node backend/mult/testMultipleFiles.js |cat >> backend/mult/restest/TestRes2.txt```
 
 ## Current progress: ##

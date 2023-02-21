@@ -21,7 +21,7 @@ const pinFileToIPFS = async (tesrc) => {
     const metadata = JSON.stringify({
       name: name,
     });
-    console.log('File name'+name);
+    console.log('--'+name);
 
     formData.append('pinataMetadata', metadata);
     
@@ -30,8 +30,6 @@ const pinFileToIPFS = async (tesrc) => {
     });
 
     formData.append('pinataOptions', options);
-
-    console.log("Sending request");
 
     try {
       const res = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
