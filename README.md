@@ -29,8 +29,9 @@ Days until the project is completed : 38 days.
 
 -> Function receiving data and call the post function inside API
 -> Post function redirect to the Transaction crafting 
--> Preparing:
+-> Preparing data:
     + Passing the data into new variables
+-> Inside Minting
     + Create an app wallet as a medium 
     + Get the app wallet receive address 
     + Forge a script for the receive address 

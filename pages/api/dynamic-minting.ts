@@ -8,8 +8,7 @@ import {
 } from "@meshsdk/core";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { KoiosProvider } from "@meshsdk/core";
-import { Deferred } from "next/dist/server/image-optimizer";
-
+// import { key1test } from "@/secretWalletkey_test/key1";
 // import { key1 } from '@/secretWalletkey_test/key1';
 
 export default async function handler(
@@ -26,6 +25,7 @@ export default async function handler(
    
     console.log("In the spot after possible bug");
   
+    // console.log("Key test",key1test);
     //create a new wallet to output the utxos 
     const appWallet = new AppWallet({
       networkId: 0,
@@ -62,7 +62,7 @@ export default async function handler(
       },
     });
   
-    console.log("In the 2nd spot before possible bug");
+    console.log("In the 2nd spot before possible bug, high chance of broken undefined key");
 
     //get the address
     const AppWalletAddress = appWallet.getPaymentAddress();
@@ -83,7 +83,7 @@ export default async function handler(
     //NFT final assesments
     const targetedNFTasset: Mint = {
       assetName: assetName,
-      assetQuantity: '1000',
+      assetQuantity: '10',
       metadata: assetMetadata,
       label: '721',
       recipient: recipentAddress,
@@ -107,8 +107,10 @@ export default async function handler(
     console.log("Flag the final possible bug 3rd");
 
     tx.setChangeAddress(recipentAddress);
-    console.log("Flag the final possible bug 4th");
+    console.log("Flag the final possible bug 4th, now building tx");
     const _unsignedTx = await tx.build();
+    console.log("Done building Tx");
+
     const unsignedTx = await appWallet.signTx(_unsignedTx,true);
   
     console.log("Everything is ready");
