@@ -2,11 +2,23 @@ This WAS a [Next.js](https://nextjs.org/) project bootstrapped with [`create-nex
 
 Welcome to our project of NCKH2, as you can see , the project is clearly vectored and built from Next.js original idea. However, we made many changes , and basically have diverted very far from the original snippet. 
 
-We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth. Also , original plan was cut short , and time was reduced, but we made sure that the progress will be sufficient for a preview after the deadline. 
-
 The project will remain open source until further notices. 
 
 Days until the project is completed : 38 days.
+
+## Why the project need so long ? 
+
+We are a group of junior developer , with no prior experiences in working with Typescript , or API.
+In fact , we are learning as we go ! 
+
+I would be impressed too if the project actually came out fine !
+
+## What does NCKH2 stand for ?
+It's a secret ! But here is our motto. 
+
+```
+We are glad to show you the result of our working as soon as possible , as we believe only working hard will bring good results , even if it sound typical , its truth as old as the earth. Also , original plan was cut short , and time was reduced, but we made sure that the progress will be sufficient for a preview after the deadline. 
+```
 
 ## The general flow of the data ##
 
@@ -97,6 +109,19 @@ Please refer to following command , type it in terminal and run:
 - Integrated multiple files transfering interfaces. Tests ran successfully.
 - Updated and repaired broken part due to statis pathing issues.
 - Currently trying to async between file uploads and minting functions.
+
+## Progress by completion : ##
+
+Yes: 
+
+- Upload multiple files to the server.
+- Pinning multiple files to IPFS.
+
+Not yet:
+
+- Automatic minting multiple files.
+- The final goal: A server-client structure with minting fungible/NFT that is ready for production. 
+
 
 
 ## Side by side projects ##
