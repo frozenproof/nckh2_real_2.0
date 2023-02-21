@@ -13,38 +13,67 @@ Days until the project is completed : 38 days.
 ## 1st: The client machines (Customers) first send the requests along with data (encrypted?) using the following procedure:
 
 -> User connect wallet on front end.
+
 -> Front end first get the following data: 
+
     + Wallet address of user (Recipient Address).
+
     + The remaining utxos of user
+
 -> User picks files to mint into NFTs
+
 -> Front end get the following data:
+
     + Name
+
     + Files
+
     + Quantity of items minted
+    
     + Brief description of the items
+
 -> User submit the information 
+
 -> Front end send the data
 
 ## 2nd: The data is prepared using the following procedure:
 
 -> Function receiving data and call the post function inside API
+
 -> Post function redirect to the Transaction crafting 
+
 -> Preparing data:
+
     + Passing the data into new variables
+
 -> Inside Minting
+
     + Create an app wallet as a medium 
+
     + Get the app wallet receive address 
+
     + Forge a script for the receive address 
+
 -> Craft the token/non-fungible token:
+
     + Name 
+
     + Image Source 
+
     + MediaType
+
     + Description
+
 -> Assess the minting exclusive detail:
+
     + Determine the asset type:
+
         - Non fungible asset (721)
+
         - Fungible asset (20)
+        
     + Quantity
+
     + Recipient Address
 
 ## 3rd: Crafting the transaction:
