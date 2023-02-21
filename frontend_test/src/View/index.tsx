@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import { CardanoWallet, useWallet } from '@meshsdk/react';
 import { sendingDataTobackend } from '@/backend/createTransaction';
 

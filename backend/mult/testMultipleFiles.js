@@ -19,7 +19,7 @@ const pinFileToIPFS = async (tesrc) => {
     formData.append('file', file);
 
     const metadata = JSON.stringify({
-      name: 'File name'+name,
+      name: name,
     });
     console.log('File name'+name);
 
