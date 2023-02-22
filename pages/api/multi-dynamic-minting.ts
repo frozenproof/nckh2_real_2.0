@@ -47,7 +47,7 @@ export default async function handler(
     const forgingScript = ForgeScript.withOneSignature(AppWalletAddress);
 
     for (var i = 0; i < 3; i++) {
-         //NFT details
+        //NFT details
         const assetName = test_names[i];
         const assetMetadata: AssetMetadata = {
             "name": test_names[i],
@@ -73,23 +73,16 @@ export default async function handler(
         console.log("Flag the final possible bug");
         tx.mintAsset(forgingScript, targetedNFTasset);
         console.log("Flag the final possible bug 2nd");
-        tx.sendLovelace(process.env.paymentWalletAddress, costLovelace);
-        console.log("Flag the final possible bug 3rd");
-    
-        tx.setChangeAddress(recipentAddress);
-       
-
     }
-    // tx.sendLovelace(process.env.paymentWalletAddress, costLovelace);
-    // console.log("Flag the final possible bug 3rd");
-
-    // tx.setChangeAddress(recipentAddress);
+    tx.sendLovelace(process.env.paymentWalletAddress, costLovelace);
+    console.log("Flag the final possible bug 3rd");
+    tx.setChangeAddress(recipentAddress);
     console.log("Flag the final possible bug 4th, now building tx");
     const _unsignedTx = await tx.build();
     console.log("Done building Tx");
 
     const unsignedTx = await appWallet.signTx(_unsignedTx, true);
-    
+
     console.log("Everything is ready");
 
     res.status(200).json({ unsignedTx: unsignedTx });

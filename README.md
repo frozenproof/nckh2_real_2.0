@@ -54,7 +54,13 @@ Even if it sound typical , its truth as old as the earth.
 
 -> Function receiving data and call the post function inside API
 
--> Post function redirect to the Transaction crafting 
+-> Post function redirect to the files uploading:
+    
+    + Upload multiple files at once to IPFS with Pinata API
+
+    + Receive IPFS hash address
+
+    + Copy the original files to new folder with new name "originalname-&&-IPFS hash" using bash script
 
 -> Preparing data:
 
