@@ -26,7 +26,8 @@ export async function sendingDataTobackend(
     console.log("Before sending request to backend");
     try {
         console.log("Running",recipentAddress,utxos);
-        return await post(`dynamic-minting`, { recipentAddress, utxos });
+        // return await post(`dynamic-minting`, { recipentAddress, utxos });
+        return await post(`multi-dynamic-minting`, { recipentAddress, utxos });
     }
     catch(err: unknown) {
         console.log(err); //Object is of type 'unknown'

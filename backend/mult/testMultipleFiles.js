@@ -31,8 +31,6 @@ const pinFileToIPFS = async (tesrc) => {
 
     formData.append('pinataOptions', options);
 
-    console.log("Sending data");
-
     try {
       const res = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
         maxBodyLength: "Infinity",
@@ -42,18 +40,17 @@ const pinFileToIPFS = async (tesrc) => {
         }
       });
 
-      // var stream = fs.createWriteStream(`${__dirname}/restest/TestRes2.txt`, { flags: 'a' });
-      // var buffer = stringify(res);
-      // // let result = buffer.split("\n");
+      var stream = fs.createWriteStream(`${__dirname}/restest/TestRes2.txt`, { flags: 'a' });
+      var buffer = stringify(res);
 
-      // stream.once('open', function (fd) {
-      //   // for (i = 0; i < result.length - 1; i = i + 1) {
-      //   //   var a = i;
-      //   //   stream.write(result[a] + "\n");
-      //   // }
-      //   stream.write(buffer+ "\n");
-      //   stream.end();
-      // });
+      stream.once('open', function (fd) {
+        // for (i = 0; i < result.length - 1; i = i + 1) {
+        //   var a = i;
+        //   stream.write(result[a] + "\n");
+        // }
+        stream.write(buffer+ "\n");
+        stream.end();
+      });
       console.log(res.data);
     } catch (error) {
       console.log(error);
