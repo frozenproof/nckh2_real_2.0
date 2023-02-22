@@ -6,7 +6,7 @@ var fs = require('fs');
 
 const buffer = fs.readFileSync(`${__dirname}/restest/TestRes2.txt`);
 const fileContent = buffer.toString();
-let result = fileContent.split("\n");
+let result = fileContent.split(",");
 
 var stream = fs.createWriteStream(`${__dirname}/my_file.txt`);
 stream.once('open', function (fd) {
