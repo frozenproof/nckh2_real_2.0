@@ -1,0 +1,1 @@
+node backend/mult/testMultipleFiles.js | cat>> backend/mult/restest/CutAndGet.txt 
