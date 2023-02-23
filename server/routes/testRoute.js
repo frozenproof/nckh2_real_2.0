@@ -4,14 +4,14 @@
 const express = require("express");
 const router = express.Router();
 const homeController = require("../controllers/testHomeController");
-const multipleUploadController = require("../controllers/testMultipleUploadController");
+const uploadController = require("../controllers/uploadController");
 
 let initRoutes = (app) => {
   // Gọi ra trang home cho việc upload
   router.get("/", homeController.getHome);
   
   // Upload nhiều file với phương thức post
-  router.post("/multiple-upload", multipleUploadController.multipleUpload);
+  router.post("/multiple-upload", uploadController.multipleUpload);
 
   return app.use("/", router);
 };

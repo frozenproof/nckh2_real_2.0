@@ -2,14 +2,14 @@
  * Created by trungquandev.com's author on 17/08/2019.
  * multipleUploadController.js
  */
-const multipleUploadMiddleware = require("../middleware/testMultipleUploadMiddleware");
+const uploadMiddle = require("../middleware/uploadMiddle");
 
 let debug = console.log.bind(console);
 
 let multipleUpload = async (req, res) => {
   try {
     // thực hiện upload
-    await multipleUploadMiddleware(req, res);
+    await uploadMiddle(req, res);
 
     // Nếu upload thành công, không lỗi thì tất cả các file của bạn sẽ được lưu trong biến req.files
     debug(req.files);

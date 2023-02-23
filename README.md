@@ -113,6 +113,12 @@ Even if it sound typical , its truth as old as the earth.
 chmod +x print.sh
 node backend/mult/outerLayer.js 
 ```
+- Testing for minting with multiple assets ( Static defined assets in array ):
+```
+npm run dev
+
+-> and then click mint
+``` 
 
 ## Current progress: ##
 

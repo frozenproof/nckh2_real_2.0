@@ -23,14 +23,16 @@ export async function sendingDataTobackend(
     recipentAddress: string,
     utxos: UTxO[]
 ) {
-    console.log("Before sending request to backend");
+    console.log("Sending request to backend");
     try {
-        console.log("Running",recipentAddress,utxos);
         // return await post(`dynamic-minting`, { recipentAddress, utxos });
         // return await post(`multi-dynamic-minting`, { recipentAddress, utxos });
-        return await post(`automate-minting`, { recipentAddress, utxos });
+        var test_names = ["hi3.png", "l6209640.png", "uyu.jpg"];
+        var imageAddress = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
+        var test_types = ["png", "png", "jpg"];
+        return await post(`automate-minting`, { recipentAddress, utxos,test_names,imageAddress ,test_types});
     }
-    catch(err: unknown) {
+    catch (err: unknown) {
         console.log(err); //Object is of type 'unknown'
     }
 }

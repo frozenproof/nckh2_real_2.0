@@ -13,15 +13,16 @@ import { KoiosProvider } from "@meshsdk/core";
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse) {
-    var test_names = ["hi3.png", "l6209640.png", "uyu.jpg"];
-    var imageAddress = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
-    var test_types = ["png", "png", "jpg"];
 
     //Using KoiosProvider as the API
     const koiosProvider = new KoiosProvider("preprod");
     //const variable to transfer to back end
     const recipentAddress = req.body.recipentAddress;
     const utxos = req.body.utxos;
+    const test_names = req.body.test_names;
+    const imageAddress = req.body.imageAddress;
+    const test_types = req.body.test_types;
+
     //create a new wallet to output the utxos 
     const appWallet = new AppWallet({
         networkId: 0,
@@ -65,13 +66,7 @@ export default async function handler(
             label: '721',
             recipient: recipentAddress,
         };
-        console.log("In the 3rd spot after possible bug");
-
-        //Variable for payment wallet-our wallet for the app
-
-        console.log("Before the final possible bug");
-        //Transaction
-        console.log("Flag the final possible bug");
+       
         tx.mintAsset(forgingScript, targetedNFTasset);
         console.log("Flag the final possible bug 2nd");
     }
