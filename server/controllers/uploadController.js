@@ -4,7 +4,7 @@
  */
 const uploadMiddle = require("../middleware/uploadMiddle");
 // const pinEngine = require("./pin");
-var outerEngine = require("./outerController");
+// var outerEngine = require("./outerController");
 let debug = console.log.bind(console);
 
 let multipleUpload = async (req, res) => {
@@ -20,7 +20,6 @@ let multipleUpload = async (req, res) => {
       return res.send(`You must select at least 1 file or more.`);
     }
 
-    outerEngine;
     // trả về cho người dùng cái thông báo đơn giản.
     return res.send(`Your files has been uploaded to IPFS.`);
   } catch (error) {

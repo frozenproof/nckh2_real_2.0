@@ -4,7 +4,7 @@ Welcome to our project of NCKH2, as you can see , the project is clearly vectore
 
 The project will remain open source until further notices. 
 
-Days until the project is completed : 38 days.
+Days until the project is completed : 36 days.
 
 ## Why doest the project take so long ? 
 
@@ -153,5 +153,5 @@ Working on a project is never easy , and sometime , we do tests too. Installing 
 ## 1. REST api test repo:
 https://github.com/frozenproof/restApitest
 
-## 2. Generating static js from ts
+## 2. Generating static js from ts (Very slow as we dont understand how the conversion worked)
 https://github.com/frozenproof/tsTojs

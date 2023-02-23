@@ -11,7 +11,9 @@ let result = fileContent.split("\n");
 let stream = fs.createWriteStream(`${__dirname}/CutRes.log`);
 stream.once('open', function (fd) {
 
-    for (i = 0; i < result.length - 1; i++) {
+    for (i = 0; i < result.length; i++) {
+        var a = result[i];
+        // var temp = a.substring();
         stream.write(result[i] + "\n");
 
     }
