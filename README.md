@@ -115,6 +115,7 @@ node server/testServer.js
 chmod +x print.sh
 node backend/mult/outerLayer.js 
 ```
+
 - Testing for minting with multiple assets ( Static defined assets in array ):
 ```
 npm run dev
@@ -151,3 +152,6 @@ Working on a project is never easy , and sometime , we do tests too. Installing 
 
 ## 1. REST api test repo:
 https://github.com/frozenproof/restApitest
+
+## 2. Generating static js from ts
+https://github.com/frozenproof/tsTojs

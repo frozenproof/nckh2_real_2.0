@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="https://trungquandev.com/wp-content/uploads/2016/11/LOGO.png" />
     <title>Multiple upload with Wallet connect</title>
 
     <!-- Get bootstrap from CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
     <style>
         div.preview-images>img {
             width: 30%;
         }
     </style>
+
+   
 </head>
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
                 <br>
                 <h4>
-                    Node.js multiple upload files
+                    Home
                 </h4>
                 <div class=""></div>
                 <form action="/multiple-upload" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="example-input-file"> </label>
-                        <input type="file" name="many-files" multiple id="input-many-files" class="form-control-file border">
+                        <input type="file" name="many-files" multiple id="input-many-files"
+                            class="form-control-file border">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -41,18 +44,22 @@
             </div>
         </div>
     </div>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <div>
+        <p>This is where its supposed to be</p>
+        <p id="WalletList"></p>
+    </div>
+    <!-- <script src="wallet.js" type="module"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Multiple images preview in browser - trungquandev.com
-            let imagesPreview = function(input, placeToInsertImagePreview) {
+            let imagesPreview = function (input, placeToInsertImagePreview) {
                 if (input.files) {
                     let filesAmount = input.files.length;
                     for (i = 0; i < filesAmount; i++) {
                         let reader = new FileReader();
-                        reader.onload = function(event) {
+                        reader.onload = function (event) {
                             $($.parseHTML("<img>")).attr("src", event.target.result).appendTo(placeToInsertImagePreview);
                         }
                         reader.readAsDataURL(input.files[i]);
@@ -60,10 +67,11 @@
                 }
             };
 
-            $("#input-many-files").on("change", function() {
+            $("#input-many-files").on("change", function () {
                 imagesPreview(this, "div.preview-images");
             });
         });
     </script>
 </body>
+
 </html>
