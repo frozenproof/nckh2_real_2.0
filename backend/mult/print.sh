@@ -1,1 +1,2 @@
-node backend/mult/testMultipleFiles.js | cat>> backend/mult/restest/CutAndGet.txt 
+node backend/mult/testMultipleFilesPinning.js | cat > backend/mult/restest/PinningRes.log
+node backend/mult/cutAndGet.js

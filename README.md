@@ -105,11 +105,14 @@ Even if it sound typical , its truth as old as the earth.
 
 ## How to run the project
 
-- Please refer to following command , type it in terminal and run:
+- To test temporary uploading ,please refer to following command , type it in terminal and run:
 ```node server/testServer.js ```
 
-- Testing for multiple files pinning:
-```node backend/mult/testMultipleFiles.js |cat >> backend/mult/restest/TestRes2.txt```
+- Testing for multiple files pinning and extract the data, remember to set chmod for the script:
+```
+chmod +x print.sh
+node backend/mult/outerLayer.js 
+```
 
 ## Current progress: ##
 

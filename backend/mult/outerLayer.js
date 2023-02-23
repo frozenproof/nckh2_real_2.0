@@ -1,7 +1,7 @@
 
 const shell = require('shelljs')
-const printout = async()=>{
+// export const printout = async()=>{
+const printout = async () => {
     shell.exec(`${__dirname}/print.sh`)
 }
-
 printout();
