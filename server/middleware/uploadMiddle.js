@@ -4,7 +4,8 @@
 const util = require("util");
 const path = require("path");
 const multer = require("multer");
-let shell = require('shelljs')
+let shell = require('shelljs');
+const { nextTick } = require("process");
 
 // Khởi tạo biến cấu hình cho việc lưu trữ file upload
 let storage = multer.diskStorage({
@@ -32,23 +33,29 @@ let storage = multer.diskStorage({
 
 // Khởi tạo middleware uploadManyFiles với cấu hình như ở trên,
 // Bên trong hàm .array() truyền vào name của thẻ input, ở đây mình đặt là "many-files", và tham số thứ hai là giới hạn số file được phép upload mỗi lần, mình sẽ để là 17 (con số mà mình yêu thích). Các bạn thích để bao nhiêu cũng được.
-// let uploadManyFiles = () => {
-//   // let result = 
-//   shell.exec(`${__dirname}/../controllers/print.sh`),
-//   multer({ storage: storage }).array("many-files", 64);
-// }
+
 
 // Mục đích của util.promisify() là để bên controller có thể dùng async-await để gọi tới middleware này
-let uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
-let multipleUploadMiddleware = util.promisify(uploadManyFiles);
+// let uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 
-// let myPromise = new Promise(function() {
+// let myPromise = new Promise(function () {
+
+//   let result = uploadManyFiles();
+//   shell.exec(`${__dirname}/../controllers/print.sh`);
+//   return result;
 // });
+const tempFO = async () => {
+  return multer({ storage: storage }).array("many-files", 64);
+}
 
-// myPromise.then(
-// );
+// const uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 
-// let outerEngine = require("../controllers/outerController");
+const uploadManyFiles = function () {
+  return multer({ storage: storage }).array("many-files", 64);
+}
 
-module.exports = multipleUploadMiddleware;
+
+let uploadMiddle = util.promisify(uploadManyFiles);
+
+module.exports = uploadMiddle;
 // module.exports = shell.exec(`${__dirname}/../controllers/print.sh`);;
