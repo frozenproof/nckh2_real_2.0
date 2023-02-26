@@ -13,9 +13,9 @@ stream.once('open', function (fd) {
 
     for (i = 0; i < result.length; i++) {
         var a = result[i];
-        // var temp = a.substring();
+        
+        var temp = a.substring();
         stream.write(result[i] + "\n");
-
     }
     stream.end();
 });

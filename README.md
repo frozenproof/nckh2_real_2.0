@@ -11,7 +11,7 @@ Days until the project is completed : 36 days.
 We are a group of junior developer , with no prior experiences in working with Typescript , or API.
 In fact , we are learning as we go ! 
 
-## What does NCKH2 stand for ?
+## What does NCKH2 stand for ? 
 It's a secret ! But here is our motto. 
 
 ```
