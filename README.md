@@ -6,7 +6,7 @@ The project will remain open source until further notices.
 
 Days until the project is completed : 36 days.
 
-## Why doest the project take so long ? 
+## Why does the project take so long ? 
 
 We are a group of junior developer , with no prior experiences in working with Typescript , or API.
 In fact , we are learning as we go ! 
