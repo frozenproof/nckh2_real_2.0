@@ -17,6 +17,8 @@ stream.once('open', function (fd) {
         if (temporary_hash == -1)
             continue;
         stream.write(result[i - 2]+"\n");
+        let temp_type=result[i - 2].split(".");
+        stream.write(temp_type[temp_type.length-1]+"\n");
         let temp_cut=a.split("'");
         stream.write(temp_cut[1] + "\n");
     }

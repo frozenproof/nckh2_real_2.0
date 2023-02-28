@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Multiplg Pinning</title>
+    <title>Multiple Pinning</title>
 
     <!-- Get bootstrap from CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
         }
     </style>
 
-   
+
 </head>
 
 <body>
@@ -32,21 +32,28 @@
                         <label for="example-input-file"> </label>
                         <input type="file" name="many-files" multiple id="input-many-files"
                             class="form-control-file border">
-                    </div>
-                    <div>
-                        <label for="Description">File descrition:</label><br>
-                        <textarea  name="Description" id ="Description" rows="4" cols="50">Type your description here</textarea>
+                        <label for="Description">Files description:</label><br>
+                        <textarea type="text" name="Description" id="Description" rows="4"
+                            cols="50">Type your description here</textarea>
+                        <br>
+                        <input type="radio" id="native" name="token" value="20" checked>
+                        <label for="native">Native token</label><br>
+                        <input type="radio" id="nft" name="token" value="721">
+                        <label for="nft">Non-fungible token</label><br>
+                        <br>
+                        <label for="Amount"> Amount : </label>
+                        <input type="number" name="Amount" maxlength="10" value="100" />
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
         <hr>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-12">
                 <div class="preview-images"></div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div>
         <p>This is where its supposed to be</p>

@@ -15,9 +15,9 @@ let storage = multer.diskStorage({
   filename: (req, file, callback) => {
     // ở đây các bạn có thể làm bất kỳ điều gì với cái file nhé.
     // Mình ví dụ chỉ cho phép tải lên các loại ảnh png & jpg
-    let math = ["image/png", "image/jpg"];
+    let math = ["image/png", "image/jpg", "image/jpeg"];
     if (math.indexOf(file.mimetype) === -1) {
-      let errorMess = `The file <strong>${file.originalname}</strong> is invalid. Only allowed to upload image jpg or png.`;
+      let errorMess = `The file <strong>${file.originalname}</strong> is invalid. Only allowed to upload image jpg/jpeg or png.`;
       return callback(errorMess, null);
     }
 
@@ -36,8 +36,8 @@ let storage = multer.diskStorage({
 let uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 
 // let uploadManyFiles = async(req,res) => {
-  // await multer({ storage: storage }).array("many-files", 64);
-  // return true;
+// await multer({ storage: storage }).array("many-files", 64);
+// return true;
 // } 
 
 // const uploadManyFiles = function () {
@@ -47,4 +47,3 @@ let uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 let uploadMiddle = util.promisify(uploadManyFiles);
 
 module.exports = uploadMiddle;
-// module.exports = shell.exec(`${__dirname}/../controllers/print.sh`);;
