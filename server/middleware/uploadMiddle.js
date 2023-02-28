@@ -4,8 +4,6 @@
 const util = require("util");
 const path = require("path");
 const multer = require("multer");
-let shell = require('shelljs');
-const { nextTick } = require("process");
 
 // Khởi tạo biến cấu hình cho việc lưu trữ file upload
 let storage = multer.diskStorage({
@@ -37,16 +35,6 @@ let storage = multer.diskStorage({
 
 // Mục đích của util.promisify() là để bên controller có thể dùng async-await để gọi tới middleware này
 // let uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
-
-// let myPromise = new Promise(function () {
-
-//   let result = uploadManyFiles();
-//   shell.exec(`${__dirname}/../controllers/print.sh`);
-//   return result;
-// });
-const tempFO = async () => {
-  return multer({ storage: storage }).array("many-files", 64);
-}
 
 const uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 

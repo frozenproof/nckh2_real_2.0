@@ -1,2 +1,0 @@
-node /home/kirigiri/nckh2_real/server/controllers/pinController.js | cat > /home/kirigiri/nckh2_real/server/controllers/PinningRes.log
-node /home/kirigiri/nckh2_real/server/controllers/extractController.js

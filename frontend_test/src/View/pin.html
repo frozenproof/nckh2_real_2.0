@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multiplg Pinning</title>
+
+    <!-- Get bootstrap from CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        div.preview-images>img {
+            width: 30%;
+        }
+    </style>
+
+   
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <br>
+                <h4>
+                    Home
+                </h4>
+                <div class=""></div>
+                <form action="/pin" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="example-input-file"> </label>
+                        <input type="file" name="many-files" multiple id="input-many-files"
+                            class="form-control-file border">
+                    </div>
+                    <button type="submit" class="btn btn-primary">To IPFS</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="preview-images"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p>This is where its supposed to be</p>
+        <p id="WalletList"></p>
+    </div>
+   
+</body>
+
+</html>

@@ -111,9 +111,20 @@ node server/testServer.js
 ```
 
 - Testing for multiple files pinning and extract the data, remember to set chmod for the script:
+
+For older test (Deprecated):
 ```
 chmod +x print.sh
-node backend/mult/outerLayer.js 
+node backend/mult/outerLayer.js
+
+```
+
+For new test (Dynamic address):
+```
+
+chmod +x print.sh
+node server/controllers/outerController.js 
+
 ```
 
 - Testing for minting with multiple assets ( Static defined assets in array ):
