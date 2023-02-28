@@ -21,9 +21,9 @@ let multipleUpload = async (req, res) => {
     // debug(req.files);
 
     // // Mình kiểm tra thêm một bước nữa, nếu như không có file nào được gửi lên thì trả về thông báo cho client
-    // if (req.files.length <= 0) {
-    //   return res.send(`You must select at least 1 file or more.`);
-    // }
+    if (req.files.length <= 0) {
+      return res.send(`You must select at least 1 file or more.`);
+    }
 
     // trả về cho người dùng cái thông báo đơn giản.
     // return res.send(`Your files has been uploaded to our server HII.`);
