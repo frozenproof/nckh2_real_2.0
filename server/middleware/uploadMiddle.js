@@ -44,7 +44,6 @@ let uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 //   return multer({ storage: storage }).array("many-files", 64);
 // }
 
-
 let uploadMiddle = util.promisify(uploadManyFiles);
 
 module.exports = uploadMiddle;
