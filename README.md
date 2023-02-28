@@ -105,12 +105,13 @@ Even if it sound typical , its truth as old as the earth.
 
 ## How to run the project
 
-- To test temporary uploading ,please refer to following command , type it in terminal and run:
+- To test project ,please refer to following command , type it in terminal and run:
 ```
 node server/testServer.js 
 ```
 
 - Testing for multiple files pinning and extract the data, remember to set chmod for the script:
+(Deprecated)
 
 For older test (Deprecated):
 ```
@@ -119,7 +120,7 @@ node backend/mult/outerLayer.js
 
 ```
 
-For new test (Dynamic address):
+For new test (Dynamic address)(Deprecated, but still can run to test function separatedly):
 ```
 
 chmod +x print.sh
