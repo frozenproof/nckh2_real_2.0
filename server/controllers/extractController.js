@@ -4,11 +4,11 @@
 // let result = text.split("\n");
 let fs = require('fs');
 
-let buffer = fs.readFileSync(`${__dirname}/PinningRes.log`);
+let buffer = fs.readFileSync(`${__dirname}/../log/PinningRes.log`);
 let fileContent = buffer.toString();
 let result = fileContent.split("\n");
 
-let stream = fs.createWriteStream(`${__dirname}/CutRes.log`);
+let stream = fs.createWriteStream(`${__dirname}/../log/CutRes.log`);
 stream.once('open', function (fd) {
 
     for (i = 0; i < result.length; i++) {
@@ -19,13 +19,5 @@ stream.once('open', function (fd) {
     }
     stream.end();
 });
-
-// stream.once('open', function (fd) {
-//     for (i = 0; i < result.length; i ++) {
-//         var a = i;
-//         stream.write(result[a] + "\n");
-//     }
-//     stream.end();
-// });
 
 

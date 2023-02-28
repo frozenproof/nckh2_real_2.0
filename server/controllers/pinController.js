@@ -12,16 +12,16 @@ const JWT = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24
 let pinFileToIPFS = async () => {
   let files = await fs.promises.readdir(src);
 
-  for (let name of files) {
+  for (let fileName of files) {
     let formData = new FormData();
-    let fromPath = path.join(src, name);
+    let fromPath = path.join(src, fileName);
 
     // Append the file to form
     let file = fs.createReadStream(fromPath);
     formData.append('file', file);
 
     let metadata = JSON.stringify({
-      name: name,
+      name: fileName,
     });
 
     formData.append('pinataMetadata', metadata);
@@ -31,7 +31,7 @@ let pinFileToIPFS = async () => {
     });
 
     formData.append('pinataOptions', options);
-    console.log(name);
+    console.log(fileName);
 
     try {
       let res = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {

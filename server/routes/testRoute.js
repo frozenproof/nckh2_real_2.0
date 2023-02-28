@@ -15,7 +15,7 @@ let initRoutes = (app) => {
   router.post("/multiple-upload", uploadController.multipleUpload);
 
   // Upload to IPFS
-  router.post("/pinning", pinConfirm.getPin);
+  router.post("/pinning", pinConfirm.ipfsPin);
 
   return app.use("/", router);
 };
