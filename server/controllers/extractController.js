@@ -13,9 +13,12 @@ stream.once('open', function (fd) {
 
     for (i = 0; i < result.length; i++) {
         var a = result[i];
-        
-        var temp = a.substring();
-        stream.write(result[i] + "\n");
+        var temporary_hash = a.search(/Ipfs/i);
+        if (temporary_hash == -1)
+            continue;
+        stream.write(result[i - 2]+"\n");
+        let temp_cut=a.split("'");
+        stream.write(temp_cut[1] + "\n");
     }
     stream.end();
 });
