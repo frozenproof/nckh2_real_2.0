@@ -55,7 +55,7 @@ export default async function handler(
             "name": test_names[i],
             "image": "ipfs://" + imageAddress[i],
             "mediaType": "image/" + test_types[i],
-            "description": "This NFT is minted by Create NFT."
+            "description": "This NFT is minted by Create NFT news app."
         };
 
         //NFT final assesments

@@ -20,7 +20,7 @@ let storage = multer.diskStorage({
       let errorMess = `The file <strong>${file.originalname}</strong> is invalid. Only allowed to upload image jpg/jpeg or png.`;
       return callback(errorMess, null);
     }
-
+  
     // Tên của file thì mình nối thêm một cái nhãn thời gian để tránh bị trùng tên file.
     // let filename = `${Date.now()}--${file.originalname}`;
     let filename = `${file.originalname}`;

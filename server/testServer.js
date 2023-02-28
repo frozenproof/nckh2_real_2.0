@@ -15,6 +15,7 @@ initRoutes(app);
 
 // chọn một port mà bạn muốn và sử dụng để chạy ứng dụng tại local
 let port = 3001;
+
 app.listen(port, () => {
   console.log(`Hello meo con, I'm running at localhost:${port}\n`);
 });

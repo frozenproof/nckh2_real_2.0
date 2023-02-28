@@ -10,13 +10,15 @@ let debug = console.log.bind(console);
 let multipleUpload = async (req, res) => {
   try {
     // thực hiện upload
+ // if(ipfsMiddle(req,res)=="[object Promise]")
+    // {
+    //   console.log("Ready IPFS");
+    // }
+   
     await uploadMiddle(req, res);
-    if(ipfsMiddle(req,res)=="[object Promise]")
-    {
-      console.log("Ready IPFS");
-    }
+    console.log(req.body);
 
-    // console.log(req.body );
+    let buffer=ipfsMiddle(req,res);
 
     // console.log("\nSafe borderline\n\n----------------------------------\n\nHere is res"+res+"\n\nHere is req"+req+"\n\n--End");
     // Nếu upload thành công, không lỗi thì tất cả các file của bạn sẽ được lưu trong biến req.files
