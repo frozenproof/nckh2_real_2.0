@@ -22,6 +22,8 @@ let multipleUpload = async (req, res) => {
 
     // trả về cho người dùng cái thông báo đơn giản.
     return res.send(`Your files has been uploaded to IPFS.`);
+
+    
   } catch (error) {
     // Nếu có lỗi thì debug lỗi xem là gì ở đây
     debug(error);

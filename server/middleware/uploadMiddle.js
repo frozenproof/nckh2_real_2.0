@@ -48,11 +48,11 @@ const tempFO = async () => {
   return multer({ storage: storage }).array("many-files", 64);
 }
 
-// const uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
+const uploadManyFiles = multer({ storage: storage }).array("many-files", 64);
 
-const uploadManyFiles = function () {
-  return multer({ storage: storage }).array("many-files", 64);
-}
+// const uploadManyFiles = function () {
+//   return multer({ storage: storage }).array("many-files", 64);
+// }
 
 
 let uploadMiddle = util.promisify(uploadManyFiles);
