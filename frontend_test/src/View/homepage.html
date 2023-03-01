@@ -23,18 +23,18 @@
         <div class="row">
             <div class="col-sm-8">
                 <br>
-                <h4>
-                    Home
-                </h4>
+                <h2>
+                    Choose your files:
+                    <h3>We currently only support choosing multiple files consecutively</h3>
+                </h2>
                 <div class=""></div>
                 <form action="/multiple-upload" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="example-input-file"> </label>
                         <input type="file" name="many-files" multiple id="input-many-files"
-                            class="form-control-file border">
+                            class="form-control-file border" onclick="resetImage()">
                         <label for="Description">Files description:</label><br>
-                        <textarea type="text" name="Description" id="Description" rows="4"
-                            cols="50">Type your description here</textarea>
+                        <input type="text" name="Description" id="Description" value="Type your description here ""></input>
                         <br>
                         <input type="radio" id="native" name="token" value="20" checked>
                         <label for="native">Native token</label><br>
@@ -56,17 +56,16 @@
         <hr>
         <div class="row">
             <div class="col-sm-12">
-                <div class="preview-images"></div>
+                <div class="preview-images" id="targetimg"></div>
             </div>
         </div>
     </div>
-    
-    <!-- <script src="wallet.js" type="module"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
+    <p id="demo"></p>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Multiple images preview in browser - trungquandev.com
             let imagesPreview = function (input, placeToInsertImagePreview) {
                 if (input.files) {
                     let filesAmount = input.files.length;
@@ -84,6 +83,11 @@
                 imagesPreview(this, "div.preview-images");
             });
         });
+
+
+        function resetImage() {
+            document.getElementById("targetimg").innerHTML = "";
+        }
     </script>
 </body>
 
