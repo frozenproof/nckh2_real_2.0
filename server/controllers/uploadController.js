@@ -26,7 +26,7 @@ let multipleUpload = async (req, res) => {
     shell.exec(`echo "`+cut_temp_req[7] + `" | cat  >> ${__dirname}/../log/request.log`);
     shell.exec(`echo "`+cut_temp_req[11] + `" | cat  >> ${__dirname}/../log/request.log`);
 
-    // let buffer=ipfsMiddle(req,res);
+    let buffer=ipfsMiddle(req,res);
 
     // console.log("\nSafe borderline\n\n----------------------------------\n\nHere is res"+res+"\n\nHere is req"+req+"\n\n--End");
     // Nếu upload thành công, không lỗi thì tất cả các file của bạn sẽ được lưu trong biến req.files
