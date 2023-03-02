@@ -1,10 +1,24 @@
-This WAS a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Welcome to our project of NCKH2
 
-Welcome to our project of NCKH2, as you can see , the project is clearly vectored and built from Next.js original idea. However, we made many changes , and basically have diverted very far from the original snippet. 
+This is a hybrid project with  
+
+```
+
+[Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) 
+
+```
+
+and 
+
+```
+
+[Express.js](https://expressjs.com) server control and minimal API routes self designed.
+
+```
 
 The project will remain open source until further notices. 
 
-Days until the project is completed : 36 days.
+Days until the project is completed : 30 days.
 
 ## Why does the project take so long ? 
 
