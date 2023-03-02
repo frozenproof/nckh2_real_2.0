@@ -3,7 +3,7 @@
 Currrent stable test : v1.0.15  
 
 
-This is a hybrid project with  
+This was a hybrid project with  
 
 ```
 
@@ -11,13 +11,16 @@ This is a hybrid project with
 
 ```
 
-and 
+# But now it's different !
+We are using Express with Pug and create a different independent system with the previously built template react app from Next.js
+
 
 ```
 
 [Express.js](https://expressjs.com) server control and minimal API routes self designed.
 
 ```
+
 
 The project will remain open source until further notices. 
 
