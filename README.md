@@ -1,5 +1,8 @@
 ## Welcome to our project of NCKH2
 
+Currrent stable test : v1.0.15  
+
+
 This is a hybrid project with  
 
 ```
