@@ -182,5 +182,8 @@ Working on a project is never easy , and sometime , we do tests too. Installing 
 ## 1. REST api test repo:
 https://github.com/frozenproof/restApitest
 
-## 2. Generating static js from ts (Very slow as we dont understand how the conversion worked)
+## 2. Generating static js from ts (Deprecated as we couldn't make the conversion worked)
 https://github.com/frozenproof/tsTojs
+
+## 3. Integration Nextjs and expressjs into a single entity
+https://github.com/frozenproof/express_next_integration
