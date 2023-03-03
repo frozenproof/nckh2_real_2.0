@@ -2,8 +2,15 @@
 
 Currrent stable test : v1.0.15  
 
+# What is our goal?
 
-This was a hybrid project with  
+We have seen too many injustices with closed source apps on a supposed open system , espcially like blockchain structures. 
+
+We made the project open source , and ready for production , in this way , people can tell what is going on , even able to run and host their all servers and services locally , as long as one connection to the mainnet/testnet is available.
+
+
+
+# This was a hybrid project with  
 
 ```
 
