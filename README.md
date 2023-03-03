@@ -133,12 +133,9 @@ Even if it sound typical , its truth as old as the earth.
 
 - To test project ,please refer to following command , type it in terminal and run:
 ```
-node server/testServer.js 
-```
+node testServer.js 
 
-- Testing for minting with multiple assets ( Static defined assets in array ):
-```
-npm run dev
+After uploading, wait for server to process request
 
 -> and then click mint
 ``` 
@@ -163,7 +160,6 @@ Not yet:
 
 - Automatic minting multiple files.
 - The final goal: A server-client structure with minting fungible/NFT that is ready for production. 
-
 
 
 ## Side by side projects ##
