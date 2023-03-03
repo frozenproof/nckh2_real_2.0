@@ -130,24 +130,6 @@ Even if it sound typical , its truth as old as the earth.
 node server/testServer.js 
 ```
 
-- Testing for multiple files pinning and extract the data, remember to set chmod for the script:
-(Deprecated)
-
-For older test (Deprecated):
-```
-chmod +x print.sh
-node backend/mult/outerLayer.js
-
-```
-
-For new test (Dynamic address)(Deprecated, but still can run to test function separatedly):
-```
-
-chmod +x print.sh
-node server/controllers/outerController.js 
-
-```
-
 - Testing for minting with multiple assets ( Static defined assets in array ):
 ```
 npm run dev
