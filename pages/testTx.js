@@ -1,4 +1,4 @@
-import { sendingDataTobackend } from '@/backend/createTransaction';
+import { sendingDataTobackend } from '@/pages/createTransaction';
 export async function otestTx(wallet) {
     // console.log("Test is good");
     const changeAddress = await wallet.getChangeAddress();

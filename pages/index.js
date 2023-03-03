@@ -1,5 +1,5 @@
 import { CardanoWallet, useWallet } from '@meshsdk/react';
-import {otestTx} from '@/backend/testTx';
+import {otestTx} from './/testTx';
 
 export default function Home() {
   const { wallet, connected, disconnect, error } = useWallet();
