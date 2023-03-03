@@ -12,8 +12,7 @@ This was a hybrid project with
 ```
 
 # But now it's different !
-We are using Express with Pug and create a different independent system with the previously built template react app from Next.js.
-
+We are using Express , which actually use a very complicated system . Lessons learned : never attempt to use Nextjs template , because the integration alone took like a month and it doesn't scale well.
 
 ```
 
@@ -24,7 +23,7 @@ We are using Express with Pug and create a different independent system with the
 
 The project will remain open source until further notices. 
 
-Days until the project is completed : 30 days.
+Days until the project is completed : 24 days.
 
 ## Why does the project take so long ? 
 
