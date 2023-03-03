@@ -10,7 +10,7 @@ app.use(express.json());
 // Cho phép lý dữ liệu từ form method POST
 app.use(express.urlencoded({extended: true}));
 // app.use(express.static("amodule"));
-app.use(express.static(__dirname + '/amodule'));
+app.use(express.static(__dirname));
 // Khởi tạo các routes cho ứng dụng
 initRoutes(app);
 
@@ -19,6 +19,11 @@ let port = 3001;
 app.get('/', function(req, res) {
   // do something here.
 });
+
+// app.get("/:universalURL", (req, res) => {
+//   res.send("404 URL NOT FOUND");
+// });
+
 
 app.listen(port, () => {
   console.log(`Hello meo con, I'm running at localhost:${port}\n`);

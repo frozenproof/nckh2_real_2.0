@@ -14,6 +14,10 @@ let initRoutes = (app) => {
   // Upload nhiều file với phương thức post
   router.post("/multiple-upload", [ uploadController.multipleUpload]);
 
+  router.get("/messages", (req, res) => {
+    res.send("Hello");
+});
+  
   return app.use("/", router);
 };
 
