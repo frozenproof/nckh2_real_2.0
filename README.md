@@ -12,7 +12,7 @@ This was a hybrid project with
 ```
 
 # But now it's different !
-We are using Express with Pug and create a different independent system with the previously built template react app from Next.js
+We are using Express with Pug and create a different independent system with the previously built template react app from Next.js.
 
 
 ```
@@ -182,11 +182,4 @@ Not yet:
 
 Working on a project is never easy , and sometime , we do tests too. Installing a new system can be risky , as such , we decided to put the test project in a different repository , only people who need to know more about technical details behind each file should use the following examples as guides .
 
-## 1. REST api test repo:
-https://github.com/frozenproof/restApitest
-
-## 2. Generating static js from ts (Deprecated as we couldn't make the conversion worked)
-https://github.com/frozenproof/tsTojs
-
-## 3. Integration Nextjs and expressjs into a single entity
-https://github.com/frozenproof/express_next_integration
+All side projects are deprecated as they do not work / scale well with the current project progresss.

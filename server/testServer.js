@@ -4,11 +4,12 @@
  */
 const express = require("express");
 const app = express();
-const initRoutes = require("./routes/testRoute");
+const initRoutes = require("./routes/systemRoute");
 app.use(express.json());
 
 // Cho phép lý dữ liệu từ form method POST
 app.use(express.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 // Khởi tạo các routes cho ứng dụng
 initRoutes(app);
