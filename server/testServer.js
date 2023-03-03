@@ -9,7 +9,7 @@ app.use(express.json());
 
 // Cho phép lý dữ liệu từ form method POST
 app.use(express.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static("amodule"));
 
 // Khởi tạo các routes cho ứng dụng
 initRoutes(app);

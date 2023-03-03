@@ -31,7 +31,7 @@ let multipleUpload = async (req, res) => {
     // if (req.files.length <= 0) {
     //   return res.send(`You must select at least 1 file or more.`);
     // }
-    return res.sendFile(path.join(`${__dirname}/../../frontend_test/src/View/after.html`));
+    return res.sendFile(path.join(`${__dirname}/../../frontend/src/View/after.html`));
 
   } catch (error) {
     // Nếu có lỗi thì debug lỗi xem là gì ở đây
