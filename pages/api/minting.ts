@@ -20,23 +20,6 @@ export default async function handler(
     var imageAddress = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
     var test_types = ["png", "png", "jpg"];
 
-    // let buffer = fs.readFileSync(`${__dirname}/../../server/log/CutRes.log`);
-    // let fileContent = buffer.toString();
-    // let result = fileContent.split("\n");
-    // var test_names = [""];
-    // var imageAddress = [""];
-    // var test_types = [""];
-
-    // for (var i = 0; i < result.length; i = i + 3) {
-    //     var a = i;
-    //     test_names.push(result[a]);
-    //     test_types.push(result[a + 1]);
-    //     imageAddress.push(result[a + 2]);
-
-    //     console.log(result[a]);
-    // }
-
-
     //Using KoiosProvider as the API
     const koiosProvider = new KoiosProvider("preprod");
     //const variable to transfer to back end
