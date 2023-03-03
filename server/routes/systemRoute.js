@@ -4,7 +4,6 @@
 const express = require("express");
 const router = express.Router();
 const homeController = require("../controllers/homeController");
-const pinConfirm = require("../controllers/pinningConfirm");
 const uploadController = require("../controllers/uploadController");
 
 
@@ -14,9 +13,6 @@ let initRoutes = (app) => {
   
   // Upload nhiều file với phương thức post
   router.post("/multiple-upload", [ uploadController.multipleUpload]);
-
-  // Upload to IPFS
-  router.post("/pinning", pinConfirm.ipfsPin);
 
   return app.use("/", router);
 };
