@@ -1,5 +1,9 @@
-import { sendingDataTobackend } from '@/pages/createTransaction';
-export async function otestTx(wallet) {
+import { CardanoWallet, useWallet } from '@meshsdk/react';
+import { sendingDataTobackend } from './createTransaction';
+
+export default function Home() {
+  const { wallet, connected, disconnect, error } = useWallet();
+  async function otestTx() {
     // console.log("Test is good");
     const changeAddress = await wallet.getChangeAddress();
     console.log("Here is the Change address", changeAddress);
@@ -20,3 +24,20 @@ export async function otestTx(wallet) {
         console.log("Error", error);
     }
 }
+
+  return (
+    <>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <CardanoWallet />
+      <button onClick={() => otestTx()}>Test Mint</button>
+    </>
+  )
+}
+

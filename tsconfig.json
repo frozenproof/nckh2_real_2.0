@@ -31,7 +31,7 @@
     "**/*.ts",
     "**/*.tsx",
     "node_modules"
-  ],
+, "pages/testTx.js"  ],
   "exclude": [
     "node_modules"
   ]
