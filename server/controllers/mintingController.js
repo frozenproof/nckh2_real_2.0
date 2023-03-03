@@ -77,7 +77,8 @@ function handler(req, res) {
                     tx = new core_1.Transaction({ initiator: appWallet });
                     tx.setTxInputs(selectedUtxos);
                     AppWalletAddress = appWallet.getPaymentAddress();
-                    forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
+                    // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
+                    forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress);
                     for (i = 0; i < 3; i++) {
                         assetName = test_names[i];
                         assetMetadata = {
