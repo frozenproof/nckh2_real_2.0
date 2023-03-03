@@ -11,11 +11,7 @@ let shell = require('shelljs')
 let multipleUpload = async (req, res) => {
   try {
     // thực hiện upload
-    // if(ipfsMiddle(req,res)=="[object Promise]")
-    // {
-    //   console.log("Ready IPFS");
-    // }
-
+   
     await uploadMiddle(req, res);
     let temp_req = JSON.stringify(req.body);
     let cut_temp_req = temp_req.split("\"");
@@ -28,7 +24,6 @@ let multipleUpload = async (req, res) => {
 
     let buffer=ipfsMiddle(req,res);
 
-    // console.log("\nSafe borderline\n\n----------------------------------\n\nHere is res"+res+"\n\nHere is req"+req+"\n\n--End");
     // Nếu upload thành công, không lỗi thì tất cả các file của bạn sẽ được lưu trong biến req.files
     // debug(req.files);
 
@@ -36,10 +31,6 @@ let multipleUpload = async (req, res) => {
     // if (req.files.length <= 0) {
     //   return res.send(`You must select at least 1 file or more.`);
     // }
-
-    // trả về cho người dùng cái thông báo đơn giản.
-    // return res.send(`Your files has been uploaded to our server HII.`);
-    // return res.sendFile(path.join(`${__dirname}/../../frontend_test/src/View/pin.html`));
     return res.sendFile(path.join(`${__dirname}/../../frontend_test/src/View/after.html`));
 
   } catch (error) {
