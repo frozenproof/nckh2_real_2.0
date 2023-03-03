@@ -55,6 +55,7 @@ function handler(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    
                     test_names = ["hi3.png", "l6209640.png", "uyu.jpg"];
                     imageAddress = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
                     test_types = ["png", "png", "jpg"];

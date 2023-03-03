@@ -52,14 +52,6 @@ Even if it sound typical , its truth as old as the earth.
 
 ## 1st: The client machines (Customers) first send the requests along with data (encrypted?) using the following procedure:
 
--> User connect wallet on front end.
-
--> Front end first get the following data: 
-
-    + Wallet address of user (Recipient Address).
-
-    + The remaining utxos of user
-
 -> User picks files to mint into NFTs
 
 -> Front end get the following data:
@@ -70,7 +62,7 @@ Even if it sound typical , its truth as old as the earth.
 
     + Quantity of items minted
     
-    + Brief description of the items
+    + Brief description of the items 
 
 -> User submit the information 
 
@@ -78,29 +70,37 @@ Even if it sound typical , its truth as old as the earth.
 
 ## 2nd: The data is prepared using the following procedure:
 
+-> Server start uploading files to IPFS
+
+-> Server log the files and IPFS addresses
+
+## 3rd: Prepare for minting:
+
+-> User is redirected to Mint step
+
+-> User connect wallet on front end.
+
+-> Front end first get the following data: 
+
+    + Wallet address of user (Recipient Address).
+
+    + The remaining utxos of user
+
 -> Function receiving data and call the post function inside API
 
--> Post function redirect to the files uploading:
-    
-    + Upload multiple files at once to IPFS with Pinata API
-
-    + Receive IPFS hash address
-
-    + Copy the original files to new folder with new name "originalname-&&-IPFS hash" using bash script
+## 4th: Start minting:
 
 -> Preparing data:
 
     + Passing the data into new variables
 
--> Inside Minting
+-> Forge a script 
 
-    + Create an app wallet as a medium 
+-> Initiate a transaction with user wallet address as the start
 
-    + Get the app wallet receive address 
+-> Start a loop for building 
 
-    + Forge a script for the receive address 
-
--> Craft the token/non-fungible token:
+-> Craft the metadata:
 
     + Name 
 
@@ -120,14 +120,15 @@ Even if it sound typical , its truth as old as the earth.
         
     + Quantity
 
-    + Recipient Address
+-> Complete loop with transaction contained all items
 
-## 3rd: Crafting the transaction:
--> Wait for transaction build
+-> Begin transaction
 
-## 4th: Open a new window for the user to enter their spending password and sign the transaction.
+-> Return unsignedTx to the front end
 
-## 5th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
+## 5th: User sign the transaction with the spending key , aka skey in a new window.
+
+## 6th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
 
 ## How to run the project
 
