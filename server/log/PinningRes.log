@@ -1,7 +1,21 @@
-ToramOnlineScreenshot2023_02_25_23_14_43.png
+ztoram.png
 {
   IpfsHash: 'QmYgEWaR4Rw9TVgg1mr2uctjLQSg3r9qPjnEfwu5QUjsdi',
   PinSize: 1718447,
   Timestamp: '2023-02-26T10:58:00.778Z',
+  isDuplicate: true
+}
+ztoram2.png
+{
+  IpfsHash: 'QmS6NcCbEjAJ8pJV7Gsc9keFbkWAHHxAUrM4T8V4Ck3oG4',
+  PinSize: 1538649,
+  Timestamp: '2023-02-26T10:58:04.290Z',
+  isDuplicate: true
+}
+ztoram3.png
+{
+  IpfsHash: 'QmQijzfbVVYdzRyJ3MhF7eHun6BFLP2VVcLRepCSM8iMJZ',
+  PinSize: 1703244,
+  Timestamp: '2023-02-26T10:58:07.713Z',
   isDuplicate: true
 }

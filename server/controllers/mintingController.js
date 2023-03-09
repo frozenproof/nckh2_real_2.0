@@ -6,7 +6,7 @@ const path = require("path");
 
 let getReq = (req, res) => {
     console.log("Sent to Express");
-    console.log("Request is:"+req.body.recipentAddress);
+    console.log("Request is:" + req.body.recipentAddress);
     console.log("End");
     return res.sendFile(path.join(`${__dirname}/../../frontend/src/View/after.html`));
 };
@@ -22,8 +22,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    var _ = { label: 0, sent: function () { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
@@ -55,13 +55,32 @@ function handler(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    
-                    test_names = ["hi3.png", "l6209640.png", "uyu.jpg"];
-                    imageAddress = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
-                    test_types = ["png", "png", "jpg"];
+                    item_names = [];
+                    item_types = [];
+                    item_address = [];
+                    let buffer = fs.readFileSync(`${__dirname}/../log/CutRes.log`);
+                    let fileContent = buffer.toString();
+                    let result = fileContent.split("\n");
+                    for (var count = 0; count < result.length - 1; count += 3) {
+                        console.log("testN " + result[count].toString());
+                        console.log("types " + result[count + 1].toString());
+                        console.log("Address " + result[count + 2].toString());
+                        item_names.push(result[count]);
+                        item_types.push(result[count + 1]);
+                        item_address.push(result[count + 2]);
+                    }
+                    console.log("Actual length of items: " + (result.length - 1) / 3);
+                    // item_names = ["hi3.png", "l6209640.png", "uyu.jpg"];
+                    // item_address = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
+                    // item_types = ["png", "png", "jpg"];
+
                     koiosProvider = new core_2.KoiosProvider("preprod");
                     recipentAddress = req.body.recipentAddress;
                     utxos = req.body.utxos;
+
+                    console.log("In the 2nd spot before possible bug, high chance of broken undefined key");
+                    costLovelace = '10000000';
+                    selectedUtxos = (0, core_1.largestFirst)(costLovelace, utxos, true);
                     appWallet = new core_1.AppWallet({
                         networkId: 0,
                         fetcher: koiosProvider,
@@ -72,23 +91,18 @@ function handler(req, res) {
                             words: ["solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution",]
                         }
                     });
-                    console.log("In the 2nd spot before possible bug, high chance of broken undefined key");
-                    costLovelace = '10000000';
-                    selectedUtxos = (0, core_1.largestFirst)(costLovelace, utxos, true);
                     tx = new core_1.Transaction({ initiator: appWallet });
                     tx.setTxInputs(selectedUtxos);
-                    AppWalletAddress = appWallet.getPaymentAddress();
                     // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
                     forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress);
-                    for (i = 0; i < 3; i++) {
-                        assetName = test_names[i];
+                    for (i = 0; i < item_names.length; i++) {
+                        assetName = item_names[i];
                         assetMetadata = {
-                            "name": test_names[i],
-                            "image": "ipfs://" + imageAddress[i],
-                            "mediaType": "image/" + test_types[i],
+                            "name": item_names[i],
+                            "image": "ipfs://" + item_address[i],
+                            "mediaType": "image/" + item_types[i],
                             "description": "This NFT is minted by Create NFT news app."
                         };
-                        console.log("name" + test_names[i]);
                         targetedNFTasset = {
                             assetName: assetName,
                             assetQuantity: '1',
@@ -117,8 +131,6 @@ function handler(req, res) {
         });
     });
 }
-
-// exports["default"] = handler;
 
 module.exports = {
     // getAxios: getReq

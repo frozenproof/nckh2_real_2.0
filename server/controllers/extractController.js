@@ -16,10 +16,14 @@ stream.once('open', function (fd) {
         var temporary_hash = a.search(/Ipfs/i);
         if (temporary_hash == -1)
             continue;
-        stream.write(result[i - 2]+"\n");
-        let temp_type=result[i - 2].split(".");
-        stream.write(temp_type[temp_type.length-1]+"\n");
-        let temp_cut=a.split("'");
+        if (result[i - 2].length > 23) {
+            stream.write(result[i - 2].substring(0,19) + "min\n");
+        }
+        else
+            stream.write(result[i - 2] + "\n");
+        let temp_type = result[i - 2].split(".");
+        stream.write(temp_type[temp_type.length - 1] + "\n");
+        let temp_cut = a.split("'");
         stream.write(temp_cut[1] + "\n");
     }
     stream.end();
