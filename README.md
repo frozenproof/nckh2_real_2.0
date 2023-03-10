@@ -8,8 +8,6 @@ We have seen too many injustices with closed source apps on a supposed open syst
 
 We made the project open source , and ready for production , in this way , people can tell what is going on , even able to run and host their all servers and services locally , as long as one connection to the mainnet/testnet is available.
 
-
-
 # This was a hybrid project with  
 
 ```
@@ -30,7 +28,7 @@ We are using Express , which actually use a very complicated system . Lessons le
 
 The project will remain open source until further notices. 
 
-Days until the project is completed : 24 days.
+Days until the project is completed : 20 days.
 
 ## Why does the project take so long ? 
 
@@ -138,8 +136,15 @@ node testServer.js
 
 After uploading, wait for server to process request
 
--> and then click mint
+-> Connect your own wallet
+
+-> Click mint
+
+-> Sign the Tx
+
+-> Done
 ``` 
+This app is ready for mainnet production as well.
 
 ## Current progress: ##
 
@@ -147,7 +152,7 @@ After uploading, wait for server to process request
 - Completed multiple files transferring on Rest APi (Originally used formiddable , now switching to multer )
 - Integrated multiple files transfering interfaces. Tests ran successfully.
 - Updated and repaired broken part due to statis pathing issues.
-- Currently trying to async between file uploads and minting functions.
+- Automatic redirection to Minting after Pinning .
 
 ## Progress by completion : ##
 
@@ -156,11 +161,13 @@ Yes:
 - Upload multiple files to the server.
 - Pinning multiple files to IPFS.
 - Multiple minting in loop
+- Automatic minting multiple files.
+- Running on REST API to save server power
+- Server - Client structure with minting fungible/NFT that is ready for production. 
 
 Not yet:
 
-- Automatic minting multiple files.
-- The final goal: A server-client structure with minting fungible/NFT that is ready for production. 
+- The final goal: Make it look better and migrate some key feature to secure spot.
 
 
 ## Side by side projects ##

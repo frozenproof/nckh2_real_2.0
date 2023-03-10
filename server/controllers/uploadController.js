@@ -18,7 +18,7 @@ let multipleUpload = async (req, res) => {
     for (var i = 0; i < cut_temp_req.length; i++) {
       console.log(cut_temp_req[i]);
     }
-    shell.exec(`echo "` + cut_temp_req[3] + `" | cat  >> ${__dirname}/../log/request.log`);
+    shell.exec(`echo "` + cut_temp_req[3] + `" | cat  > ${__dirname}/../log/request.log`);
     shell.exec(`echo "` + cut_temp_req[7] + `" | cat  >> ${__dirname}/../log/request.log`);
     shell.exec(`echo "` + cut_temp_req[11] + `" | cat  >> ${__dirname}/../log/request.log`);
 

@@ -62,7 +62,7 @@ function handler(req, res) {
                     let fileContent = buffer.toString();
                     let result = fileContent.split("\n");
                     for (var count = 0; count < result.length - 1; count += 3) {
-                        console.log("testN " + result[count].toString());
+                        console.log("test "+(count/3)+1+" :" + result[count].toString());
                         console.log("types " + result[count + 1].toString());
                         console.log("Address " + result[count + 2].toString());
                         item_names.push(result[count]);
@@ -74,6 +74,12 @@ function handler(req, res) {
                     // item_address = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
                     // item_types = ["png", "png", "jpg"];
 
+                    let bufferInfo = fs.readFileSync(`${__dirname}/../log/request.log`);
+                    let infoContent = bufferInfo.toString();
+                    let resultInfo = infoContent.split("\n");
+                    for (var infocount = 0; infocount < resultInfo.length ; infocount ++) {
+                        console.log("Items at "+infocount+" :" + resultInfo[infocount]);
+                    }
                     koiosProvider = new core_2.KoiosProvider("preprod");
                     recipentAddress = req.body.recipentAddress;
                     utxos = req.body.utxos;
@@ -101,13 +107,13 @@ function handler(req, res) {
                             "name": item_names[i],
                             "image": "ipfs://" + item_address[i],
                             "mediaType": "image/" + item_types[i],
-                            "description": "This NFT is minted by Create NFT news app."
+                            "description": resultInfo[0].toString()
                         };
                         targetedNFTasset = {
                             assetName: assetName,
-                            assetQuantity: '1',
+                            assetQuantity: resultInfo[2],
                             metadata: assetMetadata,
-                            label: '721',
+                            label: resultInfo[1],
                             recipient: recipentAddress
                         };
                         tx.mintAsset(forgingScript, targetedNFTasset);
