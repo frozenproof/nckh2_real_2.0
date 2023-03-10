@@ -169,7 +169,6 @@ Not yet:
 
 - The final goal: Make it look better and migrate some key feature to secure spot.
 
-
 ## Side by side projects ##
 
 Working on a project is never easy , and sometime , we do tests too. Installing a new system can be risky , as such , we decided to put the test project in a different repository , only people who need to know more about technical details behind each file should use the following examples as guides .
