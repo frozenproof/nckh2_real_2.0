@@ -11,6 +11,7 @@ let shell = require('shelljs')
 let multipleUpload = async (req, res) => {
   try {
     // thực hiện upload
+    shell.exec(`rm images/* |rm server/log/* `);
 
     await uploadMiddle(req, res);
     let temp_req = JSON.stringify(req.body);
