@@ -127,8 +127,7 @@ function handler(req, res) {
                         };
                         tx.mintAsset(forgingScript, targetedNFTasset);
                         console.log("Flag the final possible bug 2nd");
-                            console.log("Quantity type"+typeof('1'));
-                            console.log("Quantity type"+typeof(resultInfo[2]));
+                    
                     }
                     tx.sendLovelace(recipentAddress, costLovelace);
                     console.log("Flag the final possible bug 3rd");
