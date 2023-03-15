@@ -46,6 +46,7 @@ function Add(){
     );
     ReactDOM.render(newDiv,group_add);
 }   
+
 // let submit=document.querySelector('.btn-submit');
 // submit.onclick=()=>{
 //     let Display1=document.querySelectorAll(".check-value");
@@ -62,3 +63,20 @@ function Add(){
 //           }      
 //     } 
 // }
+// // display image 
+// const fileInput = document.getElementById('input-file');
+// const imageContainer = document.getElementById('image-container');
+
+// fileInput.addEventListener("change", (event) => {
+//   const files = event.target.files;
+//   for (let i = 0; i < files.length; i++) {
+//     const file = files[i];
+//     const reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = () => {
+//       const img = document.createElement('img');
+//       img.src = reader.result;
+//       imageContainer.appendChild(img);
+//     }
+//   }
+// });

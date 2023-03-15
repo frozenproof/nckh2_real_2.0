@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Roboto:wght@300;400;500&display=swap');
+:root{/* dinh nghia 1 bien*/
+    --main-color:#443;
+    --border-radius: 0.5rem ;
+    --border: .2rem solid var(--main-color);
+    --border-hover: .2rem dashed var(--main-color);
+    --logo-color-:black;
+    --color-shadow-:#bdb6b6;
+    --nav-a-hover-:#d6cdcd;
+    --white-color-:#fff;
+    --body-color-:#f3f4f8;
+}
+html{
+    font-size: 62.5%;
+}
+.main{
+    box-sizing: border-box;
+    justify-content: space-around;
+    margin: 0 !important;
+    padding: 0;
+    font-size: 1.6rem;
+}
+.main li{
+    list-style-type: none !important;
+}
+.main a{
+    color:unset;
+    text-decoration: none !important;
+    
+}
+.main a:hover{
+    color: unset;
+}
+.main .left-main,.right-main{
+    padding: 0.8rem !important;
+}
+.left-main .left-sibar{
+    position: fixed;
+    top: 9rem;
+}
+.left-main .left-sibar li{
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1rem 1rem 1rem 1rem;
+    cursor: pointer;
+}
+.left-main .left-sibar li:hover>a{
+    color: #2de5be;
+}
+.left-main .left-sibar .li-active a{
+    color: #2de5be;
+}
+.left-main .left-sibar .li-active a i{
+    rotate: -90deg;
+}
+.sub-menu{
+    display: none;
+} 
+.sub-menu>li:hover{
+    color: #2de5be;
+}
+.sub-menu-active{
+    display: block;
+}
+.sub-menu li.active{
+    color: #2de5be;
+}
+.right-main{
+    display: none !important;
+    padding-top: 3rem !important;
+    padding-left: 2rem !important;
+}
+.right-main.active{
+    display: flex !important;
+}
+.right-content h1{
+    font-size: 3rem;
+    margin: 1.5rem 0;
+}
+.right-content h2{
+    margin: 2rem 0;
+}
+.right-content ul{
+    text-align: justify;
+    padding-left: 2rem;
+    margin:1rem;
+}
+
+.right-content ul li{
+    padding: 1rem 0;
+    list-style-type:initial !important;
+}
+.right-tableOfContent{
+    position: fixed;
+    top: 9rem;
+}
+.right-tableOfContent ul li{
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    border-left: 0.1rem solid #bdb6b6;
+}
+.menuSubItem_active{
+    color: #2de5be;
+}
+.right-tableOfContent ul>li:hover{
+    color: #2de5be;
+}
+
+@media (max-width:992px) {
+    .left-main{
+        display: none ; 
+    }
+    .left-main.active{
+        position: relative;
+    }
+    .left-main ul.left-sibar{
+        position: absolute;
+        z-index: 1000;
+        top: 0;
+    }
+    .right-tableOfContent{
+        display: none;
+    }
+}

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/src/Style/Css/style.css">
+    <link rel="stylesheet" href="/frontend/src/Style/Css/document.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>NFT Create</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="/frontend/src/Style/image/logoNFTnew.jpg" alt=""></a>
+        </div>
+        <div class="nav">
+            <ul class="navbar-menu">
+                <li><a href="/frontend/src/View/index.html">Trang chủ</a></li>
+                <li><a href="/frontend/src/View/upload.html">Đúc tài sản</a></li>
+                <li><a href="https://docs.cardano.org/">Cardano</a></li>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    
+    <div class="row main">
+        <div  class="left-main col-lg-2">
+            <ul class="left-sibar">
+                <li class="left-sibar-li" data-target="sub-menu-1"><a href="#">Blockchain là gì? <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <ul class="sub-menu sub-menu-active" id="sub-menu-1">
+                        <li data-target="Blockchain">Kiến thức về Blockchain</li>
+                        <li data-target="SmartContract">Kiến thức về SmartContrac</li>
+                    </ul>
+                </li>
+                <li class="left-sibar-li" data-target="sub-menu-2"><a href="#">NFT && Native token <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <ul class="sub-menu" id="sub-menu-2">
+                        <li data-target="overview-Token">Kiến thức về Token</li>
+                        <li data-target="Mint-Token">Hướng dẫn mint Token</li>        
+                        <li data-target="overview-NFT">Kiến thức về NFT</li>    
+                        <li data-target="Mint-NFT">Hướng dẫn mint NFT</li> 
+                    </ul>
+                </li>
+                <li class="left-sibar-li" data-target="sub-menu-3"><a href="#">Source code của nền tảng <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+                    <ul class="sub-menu" id="sub-menu-3">
+                        <li data-target="overview-Token">Kiến thức về Token</li>
+                        <li data-target="Mint-Token">Hướng dẫn mint Token</li>        
+                        <li data-target="overview-NFT">Kiến thức về NFT</li>    
+                        <li data-target="Mint-NFT">Hướng dẫn mint NFT</li> 
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="Blockchain" class=" active row right-main col-lg-10 col-md-12 col-sm-12 col-12">
+            <div class="right-content col-lg-9 col-md-12 col-sm-12 col-12">
+                <h1><strong>Kiến thức về blockchain</strong></h1>
+                <div id="What-is-blockchain">
+                    <h2><strong>Blockchain là gì?</strong></h2>
+                    <p>"<strong>Blockchain (chuỗi khối)</strong> là một cơ sở dữ liệu phân tán phi tập trung, thông tin được lữu trữ trong các khối, các khối được liên kết với nhau bằng mã hash và mở rộng theo thời gian. 
+                        Mỗi khối  đều chứa thông tin về thời gian khởi tạo và được liên kết tới khối trước đó. 
+                        Blockchain được thiết kế để chống lại việc thay đổi của dữ liệu: Một khi dữ liệu đã được ghi thì sẽ không có cách nào thay đổi được nó. Khi một thông tin được lưu vào khối thì không có cách nào sửa đổi và xoá thông tin trong khối.
+                        Mà chỉ có thể bổ sung thêm thông tin và lưu vào một khối khác."
+                    </p>
+                </div>
+                <div id="Generation-blockchain">
+                    <h2><strong>Các thế hệ khác nhau của Blockchain </strong></h2>
+                    <p>
+                        Kể từ khi được công bố đến nay, công nghệ Blockchain đã có những bước phát triển vượt bậc, không chỉ dừng lại ở tiền mã hóa, công nghệ này đã và đang thể hiện nhiều vai trò đa dạng và thông minh hơn.
+                    </p>
+                    <ul>
+                        <li>
+                            <p><strong>Công nghệ Blockchain thế hệ 1.0 – Cryptocurrency:</strong> Tiền mã hóa là ứng dụng được xem là đời đầu của công nghệ Blockchain, với sự ra đời và phát triển mạnh mẽ của đồng Bitcoin. Nhờ việc triển khai sổ cái phân tán DLT (distributed ledger technology), các giao dịch tài chính ngang hàng có thể được thực hiện một cách nhanh chóng, hiệu quả. Cho đến nay, rất nhiều đồng tiền mã hóa khác ngoài Bitcoin đã được ra đời, thể hiện sự bùng nổ mạnh mẽ của loại tiền tệ dựa trên ứng dụng công nghệ Blockchain. </p>
+                        </li>
+                        <li>
+                            <p><strong>Công nghệ Blockchain thế hệ 2.0 – Smart Contract:</strong> Smart Contract (hợp đồng thông minh) là ứng dụng tiếp theo giúp Blockchain mở rộng ra khỏi lĩnh vực tài chính tiền tệ. Với Smart Contract, các điều kiện giao dịch được thiết lập trên hệ thống. Sau đó, chương trình máy tính sẽ kiểm tra các điều kiện và thực thi tự động theo quy trình với tốc độ nhanh chóng và đảm bảo độ chính xác cao.</p>
+                        </li>
+                        <p>Với ứng dụng này, các hợp đồng truyền thống sẽ có thể dần được thay thế, giúp cho các thỏa thuận phức tạp được đảm bảo thực hiện hiệu quả. Nhờ vậy, người dùng sẽ tiết kiệm được rất nhiều chi phí cũng như tránh sự can thiệp của các bên trung gian trong quá trình thực hiện các hợp đồng, đặc biệt là đối với các hợp đồng xuyên biên giới. </p>
+                        <li>
+                            <p><strong>Công nghệ Blockchain thế hệ 3.0 – Dapps:</strong> Dapps (Decentralized applications) là ứng dụng phi tập trung hay còn gọi là ứng dụng phân quyền. Đây là ứng dụng dạng kỹ thuật số chạy trên mạng chuỗi khối hoặc mạng ngang hàng (peer-to-peer) của các máy tính thay vì chỉ chạy trên một máy tính đơn lẻ. Nhờ vậy, Dapps không bị kiểm soát bởi bất kỳ đơn vị tập trung nhất định nào. </p>
+                        </li>
+                        <li>
+                            <p><strong>Công nghệ Blockchain thế hệ 4.0 – Blockchain For industry:</strong> Mục tiêu của Blockchain 4.0 là kế thừa và phát triển tích hợp trên cơ sở ứng dụng các tính năng của 3 thế hệ trước. Trong đó, Blockchain sẽ hướng tới trở thành công nghệ giúp đáp ứng hầu hết các nhu cầu trong hoạt động kinh doanh ở các lĩnh vực. Đây được xem là một tầm nhìn mang tính dài hạn, và vẫn còn rất nhiều thách thức để thế giới thực sự công nhận cũng như sử dụng tất cả các ứng dụng của công nghệ mới và đột phá này. </p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="feature-blockchain">
+                    <h2><strong>Ưu điểm và nhược điểm của Blockchain</strong></h2>
+                    <p><strong>Tìm hiểu về công nghệ Blockchain,</strong> chúng ta đã và đang thấy những những giá trị mang tính đột phá so với các công nghệ truyền thống. Tuy nhiên, Blockchain vẫn còn tồn tại một số nhược điểm nhất định. </p>
+                    <h3><strong>Ưu điểm</strong></h3>
+                    <ul>
+                        <li>
+                            <p><strong>Tính phân tán,minh bạch, bảo mật:</strong> Dữ liệu Blockchain được lưu trữ trên hàng ngàn thiết bị với mạng lưới là các Node phân tán. Trong đó, mỗi Node có khả năng sao chép và lưu trữ một bản sao của cơ sở dữ liệu Blockchain. Nhờ thiết kế như vậy có thể chống lại các lỗi xảy ra trên Node đơn làm ảnh hưởng đến hệ thống Blockchain. Các hacker vì vậy cũng khó có thể thực hiện các cuộc tấn công vào toàn bộ mạng lưới Blockchain.</p>
+                        </li>
+                        <li>
+                            <p><strong>Tính ổn định giúp thông tin khó có thể bị tấn công:</strong> Như đã trình bày ở trên, hệ thống Blockchain được cấu thành bởi các khối dữ liệu liên kết bằng mã băm độc nhất. Do đó, để có thể tấn công can thiệp vào một khối nhất định trong Blockchain nhằm đánh cắp thông tin thì cần phải tấn công gần như tất cả các Block trong chuỗi, và việc này thì gần như là không thể. </p>
+                        </li>
+                        <li>
+                            <p><strong>Hệ thống không cần sự sự can thiệp của các bên trung gian:</strong> Bằng việc sử dụng giao thức ngang hàng (Peer-to-peer) và khả năng xác minh bằng mạng lưới nút phân tán, các hoạt động và giao dịch trên Blockchain được thực hiện trực tiếp giữa các bên tham gia. Nhờ đó giúp tránh được sự can thiệp của các trung gian, gây tốn thời gian, chi phí và thậm chí có thể bị thao túng, kiểm soát.</p>
+                        </li>
+                    </ul>
+                    <h3><strong>Nhược điểm</strong></h3>
+                    <ul>
+                        <li>
+                            <p><strong>Rủi ro nếu mất chìa khóa cá nhân (Private Key):</strong> Khi tham gia vào các dự án Blockchain, mỗi tài khoản sẽ được cung cấp hai chìa khóa: chìa khóa chung (có thể công khai) và chìa khóa cá nhân (cần được bảo mật). Chìa khóa cá nhân là công cụ giúp truy cập vào tài khoản cũng như kiểm soát thông tin và tài sản có trong tài khoản.</p>
+                        </li>
+                        <p>Nếu bị mất chìa khóa này, người dùng sẽ gần như mất khả năng truy cập cũng như tài sản của mình. Đồng thời, với bản chất hoạt động ngang hàng, hầu như sẽ không ai có thể can thiệp và hỗ trợ lấy lại tài khoản được.</p>
+                        <li>
+                            <p><strong>Tốn nhiều năng lượng khai thác và không gian lưu trữ:</strong> Hiện nay, để có thể khai thác (đào) Bitcoin hay các đồng tiền mã hóa ứng dụng công nghệ Blockchain, rất nhiều người đã đầu tư hàng loạt bộ máy tính được nâng cấp với công suất cao hoạt động liên tục nhằm tăng khả năng giải các thuật toán. Điều này đã và đang tiêu thụ một lượng lớn năng lượng điện. </p>
+                        </li>
+                        <p>Ngoài ra với tốc độ phát triển ngày càng nhanh chóng của công nghệ Blockchain, quy mô của các sổ cái đã tăng lên đáng kể, đòi hỏi một không gian lưu trữ lớn. Nếu vượt qua khả năng lưu trữ của ổ cứng sẽ gây ra khó khăn cho các cá nhân lưu trữ sổ cái.</p>
+                    </ul>
+                </div>
+                <div id="application-blockchain">
+                    <h2><strong>Ứng dụng đa dạng của Blockchain vào các lĩnh vực</strong></h2>
+                    <p>Blockchain có rất nhiều ứng dụng trong các lĩnh vực của cuộc sống hiện nay</p>
+                    <h3><strong>Dịch vụ tài chính, ngân hàng</strong></h3>
+                    <p>Một trong những khó khăn lớn nhất của lĩnh vực tài chính – ngân hàng đó là bảo mật thông tin cũng như kiểm soát sự trung thực của các bên trung gian. Với việc ứng dụng công nghệ Blockchain, những vấn đề này có thể được giải quyết nhanh chóng, hiệu quả.</p>
+                    <ul>
+                        <li>
+                            <p>Trực tiếp xác thực thông tin khách hàng và điểm tín dụng không cần thông qua trung gian.</p>
+                        </li>
+                        <li>
+                            <p>Sổ cái kỹ thuật số giúp xác minh, thực hiện thanh toán và cập nhật thông tin các giao dịch ngang hàng một cách liên tục.</p>
+                        </li>
+                        <li>
+                            <p>Tiền mã hóa, hệ thống tiền tệ phi tập trung (DeFi) giúp thực hiện giao dịch xuyên biên giới một cách nhanh chóng, chính xác.</p>
+                        </li>
+                    </ul>
+                    <h3><strong>Y tế, chăm sóc sức khỏe</strong></h3>
+                    <p>Hiện nay rất nhiều nước trên thế giới, trong đó có Việt Nam đang thúc đẩy quá trình số hóa lĩnh vực y tế và chăm sóc sức khỏe. Trong đó ứng dụng công nghệ Blockchain được sử dụng rộng rãi nhờ các tính năng đột phá so với các công nghệ truyền thống.</p>
+                    <ul>
+                        <li>
+                            <p>Sử dụng công nghệ để theo dõi và quản lý bệnh lý của khách hàng</p>
+                        </li>
+                        <li>
+                            <p>Quản lý chuỗi cung ứng các sản phẩm thuốc và thiết bị y tế: Theo dõi toàn bộ từ đầu vào, nguồn gốc cũng như quá trình sử dụng của các vật tư y tế.</p>
+                        </li>
+                    </ul>
+                    <h3><strong>Logistics, chuỗi cung ứng</strong> </h3>
+                    <p>Công nghệ Blockchain giúp hỗ trợ ghi lại dữ liệu về toàn bộ vòng đời sản phẩm, bao gồm tất cả các bước của chuỗi cung ứng. Qua đó, giúp tăng hiệu quả trong quá trình trao đổi thông tin giữa các bên liên quan như theo dõi đơn đặt hàng, lưu trữ thông tin các biên lai, hoá đơn chứng từ, truy xuất nguồn gốc sản phẩm,….</p>
+                    <i>Một số ví dụ về ứng dụng của Blockchain trong ngành Logistics, chuỗi cung ứng và xuất nhập khẩu:</i>
+                    <ul>
+                        <li>
+                            <p>Truy xuất nguồn gốc sản phẩm, xác thực các tài liệu có liên quan một cách rõ ràng và minh bạch.</p>
+                        </li>
+                        <li>
+                            <p>Đóng gói thông minh (smart package) kèm theo mã in kỹ thuật số.</p>
+                        </li>
+                        <li>
+                            <p>Kết hợp trí tuệ nhân tạo và IOT để giám sát hành trình và phương tiện vận chuyển.</p>
+                        </li>
+                    </ul>
+                    <h3><strong>Nông nghiệp</strong></h3>
+                    <p>Một trong những thách thức lớn nhất của các sản phẩm nông nghiệp ở Việt Nam là vấn đề về truy xuất nguồn gốc nhằm nâng cao lòng tin cũng như sự trung thành của người tiêu dùng. Bằng hệ thống sổ cái phân tán của công nghệ Blockchain giúp nhà bán lẻ, người tiêu dùng cũng như các bên có liên quan lưu trữ các thông tin giao dịch trong suốt quá trình sản phẩm từ nơi sản xuất đến cơ sở chế biến, mạng lưới nhà phân phối, siêu thị, cửa hàng bán lẻ và cuối cùng là người tiêu dùng.</p>
+                    <i>Một số ví dụ về ứng dụng của Blockchain trong lĩnh vực nông nghiệp:</i>
+                    <ul>
+                        <li>
+                            <p>Quản lý chuỗi cung ứng sản phẩm, chuỗi phân phối hàng tồn kho.</p>
+                        </li>
+                        <li>
+                            <p>Lưu trữ thông tin về hàng hóa, quy trình chăm sóc cũng như các tiêu chuẩn trong quá trình nuôi trồng thực phẩm.</p>
+                        </li>
+                        <li>
+                            <p>Truy xuất nguồn gốc và vòng đời sản xuất các loại nông sản.</p>
+                        </li>
+                    </ul>
+                    <h3><strong>Thị trường trò chơi</strong></h3>
+                    <p>Thông thường hầu hết các game truyền thống đều sử dụng mô hình tập trung, trong đó người chơi không có quyền sở hữu thực sự tài khoản cũng như các vật phẩm trong game. Tuy nhiên, hiện nay với các ứng dụng của Blockchain, thị trường trò chơi giải trí đã đã có thể hiện thực hóa được quyền sở hữu trên nền tảng phi tập trung.</p>
+                    <p>
+                        Với tài khoản được được liên kết với token trên Blockchain và được duy trì bởi mạng phân tán, người chơi có thể sở hữu vĩnh viễn và kiểm soát tài sản của mình trong trò chơi. Đồng thời người chơi cũng có thể trao đổi và mua bán các vật phẩm trong game để kiếm tiền và thực sự rút được tiền nhờ NFT (non-fungible token) – một ứng dụng của công nghệ của Blockchain.
+                    </p>
+                </div>
+            </div>
+            <div class="right-tableOfContent  col-lg-3">
+                <ul class="right-tableOfContent">
+                    <li class="menuSubItem_active"><a href="#What-is-blockchain">Blockchain Là Gì?</a></li>
+                    <li><a href="#Generation-blockchain">Các Thế Hệ Khác Nhau Của Blockchain</a></li>
+                    <li><a href="#feature-blockchain">Ưu Điểm Và Nhược Điểm Của Blockchain</a></li>
+                    <li><a href="#application-blockchain">Ứng Dụng Đa Dạng Của Blockchain Vào Các Lĩnh Vực</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="SmartContract" class="row right-main col-lg-10 col-md-12 col-sm-12 col-12">
+            <div class="right-content col-lg-9 col-md-12 col-sm-12 col-12">
+                <h1><strong>Kiến thức về SmartContract</strong></h1>
+                <div id="What-is-SmartContract">
+                    <h2><strong>SmartContrac là gì?</strong></h2>
+                    <p>"<strong>SmartContract(Hợp đồng thông minh)</strong> chỉ đơn giản là các chương trình được lưu trữ trên một blockchain chạy khi các điều kiện được xác định trước được đáp ứng. Chúng thường được sử dụng để tự động hóa việc thực hiện một thỏa thuận để tất cả những người tham gia có thể ngay lập tức chắc chắn về kết quả, mà không có bất kỳ sự tham gia hoặc mất thời gian của trung gian. Họ cũng có thể tự động hóa một quy trình làm việc, kích hoạt hành động tiếp theo khi các điều kiện được đáp ứng
+                    </p>
+                </div>
+                <div id="How-to-smartcontract-work">
+                    <h2><strong>SmartContrac hoạt động như thế nào? </strong></h2>
+                    <p>Hợp đồng thông minh hoạt động bằng cách làm theo các câu lệnh "If/Khi thì sau đó" "được viết thành mã trên blockchain. Một mạng lưới máy tính thực hiện các hành động khi các điều kiện được xác định trước đã được đáp ứng và xác minh. Những hành động này có thể bao gồm phát hành tiền cho các bên thích hợp, đăng ký xe, gửi thông báo hoặc đưa vé. Blockchain sau đó được cập nhật khi giao dịch được hoàn thành. Điều đó có nghĩa là giao dịch không thể thay đổi và chỉ các bên được cấp phép mới có thể thấy kết quả.</p>
+                    >Với ứng dụng này, các hợp đồng truyền thống sẽ có thể dần được thay thế, giúp cho các thỏa thuận phức tạp được đảm bảo thực hiện hiệu quả. Nhờ vậy, người dùng sẽ tiết kiệm được rất nhiều chi phí cũng như tránh sự can thiệp của các bên trung gian trong quá trình thực hiện các hợp đồng, đặc biệt là đối với các hợp đồng xuyên biên giới. </p>
+                 <p>Trong một hợp đồng thông minh, có thể có nhiều quy định cần thiết để thỏa mãn những người tham gia rằng nhiệm vụ sẽ được hoàn thành một cách mỹ mãn. Để thiết lập các điều khoản, người tham gia phải xác định cách các giao dịch và dữ liệu của họ được thể hiện trên chuỗi khối, đồng ý với các quy tắc “nếu/khi...thì…” chi phối các giao dịch đó, khám phá tất cả các trường hợp ngoại lệ có thể xảy ra và xác định khuôn khổ để giải quyết tranh chấp .</p>
+                </div>
+                <div id="Feature-smartcontract">
+                    <h2><strong>Ưu điểm và nhược điểm của SmartContrac</strong></h2>
+                    <h3><strong>Ưu điểm của SmartContract</strong></h3>
+                    <ul>
+                        <li>
+                            <p><strong>Tốc độ, hiệu quả và độ chính xác cao:</strong>
+                                Khi một điều kiện được đáp ứng, hợp đồng được thực hiện ngay lập tức. Bởi vì các hợp đồng thông minh là kỹ thuật số và tự động, không có thủ tục giấy tờ để xử lý và không mất thời gian để điều chỉnh các lỗi thường do điền tài liệu theo cách thủ công.</p>
+                        </li>
+                        <li>
+                            <p><strong>Tinh minh bạch, đáng tin cậy, không qua trung gian bên thứ ba:</strong> Vì không có bên thứ ba tham gia và vì các bản ghi giao dịch được mã hóa được chia sẻ giữa những người tham gia nên không cần phải đặt câu hỏi liệu thông tin có bị thay đổi vì lợi ích cá nhân hay không. </p>
+                        </li>
+                        <li>
+                            <p><strong>An toàn và bảo mật:</strong> 
+                                Hồ sơ giao dịch chuỗi khối được mã hóa, khiến chúng rất khó bị hack. Hơn nữa, vì mỗi bản ghi được kết nối với các bản ghi trước đó và tiếp theo trên một sổ cái phân tán, tin tặc sẽ phải thay đổi toàn bộ chuỗi để thay đổi một bản ghi.</p>
+                        </li>
+                        <li>
+                            <p><strong>Tiết kiệm, giảm chi phí vận hành do không cần tới bên thứ ba:</strong>Hợp đồng thông minh loại bỏ sự cần thiết của các bên trung gian để xử lý các giao dịch và, bằng cách mở rộng, sự chậm trễ và phí liên quan của họ.</p>
+                        </li>
+                    </ul>
+                    <h3><strong>Nhược điểm của SmartContract</strong></h3>
+                    <ul>
+                        <li><p><strong>Tính pháp lý:</strong> Bạn không được bảo vệ quyền lợi khi xảy ra lỗi phát sinh do pháp luật chưa có chính sách để khai thác, quản lý smart contract</p></li>
+                        <li>
+                            <p><strong>Tính bất biến, không thể sửa đối:</strong> Bởi vì được lưu trữ trên sổ cái, dữ liệu trong hợp đồng gần như không thể thay đổi. Đây là ưu điểm nhưng đồng thời cũng là nhược điểm nếu các bên tham gia đều đồng thuận thay đổi một số điều khoản trong hợp đồng. </p>
+                        </li>
+                       <li><p><strong>Chi phí triển khai:</strong> Cần chi trả cho hệ thống cơ sở hạ tầng, máy tính, và các lập trình viên giỏi để họ triển khai.</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-tableOfContent  col-lg-3">
+                <ul class="right-tableOfContent">
+                    <li class="menuSubItem_active"><a href="#What-is-SmartContract">SmartContract là gì?</a></li>
+                    <li><a href="#How-to-smartcontract-work">SmartContract hoạt động như thế nào?</a></li>
+                    <li><a href="#Feature-smartcontract">Ưu Điểm Và Nhược Điểm Của SmartContract</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="overview-Token" class="row right-main col-lg-10 col-md-12 col-sm-12 col-12">
+            <div class="right-content col-lg-9 col-md-12 col-sm-12 col-12">
+                <h1> <strong>Kiến thức về Token</strong></h1>
+                <div id="What-is-Token">
+                    <h3><strong>Token là gì?</strong></h3>
+                    <p><strong>Tokens</strong>Token là tài sản kỹ thuật số do các dự án phát hành, có thể được sử dụng như một phương thức thanh toán bên trong hệ sinh thái của dự án đó, thực hiện các chức năng tương tự như Coin, nhưng khác biệt chính là nó cho phép những người nắm giữ các Token này tham gia vào mạng lưới hệ thống.</p>
+                </div>
+                <div id="Some-type-token">
+                    <h3><strong>Các loại Token</strong></h3>
+                    <ul>
+                        <li>
+                            <p><strong>Security Token:</strong> Đây là tài sản kỹ thuật số đại diện cho “chứng khoán” truyền thống. Ví dụ: một số Token bảo mật đại diện cho cổ phiếu hoặc trái phiếu của công ty mà họ phát hành để huy động vốn từ các nhà đầu tư.</p>
+                        </li>
+                        <li>
+                            <p><strong>Utility Token:</strong> Token tiện ích được thiết kế để khuyến khích sự tương tác giữa người dùng và các dịch vụ tiền mã hóa của dự án.</p>
+                        </li>
+                        <li>
+                            <p><strong>Asset-backed Token:</strong> Đây là các Token đại diện cho tài sản tồn tại trong thế giới thực, chẳng hạn như một phần bất động sản hoặc các phiên bản mã hóa của vàng được lưu trữ trong kho lưu trữ. </p>
+                        </li>
+                        <li>
+                            <p><strong>Non-Fungible Token (NFT):</strong> NFT là những token chủ yếu hoạt động dưới dạng đồ sưu tầm. Người dùng có thể tạo NFT cho hầu hết mọi thứ, bao gồm nghệ thuật, bất động sản ảo, vé sự kiện,…</p>
+                        </li>
+                        <li>
+                            <p><strong>Tokenized Money (Stablecoin):</strong> Đây là các Token đại diện cho phiên bản kỹ thuật số của tiền tệ fiat. </p>
+                        </li>
+                </div>
+                <div id="Character-token">
+                    <h3><strong>Đặc điểm của Token</strong></h3>
+                    
+                    <ul>
+                        <li>
+                            <p>Thực hiện các chức năng của tài sản kỹ thuật số, đại diện cho cổ phần của công ty, cấp quyền truy cập vào chức năng của dự án.</p>
+                        </li>
+                        <li>
+                            <p>Token đại diện cho một tài sản hoặc tiện ích vì vậy token bảo mật và tiện ích được phân biệt với nhau.</p>
+                        </li>
+                        <li>
+                            <p>Được thiết kế để trở thành cổ phần của công ty.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="How-to-Mint-Token?">
+                    <h3><strong>Làm sao để đúc Token?</strong></h3>
+                    <ul>
+                        <li>
+                            <p>Hiện nay nền tảng của chúng tôi đã có thêm các tính năng giúp người dùng có thể mint Token một cách dễ dàng và miễn phí mà không cần có kĩ thuật chuyên môn, tất cả những gì bạn cần làm là điền thông tin vào form do chúng tôi cung cấp, tất cả những thông tin mà bạn điền vào sẽ là thông tin để mô tả NFT của bạn. Đó là tất cả những gì bạn cần làm. Từ những thông tin mà bạn gửi chúng tôi sẽ lấy chúng và tạo ra NFT cho bạn rồi gửi về ví của bạn.
+                                <a href="/frontend/src/Style/Html/createToken.html" style="color: #2de5be;"><i>Nhấn vào đây để tự mint Token cho riêng bạn</i></a>
+                            </p>
+                        </li>
+                        <li>
+                            <p>Nếu như bạn là một trong những nhà phát triển, những người lập trình viên muốn biết các bước chúng tôi tạo ra Token như thế nào thì dưới đây chúng tôi sẽ cung cấp điều đó cho các bạn.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="right-tableOfContent  col-lg-3">
+                <ul class="right-tableOfContent">
+                    <li class="menuSubItem_active"><a href="#What-is-Token">Token là gì?</a></li>
+                    <li><a href="#Some-type-token">Các loạt token</a></li>
+                    <li><a href="#Character-token">Đặc điểm của token</a></li>
+                    <li><a href="#How-to-Mint-Token?">Cách để mint token</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="overview-NFT" class="row right-main col-lg-10 col-md-12 col-sm-12 col-12">
+            <div class="right-content col-lg-9 col-md-12 col-sm-12 col-12">
+                <h1><strong>Kiến thức về NFT</strong></h1>
+                <div id="NFT" class="NFT">
+                    <h2> <strong>Kiến thức về NFT</strong></h2>
+                    <div id="What-is-NFT">
+                        <h3><strong>NFT là gì?</strong></h3>
+                        <p><strong>NFTs (Non-fungible-tokens)</strong> còn được gọi là tài sản không thể thay thế. Là một token được định danh, không thể chia nhỏ được, nó đại diện cho một chủ thể nào đó được số hoá, xác định quyền sở hữu liên quan đến chủ thể này. Dùng dể định danh các sản phẩm số hoá như video, game, ảnh,.. được lưu trữ trên blockchain.  Mỗi NFT có một chữ ký kỹ thuật số do đó NFT không thể thay thế được (non-fungible), và nó là duy nhất.</p>
+                    </div>
+                    <div id="How-NFT-work">
+                        <h3><strong>NFT hoạt động như thế nào?</strong></h3>
+                        <p>NFT chạy trên hệ thống chuỗi-khối (blockchain)- một sổ cái kỹ thuật phân tán công khai dùng để ghi lại các giao dịch. Có lẽ hầu như bạn đã quen thuộc với quy trình cơ bản để tạo ra tiền điện tử bằng blockchain.</p>
+                        <p>NFT được tạo ra hoặc “đúc” từ các đối tượng số đại diện cho cả vật phẩm hữu hình và vô hình, bao gồm:</p>
+                        <ul>
+                            <li>
+                                <p>Các tác phẩm nghệ thuật</p>
+                            </li>
+                            <li>
+                                <p>Các hình ảnh GIF</p>
+                            </li>
+                            <li>
+                                <p>Video và các khoảnh khắc nổi bật trong thể thao</p>
+                            </li>
+                            <li>
+                                <p>Các bộ sưu tập</p>
+                            </li>
+                            <li>
+                                <p>Ảnh đại diện ảo và vật phẩm game</p>
+                            </li>
+                            <li>
+                                <p>Giày thể thao thiết kế</p>
+                            </li>
+                            <li>
+                                <p>Sản phẩm âm nhạc</p>
+                            </li>
+                        </ul>
+                        <p>Về cơ bản, giống với những vật phẩm của các nhà sưu tầm vật lý, NFT chỉ là một dạng kỹ thuật số. Vì vậy, thay vì nhận một bức tranh sơn dầu thực tế để treo tường, người mua chỉ nhận một tệp kỹ thuật số.</p>
+                        <p>Người mua cũng có được quyền sở hữu độc quyền. Mỗi NFT chỉ có thể có một chủ sở hữu tại một thời điểm. Nhờ có dữ liệu độc nhất vô nhị, NFT dễ dàng xác minh quyền sở hữu và chuyển giao các token giữa các chủ sở hữu. Chủ sở hữu hay nhà sáng lập cũng có thể lưu trữ các thông tin cụ thể dưới dạng các NFT. Chẳng hạn, các nghệ sĩ có thể ký tên vào tác phẩm nghệ thuật của mình bằng cách chuyển chữ ký của họ thành dạng siêu dữ liệu NFT.</p>
+                    </div>
+                    <div id="Applycation-NFT">
+                        <h3><strong>Ứng dụng của NFT là gì?</strong></h3>
+                        <p>Sau khi sở hữu NFT, người dùng có thể sử dụng các mã thông báo không thể thay thế này trong nhiều trường hợp khác nhau:
+                        </p>
+                        <ul>
+                            <li>
+                                <p><strong>Sử dụng trong các trò chơi:</strong> Hiện nay, trong nhiều trò chơi, đặc biệt là các tựa game Play-to-Earn thì NFT được sử dụng để hỗ trợ thúc đẩy nền kinh tế trong game. Đặc biệt, NFT còn có thể chuyển đổi thành nhiều vật phẩm hoặc trang bị khác nhau để thu hút người dùng cũng như tạo ra giá trị cho trò chơi.</p>
+                            </li>
+                            <li>
+                                <p><strong>Tài sản kỹ thuật số:</strong> NFT được sử dụng để hỗ trợ người dùng mua bán các tài sản ảo như đất ảo, quần áo, trang thiết bị… Trong năm 2021, có người đã bỏ hơn 450 nghìn USD để mua đất ảo sát với khu đất của rapper nổi tiếng Snoop Dogg….</p>
+                            </li>
+                            <li>
+                                <p><strong>Xác thực danh tính:</strong> Với đặc điểm độc nhất và không thể thay thế, NFT được cho là giải pháp tối ưu trong việc xác minh cũng như chứng nhận bản quyền tác phẩm.</p>
+                            </li>
+                            <li>
+                                <p><strong>Sưu tầm:</strong> Nhiều nhà đầu tư lưu trữ NFT với mục đích sưu tầm bởi nhiều tác phẩm nghệ thuật được chuyển đổi sang NFT là những tác phẩm của các nghệ sĩ nổi tiếng và có giá trị cao.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="How-to-Mint-NFT?">
+                        <h3><strong>Làm sao để đúc ra một NFT?</strong></h3>
+                        <ul>
+                            <li>
+                                <p>Hiện nay nền tảng của chúng tôi đã có thêm các tính năng giúp người dùng có thể mint NFT một cách dễ dàng và miễn phí mà không cần có kĩ thuật chuyên môn, tất cả những gì bạn cần làm là điền thông tin vào form do chúng tôi cung cấp, tất cả những thông tin mà bạn điền vào sẽ là thông tin để mô tả NFT của bạn. Đó là tất cả những gì bạn cần làm. Từ những thông tin mà bạn gửi chúng tôi sẽ lấy chúng và tạo ra NFT cho bạn rồi gửi về ví của bạn.
+                                    <a href="/frontend/src/Style/Html/createNFT.html" style="color: #2de5be;"><i>Nhấn vào đây để tự đúc NFT cho riêng bạn</i></a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Nếu như bạn là một trong những nhà phát triển, những người lập trình viên muốn biết các bước chúng tôi tạo ra NFT như thế nào thì dưới đây chúng tôi sẽ cung cấp điều đó cho các bạn.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-tableOfContent  col-lg-3">
+                <ul class="right-tableOfContent">
+                    <li class="menuSubItem_active"><a href="#What-is-NFT">NFT là gì?</a></li>
+                    <li><a href="#How-NFT-work">NFT hoạt động như thế nào?</a></li>
+                    <li><a href="#Applycation-NFT">Ứng dụng của NFT</a></li>
+                    <li><a href="#How-to-Mint-NFT?">Cách để mint NFT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="row">
+            <div class="footer-contact col-lg-3 col-md-4 col-sm-12 row">
+                <div class="logo">
+                    <a href="#"><img src="/frontend/src/Style/image/logoNFTnew.jpg" alt=""></a>
+                </div>
+                <div class="contact">
+                    <a href=""><i class="fa-brands fa-square-facebook"></i></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-square-github"></i></a>
+                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-plaform col-lg-9 col-md-8 col-sm-12 row">
+                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
+                    <a href="">Blockchain</a>
+                    <a href="">SmartContract</a>
+                </div>
+                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
+                    <a href="">Kiến thức về NFT</a>
+                    <a href="">Kiến Thức vè token</a>
+                </div><div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
+                    <a href="">Soursce Code</a>
+                
+            </div>
+        </div>
+        <div class="footer-end">
+            © 2023 Đúc tài sản cho riêng bạn trên Cardano
+        </div>
+    </footer>
+    <script src="/frontend/src/Style/Js/document.js"></script>
+</body>
+</html>

@@ -174,3 +174,8 @@ Not yet:
 Working on a project is never easy , and sometime , we do tests too. Installing a new system can be risky , as such , we decided to put the test project in a different repository , only people who need to know more about technical details behind each file should use the following examples as guides .
 
 All side projects are deprecated as they do not work / scale well with the current project progresss.
+
+# About me
+I'm the leader of the devs team , and i'm responsible for all the backend programming .
+My colleagues take care of the front end.
+Feel free to contact me at tuanmoc21200@gmail.com , and I will respond as the representative for this project.

@@ -10,8 +10,8 @@ const upload = require("../frontendRouting/upload");
 
 let initRoutes = (app) => {
   // Gọi ra trang home cho việc upload
-  // router.get("/", homeController.getHome);
-  router.get("/", upload.getFrontend);
+  router.get("/", homeController.getHome);
+  // router.get("/", upload.getFrontend);
   
   // Upload nhiều file với phương thức post
   router.post("/multiple-upload", [ uploadController.multipleUpload]);
