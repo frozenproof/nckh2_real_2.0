@@ -2,6 +2,7 @@ exports.__esModule = true;
 var core_1 = require("@meshsdk/core");
 var core_2 = require("@meshsdk/core");
 var fs = require('fs');
+const { parse } = require("path");
 const path = require("path");
 
 let getReq = (req, res) => {
@@ -55,8 +56,8 @@ function handler(req, res) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    item_names = [];
-                    item_types = [];
+                    item_name = [];
+                    item_type = [];
                     item_address = [];
                     let buffer = fs.readFileSync(`${__dirname}/../log/CutRes.log`);
                     let fileContent = buffer.toString();
@@ -65,8 +66,8 @@ function handler(req, res) {
                         console.log("test "+(count/3)+1+" :" + result[count].toString());
                         console.log("types " + result[count + 1].toString());
                         console.log("Address " + result[count + 2].toString());
-                        item_names.push(result[count]);
-                        item_types.push(result[count + 1]);
+                        item_name.push(result[count]);
+                        item_type.push(result[count + 1]);
                         item_address.push(result[count + 2]);
                     }
                     console.log("Actual length of items: " + (result.length - 1) / 3);
@@ -78,8 +79,15 @@ function handler(req, res) {
                         console.log("Items at "+infocount+" :" + resultInfo[infocount]);
                     }
                    
-                    if(parseInt( resultInfo[1])==721)
-                    resultInfo[2]="1";
+                    // for (i = 0; i < item_name.length; i++) {
+                    //     console.log(  "name"+ resultInfo[3]+" contain "+item_name[i],
+                    //     "image: ipfs://" + item_address[i]+
+                    //     "mediaType: image/" + item_type[i]+
+                    //     "description:"+ resultInfo[0].toString())
+                    // }
+                    
+                    if(parseInt(resultInfo[1])==721)
+                    resultInfo[2]='1';
 
                     koiosProvider = new core_2.KoiosProvider("preprod");
                     recipentAddress = req.body.recipentAddress;
@@ -102,23 +110,25 @@ function handler(req, res) {
                     tx.setTxInputs(selectedUtxos);
                     // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
                     forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress);
-                    for (i = 0; i < item_names.length; i++) {
-                        assetName =  resultInfo[3]+" contain "+item_names[i];
+                    for (i = 0; i < item_name.length; i++) {
+                        assetName =  resultInfo[3].substring(0,4)+" || "+item_name[i];
                         assetMetadata = {
-                            "name": resultInfo[3]+" contain "+item_names[i],
+                            "name": resultInfo[3]+" contain "+item_name[i],
                             "image": "ipfs://" + item_address[i],
-                            "mediaType": "image/" + item_types[i],
+                            "mediaType": "image/" + item_type[i],
                             "description": resultInfo[0].toString()
                         };
                         targetedNFTasset = {
                             assetName: assetName,
-                            assetQuantity: resultInfo[2],
                             metadata: assetMetadata,
                             label: resultInfo[1],
-                            recipient: recipentAddress
+                            recipient: recipentAddress,
+                            assetQuantity: resultInfo[2]
                         };
                         tx.mintAsset(forgingScript, targetedNFTasset);
                         console.log("Flag the final possible bug 2nd");
+                            console.log("Quantity type"+typeof('1'));
+                            console.log("Quantity type"+typeof(resultInfo[2]));
                     }
                     tx.sendLovelace(recipentAddress, costLovelace);
                     console.log("Flag the final possible bug 3rd");

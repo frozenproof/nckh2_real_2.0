@@ -63,6 +63,8 @@ export default async function handler(
         };
 
         console.log("name" + test_names[i]);
+
+        const temp="100";
         //NFT final assesments
         const targetedNFTasset: Mint = {
             assetName: assetName,
