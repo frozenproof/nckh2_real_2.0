@@ -70,9 +70,6 @@ function handler(req, res) {
                         item_address.push(result[count + 2]);
                     }
                     console.log("Actual length of items: " + (result.length - 1) / 3);
-                    // item_names = ["hi3.png", "l6209640.png", "uyu.jpg"];
-                    // item_address = ["QmTWjgDhu57zV2UTG9a2FkWVkemNKmYKEnhmtFVFv2FryH", "QmZhn8oALDSpDv4MQjsFtafYCk35moAwE1cQmw7EpGTTTV", "QmPfgm9PYZPpLD6muD5WStEjYNWLYR29xrqUbsrSuTCuEt"];
-                    // item_types = ["png", "png", "jpg"];
 
                     let bufferInfo = fs.readFileSync(`${__dirname}/../log/request.log`);
                     let infoContent = bufferInfo.toString();
@@ -80,6 +77,10 @@ function handler(req, res) {
                     for (var infocount = 0; infocount < resultInfo.length ; infocount ++) {
                         console.log("Items at "+infocount+" :" + resultInfo[infocount]);
                     }
+                   
+                    if(parseInt( resultInfo[1])==721)
+                    resultInfo[2]="1";
+
                     koiosProvider = new core_2.KoiosProvider("preprod");
                     recipentAddress = req.body.recipentAddress;
                     utxos = req.body.utxos;
@@ -102,9 +103,9 @@ function handler(req, res) {
                     // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
                     forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress);
                     for (i = 0; i < item_names.length; i++) {
-                        assetName = item_names[i];
+                        assetName =  resultInfo[3]+" contain "+item_names[i];
                         assetMetadata = {
-                            "name": item_names[i],
+                            "name": resultInfo[3]+" contain "+item_names[i],
                             "image": "ipfs://" + item_address[i],
                             "mediaType": "image/" + item_types[i],
                             "description": resultInfo[0].toString()

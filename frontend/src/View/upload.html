@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/src/Style/Css/create.css">
+    <link rel="stylesheet" href="/frontend/src/Style/Font_icon/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Create Token Native</title>
+    <script>
+
+        function showTokenForm() {
+            document.getElementById("token-form").style.display = "block";
+        }
+
+        function hideTokenForm() {
+            document.getElementById("token-form").style.display = "none";
+        }
+
+        function resetImage() {
+            document.getElementById("targetimg").innerHTML = "";
+        }
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/frontend/src/Style/Html/index.html"><img src="/frontend/src/Style/image/logoNFTnew.jpg"
+                    alt=""></a>
+        </div>
+        <div class="nav">
+            <ul class="navbar-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="createToken.html">Đúc tài sản</a></li>
+                <li><a href="./document.html">Tài liệu</a></li>
+                <li><a href="">Wallet</a>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+    <div class="header-container-content">
+        <h1>Đúc Tài Sản</h1>
+        <p>Nếu bạn muốn đúc tài sản hãy chọn loại tài sản cần đúc và điền thông tin tài sản cần đúc</p>
+    </div>
+
+
+    <div class="form-collection col-lg-4 col-md-6 col-sm-8 col-8">
+        <form action="/multiple-upload" method="POST" enctype="multipart/form-data">
+            <div class="form-one-collection">
+                <div class="check-value">Yêu cầu nhập thông tin</div>
+                <span class="check-value-ria"></span>
+                <label>Tên tài sản</label>
+                <span><i class="fa-solid fa-circle-plus"></i>
+                    <div class="notice">Tên này là một phần mô tả cho trường thông tin của tài sản đúc</div>
+                </span>
+                <input type="text" name="Name" id="Name" placeholder="Viết tên tài sản đúc vào đây ..." value="""></input>
+            </div>
+
+            <div class="form-one-collection">
+                <div class="check-value">Yêu cầu nhập thông tin</div>
+                <span class="check-value-ria"></span>
+                <label>Mô tả</label>
+                <span><i class="fa-solid fa-circle-plus"></i>
+                    <div class="notice">Một phần mô tả tài sản đúc của bạn</div>
+                </span>
+                <input type="text" name="Description" id="Description" placeholder="Viết mô tả tài sản đúc vào đây ..."></input>
+            </div>
+
+            <input type="radio" id="native" name="token" value="20" checked onclick="showTokenForm()">
+            <label for="native">Native token</label>
+            <input type="radio" id="nft" name="token" value="721" onclick="hideTokenForm()">
+            <label for="nft">Non-Fungible Token</label>
+
+
+            <div class="form-one-collection" id="token-form">
+                <div class="check-value">Yêu cầu nhập thông tin</div>
+                <span class="check-value-ria"></span>
+                <label>Số lượng token</label>
+                <span><i class="fa-solid fa-circle-plus"></i>
+                    <div class="notice">The symbol of your token (part of the final asset ID)</div>
+                </span>
+                <input type="number" name="Amount" maxlength="8" value="100" />
+            </div>
+            <div class="form-one-collection">
+                <div class="check-value">Yêu cầu nhập thông tin</div>
+                <label>Logo(Logo cho tài sản đúc)</label>
+                <span class="check-value-ria"></span>
+                <span>
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <div class="notice">Tài sản sẽ được lưu trữ trên IPFS</div>
+                </span>
+                <input type="file" name="many-files" multiple id="input-many-files"
+                    class="form-control-file border file" onclick="resetImage()">
+            </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    </div>
+  
+    <h4>This is images preview</h4>
+    <div id="image-container">
+        <div class="preview-images" id="targetimg"></div>
+    </div>
+    <h4>End of images preview</h4>
+
+    <footer>
+        <div class="row">
+            <div class="footer-contact col-lg-3 col-md-4 col-sm-12 row">
+                <div class="logo">
+                    <a href="#"><img src="/frontend/src/Style/image/logoNFTnew.jpg" alt=""></a>
+                </div>
+                <div class="contact">
+                    <a href=""><i class="fa-brands fa-square-facebook"></i></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-square-github"></i></a>
+                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-plaform col-lg-9 col-md-8 col-sm-12 row">
+                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
+                    <a href="">Blockchain</a>
+                    <a href="">SmartContract</a>
+                </div>
+                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
+                    <a href="">Kiến thức về NFT</a>
+                    <a href="">Kiến Thức vè token</a>
+                </div>
+                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
+                    <a href="">Soursce Code</a>
+
+                </div>
+            </div>
+            <div class="footer-end">
+                © 2023 Đúc tài sản cho riêng bạn trên Cardano
+            </div>
+    </footer>
+
+    <script src="/frontend/src/Style/Js/script.js"></script>
+    <script>
+        
+$(document).ready(function () {
+    let imagesPreview = function (input, placeToInsertImagePreview) {
+        if (input.files) {
+            let filesAmount = input.files.length;
+            for (i = 0; i < filesAmount; i++) {
+                let reader = new FileReader();
+                reader.onload = function (event) {
+                    $($.parseHTML("<img>")).attr("src", event.target.result).appendTo(placeToInsertImagePreview);
+                }
+                reader.readAsDataURL(input.files[i]);
+            }
+        }
+    };
+
+    $("#input-many-files").on("change", function () {
+        imagesPreview(this, "div.preview-images");
+    });
+});
+    </script>
+</body>
+
+</html>
