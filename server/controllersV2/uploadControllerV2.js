@@ -10,9 +10,9 @@ let debug = console.log.bind(console);
 let shell = require('shelljs')
 var fs = require('fs');
 const axios = require('axios');
-var utxostemp=new Array();
+var utxostemp = new Array();
 
-let multipleUpload = async (req, res) => {
+let multipleUploadV2 = async (req, res) => {
   try {
     // thực hiện upload
 
@@ -39,16 +39,25 @@ let multipleUpload = async (req, res) => {
     shell.exec(`echo "` + cut[7] + `" | cat >> ` + rootClient + cut[3] + `/log/` + cut[3] + `.log`);
     shell.exec(`echo "` + cut[3] + `" | cat >> ` + rootClient + cut[3] + `/log/` + cut[3] + `.log`);
 
+  //Directory
+    var logindir = rootClient + cut[3] + `/loginIPFS/` + cut[3] + `.log`;
+    var logoutdir = rootClient + cut[3] + `/logoutIPFS/` + cut[3] + `.log`;
+  
     //Pin to IPFS
     shell.exec(`echo ""| cat > ` + rootClient + cut[3] + `/loginIPFS/` + cut[3] + `.log`);
     shell.exec(`echo ""| cat > ` + rootClient + cut[3] + `/logoutIPFS/` + cut[3] + `.log`);
     console.log(rootClient + cut[3] + `/logoutIPFS/` + cut[3] + `.log`);
-    var bufferPinning = await (pinControllerV2.pinningIPFS(rootClient + cut[3] + `/images`, rootClient + cut[3] + `/loginIPFS/` + cut[3] + `.log`));
+    var nani = await pinControllerV2.pinningIPFS(rootClient + cut[3] + `/images`, logindir);
 
     //Extract data into log for minting
-    let bufferExtract = (extractControllerV2.extractData(rootClient + cut[3] + `/loginIPFS/` + cut[3] + `.log`, rootClient + cut[3] + `/logoutIPFS/` + cut[3] + `.log`));
+     //await 10 --> fail
+    //await 00 -> fail
+    //await 11
+    var buffertemp = await extractControllerV2.extractData(logindir, logoutdir) + nani ;
+    console.log(buffertemp+90);
 
-
+    console.log("\n\ndone??????");
+    //Extract UTXOS
     let buffer2 = fs.readFileSync(rootClient + cut[3] + `/` + cut[3] + `.log`);
     let fileContent2 = buffer2.toString();
     let result2 = fileContent2.split(`{\n"input" : { \n`);
@@ -56,34 +65,25 @@ let multipleUpload = async (req, res) => {
 
     for (var i = 0; i < result2.length - 1; i++) {
       var temp = `{\n"input" : { \n` + result2[i + 1].substring(0, (result2[i + 1].length - 2));
-      console.log("i=" + i + ":" + temp + "\nEnding");
       var tempobj;
       try {
         tempobj = JSON.parse(temp);
         utxostemp.push(tempobj);
-        console.log(typeof (tempobj));
       }
       catch
       {
         var temp = `{\n"input" : { \n` + result2[i + 1].substring(0, (result2[i + 1].length - 2)) + `}`;
         tempobj = JSON.parse(temp);
         utxostemp.push(tempobj);
-        console.log(typeof (tempobj));
       }
-      console.log(result2[i]);
     }
-    console.log(`lmao` + utxostemp);
     console.log("\n\nEMPTY??????");
     console.log(result2.length);
-    // let mintTest = (mintingControllerV2.Mint(cut[3], utxostemp,res));
-    // return res.sendFile(path.join(`${__dirname}/../../out/index.html`));
-    var options = {
-      headers: {
-        'user': cut[3],
-        'title': "LmAO"
-      }
-    };
-    return res.sendFile(path.join(`${__dirname}/../../frontend/src/View/upload.html`));
+
+
+    var buffermint= await mintingControllerV2.Mint(cut[3], utxostemp, res);
+
+    // return res.sendFile(path.join(`${__dirname}/../../frontend/src/View/upload.html`));
 
   } catch (error) {
     // Nếu có lỗi thì debug lỗi xem là gì ở đây
@@ -99,5 +99,5 @@ let multipleUpload = async (req, res) => {
 };
 
 module.exports = {
-  multipleUpload: multipleUpload
+  multipleUpload: multipleUploadV2
 };

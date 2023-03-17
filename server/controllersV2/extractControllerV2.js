@@ -1,34 +1,44 @@
-let fs = require('fs');
+let fsync = require('fs');
+let fs = require('fs/promises');
+const util = require("util");
 
 let extractData = async (logindir, logoutdir) => {
-
-    let buffer = fs.readFileSync(logindir);
+    console.log("?? extract" + logindir);
+    let buffer = fsync.readFileSync(logindir);
     let fileContent = buffer.toString();
     let result = fileContent.split("\n");
-
-    let stream = fs.createWriteStream(logoutdir);
-    stream.once('open', function (fd) {
-
-        console.log(logoutdir);
-        for (i = 0; i < result.length; i++) {
-            var a = result[i];
-            var temporary_hash = a.search(/Ipfs/i);
-            if (temporary_hash == -1)
-                continue;
-            let tempcut = a.split(":");
-            let typecut = result[i - 1].split(".");
-            if (result[i - 1].length > 20)
-                stream.write(result[i - 1].substring(0,19)+ "\n");
-            else
-                stream.write(result[i - 1] + "\n");
-            stream.write(typecut[typecut.length - 1] + "\n");
-            stream.write(tempcut[1] + "\n");
+    console.log("Extract is Here");
+    var finalresult = "";
+    for (i = 0; i < result.length; i++) {
+        var a = result[i];
+        var temporary_hash = a.search(/Ipfs/i);
+        if (temporary_hash == -1)
+            continue;
+        let tempcut = a.split(":");
+        let typecut = result[i - 1].split(".");
+        if (result[i - 1].length > 20)
+        {
+            var d = new Date();
+            finalresult = finalresult + result[i - 1].substring(0, 19) + d.getTime()%122347279+"\n";
         }
-        stream.end();
+        else
+            finalresult = finalresult + result[i - 1] + "\n";
+        finalresult = finalresult + typecut[typecut.length - 1] + "\n";
+        finalresult = finalresult + tempcut[1] + "\n";
+    }
+    // console.log("Final result is"+finalresult+"END");
+    var zero = await fs.writeFile(logoutdir, finalresult, (err) => {
+        if (err)
+            console.log(err);
+        else {
+            console.log("File written successfully\n");
+        }
     });
-
+    console.log("Helllo from extract 2");
+    console.log(zero);
+    return zero;
 }
 
 module.exports = {
     extractData: extractData
-}
+};

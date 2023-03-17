@@ -28,7 +28,7 @@ We are using Express , which actually use a very complicated system . Lessons le
 
 The project will remain open source until further notices. 
 
-Days until the project is completed : 10 days.
+Days until the project is completed : 6 days.
 
 ## Why does the project take so long ? 
 

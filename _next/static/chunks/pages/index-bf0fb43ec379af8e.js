@@ -25,7 +25,8 @@
                         let utxos = await Wallet.getUtxos();
                         for (let o in await Wallet.getUtxos(),
                             console.log("Here is the utxos", utxos),
-                            document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0])
+                            // document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0],
+                            document.getElementById("reqcode").value = walletAddress, utxos[0])
                             try {
                                 // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
                                 await function (t) {
@@ -42,26 +43,27 @@
                     }
 
                     async function finalSign() {
-                        console.log("FINAL SIGN ONLY");
+                        console.log("FINAL SIGN ONLY with CUSTOM");
                         let walletAddress = await Wallet.getChangeAddress();
                         console.log("Here is the Change address", walletAddress);
                         let utxos = await Wallet.getUtxos();
-                        for (let o in await Wallet.getUtxos(),
-                            console.log("Here is the utxos", utxos),
-                            document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0])
-                            var res;
+                        // for (let o in await Wallet.getUtxos(),
+                        //     console.log("Here is the utxos", utxos)
+                            // document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0])
                             try {
-                                // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
-                                let { unsignedTx: unsignedTx } = await function (t) {
-                                    let n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                                    return axios.post("".concat(t), n).then(t => {
-                                        let { data: n } = t;
-                                        return n
-                                    }).catch(t => { throw t })
-                                }
-                                    // ("minting", { recipentAddress: t, utxos: n })
-                                    ("signing", { recipentAddress: walletAddress, utxos});
-                                console.log("Unsigned Tx", unsignedTx);
+                            //     // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
+                            //     let { unsignedTx: unsignedTx } = await function (t) {
+                            //         let n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
+                            //         return axios.post("".concat(t), n).then(t => {
+                            //             let { data: n } = t;
+                            //             return n
+                            //         }).catch(t => { throw t })
+                            //     }
+                            //         // ("minting", { recipentAddress: t, utxos: n })
+                            //         ("signing", { recipentAddress: walletAddress, utxos});
+                                let { unsignedTx: unsignedTx } = JSON.parse(document.getElementById("unsignedTx").innerHTML);
+                                console.log("Unsigned Tx from inside react 2", unsignedTx);
+                                console.log("Unsigned Tx type", typeof(unsignedTx));
                                 let s = await Wallet.signTx(unsignedTx, !0);
                                 console.log("Signed Tx", s);
                                 let i = await Wallet.submitTx(s);
@@ -78,8 +80,9 @@
                                     (0, s.jsx)("br", {}),
                                     (0, s.jsx)("br", {}),
                                     (0, s.jsx)("button", { onClick: () => getwallet(), children: "Get Wallet", id: "walletButton" }),
-                                    (0, s.jsx)("p", { id: "walletAddress" }),
+                                    // (0, s.jsx)("p", { id: "walletAddress" }),
                                     (0, s.jsx)("br", {}),
+                                    (0, s.jsx)("p", { id: "unsignedTx",children: "UNSIGNED" }),
                                     (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", id: "signButton" }),
                                 ]
                             })

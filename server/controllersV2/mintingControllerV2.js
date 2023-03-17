@@ -50,19 +50,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 
-// function handler(recipentAddress, utxos, res) {
-function handler(req, res) {
+function handler(recipentAddress, utxos, res) {
+// function handler(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var test_names, imageAddress, test_types, koiosProvider,utxos,recipentAddress, recipentAddress2, utxos2, appWallet, costLovelace, selectedUtxos, tx, AppWalletAddress, forgingScript, i, assetName, assetMetadata, targetedNFTasset, _unsignedTx, unsignedTx ;
+        var test_names, imageAddress, test_types, koiosProvider, recipentAddress2, utxos2, appWallet, costLovelace, selectedUtxos, tx, AppWalletAddress, forgingScript, i, assetName, assetMetadata, targetedNFTasset, _unsignedTx, unsignedTx ;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     let rootClient = `${__dirname}/../../iClient/`;
-                    recipentAddress=req.body.recipentAddress;
-                    utxos=req.body.utxos;
+                    // recipentAddress2=req.body.recipentAddress;
+                    // utxos2=req.body.utxos;
                     utxos2 = utxos;
                     recipentAddress2 = recipentAddress;
-                    console.log("Address is" + recipentAddress2);
+                    console.log("Address is :  " + recipentAddress2);
                     item_name = [];
                     item_type = [];
                     item_address = [];
@@ -112,12 +112,13 @@ function handler(req, res) {
                             words: ["solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution",]
                         }
                     });
+                    console.log("Length="+item_name.length);
                     tx = new core_1.Transaction({ initiator: appWallet });
                     tx.setTxInputs(selectedUtxos);
                     // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
                     forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress2);
                     for (i = 0; i < item_name.length; i++) {
-                        assetName = resultInfo[3].substring(0, 4) + "LMAO" + item_name[i];
+                        assetName = item_name[i];
                         assetMetadata = {
                             "name": resultInfo[3] + " contain " + item_name[i],
                             "image": "ipfs://" + item_address[i],
@@ -134,7 +135,6 @@ function handler(req, res) {
                         };
                         tx.mintAsset(forgingScript, targetedNFTasset);
                         console.log("Flag the final possible bug 2nd");
-
                     }
                     tx.sendLovelace(recipentAddress2, costLovelace);
                     console.log("Flag the final possible bug 3rd");
@@ -149,6 +149,7 @@ function handler(req, res) {
                     unsignedTx = _a.sent();
                     console.log("Everything is ready");
                     res.status(200).json({ unsignedTx: unsignedTx });
+                    // res.send(JSON.stringify(unsignedTx));
                     return [2 /*return*/];
             }
         });
