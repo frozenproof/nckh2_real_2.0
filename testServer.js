@@ -6,6 +6,9 @@ const express = require("express");
 const app = express();
 const initRoutes = require(`${__dirname}/server/routes/systemRoute`);
 app.use(express.json());
+app.engine('.html', require('ejs').__express);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'html');
 
 // Cho phép lý dữ liệu từ form method POST
 app.use(express.urlencoded({extended: true}));

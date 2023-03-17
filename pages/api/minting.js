@@ -42,7 +42,7 @@ var path = require("path");
 var fs = require('fs');
 function handler(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var test_names, imageAddress, test_types, koiosProvider, recipentAddress, utxos, appWallet, costLovelace, selectedUtxos, tx, AppWalletAddress, forgingScript, i, assetName, assetMetadata, targetedNFTasset, _unsignedTx, unsignedTx;
+        var test_names, imageAddress, test_types, koiosProvider, recipentAddress, utxos, appWallet, costLovelace, selectedUtxos, tx, AppWalletAddress, forgingScript, i, assetName, assetMetadata, temp, targetedNFTasset, _unsignedTx, unsignedTx;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -78,6 +78,7 @@ function handler(req, res) {
                             "description": "This NFT is minted by Create NFT news app."
                         };
                         console.log("name" + test_names[i]);
+                        temp = "100";
                         targetedNFTasset = {
                             assetName: assetName,
                             assetQuantity: '1',

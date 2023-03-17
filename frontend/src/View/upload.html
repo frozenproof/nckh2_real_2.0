@@ -6,16 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/src/Style/Css/create.css">
+   
     <link rel="stylesheet" href="/frontend/src/Style/Font_icon/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <title>Create Token Native</title>
+    <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+    <script src="/_next/static/chunks/webpack-95c90a7773d5bfe1.js" defer=""></script>
+    <script src="/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script>
+    <script src="/_next/static/chunks/main-f11614d8aa7ee555.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/_app-403e5925f094456e.js" defer=""></script>
+    <script src="/_next/static/chunks/433-ba7836dc25c33da5.js" defer=""></script>
+    <script src="/_next/static/chunks/pages/index-bf0fb43ec379af8e.js" defer=""></script>
+    <script src="/_next/static/JnTmV6RA-m-6DaZwGtWFo/_buildManifest.js" defer=""></script>
+    <script src="/_next/static/JnTmV6RA-m-6DaZwGtWFo/_ssgManifest.js" defer=""></script>
+    <title>Uploading</title>
     <script>
-
         function showTokenForm() {
             document.getElementById("token-form").style.display = "block";
         }
@@ -40,9 +49,7 @@
         <div class="nav">
             <ul class="navbar-menu">
                 <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="createToken.html">Đúc tài sản</a></li>
                 <li><a href="./document.html">Tài liệu</a></li>
-                <li><a href="">Wallet</a>
                 </li>
             </ul>
         </div>
@@ -52,10 +59,38 @@
         <h1>Đúc Tài Sản</h1>
         <p>Nếu bạn muốn đúc tài sản hãy chọn loại tài sản cần đúc và điền thông tin tài sản cần đúc</p>
     </div>
-
+    <div class="form-collection col-lg-4 col-md-6 col-sm-8 col-8" id="outernext">
+        <div id="__next">
+            <div style="width:fit-content"><button type="button"
+                    class="CardanoWallet__StyledMenuButton-sc-13vl5pq-0 krcbSN mr-wallet-button">Connect Wallet<!-- -->
+                    <svg fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke="currentColor"
+                        xmlns="http://www.w3.org/2000/svg" class="ChevronDown__StyledChevronDown-sc-17n3mfh-0 bTznHV">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg></button>
+                <div hidden="" class="CardanoWallet__StyledMenuList-sc-13vl5pq-1 fQlGkr mr-menu-list"><span>No Wallet
+                        Found</span></div>
+            </div><button id="walletButton">Get Wallet</button>
+            <p id="walletAddress"></p>
+            <p id="utxos"></p>
+        </div>
+        <script id="__NEXT_DATA__"
+            type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"JnTmV6RA-m-6DaZwGtWFo","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
+        <button class="btn btn-primary" style="text-align: center;size: 64px;" onclick="setconfirm()">Initiate</button>
+    </div>
 
     <div class="form-collection col-lg-4 col-md-6 col-sm-8 col-8">
-        <form action="/multiple-upload" method="POST" enctype="multipart/form-data">
+        <!-- <form action="/multiple-upload" method="POST" enctype="multipart/form-data"> -->
+        <form action="/mlupload2" method="POST" enctype="multipart/form-data">
+            <div class="form-one-collection">
+                <label>Mã request</label>
+                <span><i class="fa-solid fa-circle-plus"></i>
+                    <div class="notice">Tên này là code của yêu cầu đúc</div>
+                </span>
+                <input type="text" name="reqcode" id="reqcode"
+                    value="addr_test1qp86xztd3eqm8wsq2epatvccdnwwrd2ha4qph0ekyugqjc3uj2whl9s7hdgz0twpsedn90zv2ndxackqy864mnz70gpq0zq87s"
+                    readonly></input>
+            </div>
+
             <div class="form-one-collection">
                 <div class="check-value">Yêu cầu nhập thông tin</div>
                 <span class="check-value-ria"></span>
@@ -63,24 +98,25 @@
                 <span><i class="fa-solid fa-circle-plus"></i>
                     <div class="notice">Tên này là một phần mô tả cho trường thông tin của tài sản đúc</div>
                 </span>
-                <input type="text" name="Name" id="Name" placeholder="Viết tên tài sản đúc vào đây ..." value="""></input>
+                <input type="text" name="Name" id="Name" placeholder="Viết tên tài sản đúc vào đây ..."
+                    value="Tên tài sản"></input>
             </div>
 
-            <div class="form-one-collection">
+            <div class=" form-one-collection">
                 <div class="check-value">Yêu cầu nhập thông tin</div>
                 <span class="check-value-ria"></span>
                 <label>Mô tả</label>
                 <span><i class="fa-solid fa-circle-plus"></i>
                     <div class="notice">Một phần mô tả tài sản đúc của bạn</div>
                 </span>
-                <input type="text" name="Description" id="Description" placeholder="Viết mô tả tài sản đúc vào đây ..."></input>
+                <input type="text" name="Description" id="Description" placeholder="Viết mô tả tài sản đúc vào đây ..."
+                    value="Mô tả đơn giản"></input>
             </div>
 
             <input type="radio" id="native" name="token" value="20" checked onclick="showTokenForm()">
             <label for="native">Native token</label>
             <input type="radio" id="nft" name="token" value="721" onclick="hideTokenForm()">
             <label for="nft">Non-Fungible Token</label>
-
 
             <div class="form-one-collection" id="token-form">
                 <div class="check-value">Yêu cầu nhập thông tin</div>
@@ -91,6 +127,7 @@
                 </span>
                 <input type="number" name="Amount" maxlength="8" value="100" />
             </div>
+
             <div class="form-one-collection">
                 <div class="check-value">Yêu cầu nhập thông tin</div>
                 <label>Logo(Logo cho tài sản đúc)</label>
@@ -102,16 +139,18 @@
                 <input type="file" name="many-files" multiple id="input-many-files"
                     class="form-control-file border file" onclick="resetImage()">
             </div>
+            <div class="form-one-collection" style="text-align: center;">
+                <button type="submit" class="btn btn-primary" style="text-align: center;size: 64px;">Create</button>
+            </div>
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
     </form>
     </div>
-  
-    <h4>This is images preview</h4>
+
+    <h2>This is images preview</h2>
     <div id="image-container">
         <div class="preview-images" id="targetimg"></div>
     </div>
-    <h4>End of images preview</h4>
+    <h2>End of images preview</h2>
 
     <footer>
         <div class="row">
@@ -147,25 +186,33 @@
 
     <script src="/frontend/src/Style/Js/script.js"></script>
     <script>
-        
-$(document).ready(function () {
-    let imagesPreview = function (input, placeToInsertImagePreview) {
-        if (input.files) {
-            let filesAmount = input.files.length;
-            for (i = 0; i < filesAmount; i++) {
-                let reader = new FileReader();
-                reader.onload = function (event) {
-                    $($.parseHTML("<img>")).attr("src", event.target.result).appendTo(placeToInsertImagePreview);
+        $(document).ready(function () {
+            let imagesPreview = function (input, placeToInsertImagePreview) {
+                if (input.files) {
+                    let filesAmount = input.files.length;
+                    for (i = 0; i < filesAmount; i++) {
+                        let reader = new FileReader();
+                        reader.onload = function (event) {
+                            $($.parseHTML("<img>")).attr("src", event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+                        reader.readAsDataURL(input.files[i]);
+                    }
                 }
-                reader.readAsDataURL(input.files[i]);
-            }
-        }
-    };
+            };
 
-    $("#input-many-files").on("change", function () {
-        imagesPreview(this, "div.preview-images");
-    });
-});
+            $("#input-many-files").on("change", function () {
+                imagesPreview(this, "div.preview-images");
+            });
+
+            // $("button").click(function () {
+            //     alert("The paragraph was clicked.");
+            // });
+        });
+
+        function setconfirm() {
+            if (document.getElementById("walletAddress").innerHTML != "")
+                document.getElementById("reqcode").value = document.getElementById("walletAddress").innerHTML;
+        }
     </script>
 </body>
 

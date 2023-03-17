@@ -25,6 +25,7 @@ export default function Home() {
     console.log("Sending request to backend");
     try {
       return await post(`minting`, { recipentAddress, utxos });
+      // return await post(`logging`, { recipentAddress, utxos });
     }
     catch (err: unknown) {
       console.log(err); //Object is of type 'unknown'
@@ -35,8 +36,18 @@ export default function Home() {
     const changeAddress = await wallet.getChangeAddress();
     console.log("Here is the Change address", changeAddress);
 
-    const utxos = await wallet.getUtxos();
+    let utxos = await wallet.getUtxos();
+    const utxos2 = await wallet.getUtxos();
     console.log("Here is the utxos", utxos);
+    document.getElementById("walletAddress")!.innerHTML = changeAddress;
+    let txt = "";
+    for (let x in utxos[0]) {
+      for (let y in utxos[0][x]) {
+        txt += utxos[0][x][y] + " ";
+    };
+
+  };
+
 
     try {
       const { unsignedTx } = await sendingDataTobackend(changeAddress, utxos);
@@ -54,16 +65,10 @@ export default function Home() {
 
   return (
     <>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
       <CardanoWallet />
       <button onClick={() => otestTx()}>Test Mint</button>
+      <p id="walletAddress"></p>
+      <p id="utxos"></p>
     </>
   )
 }
