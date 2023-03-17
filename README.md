@@ -50,6 +50,8 @@ Even if it sound typical , its truth as old as the earth.
 
 ## 1st: The client machines (Customers) first send the requests along with data (encrypted?) using the following procedure:
 
+-> User connect wallet on front end.
+
 -> User picks files to mint into NFTs
 
 -> Front end get the following data:
@@ -62,35 +64,21 @@ Even if it sound typical , its truth as old as the earth.
     
     + Brief description of the items 
 
+    + Wallet Address
+
 -> User submit the information 
 
 -> Front end send the data
 
 ## 2nd: The data is prepared using the following procedure:
 
+-> Server generate a seperate folder for each wallet address, serve as root folder for each user
+
 -> Server start uploading files to IPFS
 
 -> Server log the files and IPFS addresses
 
-## 3rd: Prepare for minting:
-
--> User is redirected to Mint step
-
--> User connect wallet on front end.
-
--> Front end first get the following data: 
-
-    + Wallet address of user (Recipient Address).
-
-    + The remaining utxos of user
-
--> Function receiving data and call the post function inside API
-
-## 4th: Start minting:
-
--> Preparing data:
-
-    + Passing the data into new variables
+## 3rd: Generate transaction
 
 -> Forge a script 
 
@@ -124,26 +112,30 @@ Even if it sound typical , its truth as old as the earth.
 
 -> Return unsignedTx to the front end
 
-## 5th: User sign the transaction with the spending key , aka skey in a new window.
+## 4th: User sign the transaction with the spending key , aka skey in a new window.
 
-## 6th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
+## 5th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
 
 ## How to run the project
 
 - To test project ,please refer to following command , type it in terminal and run:
 ```
 node testServer.js 
+```
 
-After uploading, wait for server to process request
+- Server run at port 3001 , but you can change it inside testServer.js
 
--> Connect your own wallet
+- Connect wallet, click Get Wallet.
 
--> Click mint
+- Change information in the form , pick files, current limit is 64
 
--> Sign the Tx
+- Click Create
 
--> Done
-``` 
+- After the alert of unsignedTx , user can click Sign button to sign the transaction with skey.
+
+- And done!
+
+
 This app is ready for mainnet production as well.
 
 ## Current progress: ##
