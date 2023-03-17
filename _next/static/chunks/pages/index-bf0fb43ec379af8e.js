@@ -80,8 +80,6 @@
                                     (0, s.jsx)("button", { onClick: () => getwallet(), children: "Get Wallet", id: "walletButton" }),
                                     (0, s.jsx)("p", { id: "walletAddress" }),
                                     (0, s.jsx)("br", {}),
-                                    (0, s.jsx)("br", {}),
-                                    (0, s.jsx)("br", {}),
                                     (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", id: "signButton" }),
                                 ]
                             })

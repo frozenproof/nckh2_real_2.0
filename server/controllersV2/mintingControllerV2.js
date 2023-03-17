@@ -117,7 +117,7 @@ function handler(req, res) {
                     // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
                     forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress2);
                     for (i = 0; i < item_name.length; i++) {
-                        assetName = resultInfo[3].substring(0, 4) + " || " + item_name[i];
+                        assetName = resultInfo[3].substring(0, 4) + "LMAO" + item_name[i];
                         assetMetadata = {
                             "name": resultInfo[3] + " contain " + item_name[i],
                             "image": "ipfs://" + item_address[i],
@@ -130,6 +130,7 @@ function handler(req, res) {
                             label: resultInfo[1],
                             recipient: recipentAddress2,
                             assetQuantity: resultInfo[2]
+                            // assetQuantity: '1'
                         };
                         tx.mintAsset(forgingScript, targetedNFTasset);
                         console.log("Flag the final possible bug 2nd");
