@@ -53,8 +53,7 @@ let multipleUploadV2 = async (req, res) => {
      //await 10 --> fail
     //await 00 -> fail
     //await 11
-    var buffertemp = await extractControllerV2.extractData(logindir, logoutdir) + nani ;
-    console.log(buffertemp+90);
+    await extractControllerV2.extractData(logindir, logoutdir) + nani ;
 
     console.log("\n\ndone??????");
     //Extract UTXOS
