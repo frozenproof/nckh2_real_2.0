@@ -37,7 +37,7 @@
                                     }).catch(t => { throw t })
                                 }
                                     // ("minting", { recipentAddress: t, utxos: n })
-                                    ("pining", {recipentAddress: walletAddress, utxos });
+                                    ("pining", { recipentAddress: walletAddress, utxos });
                             }
                             catch (t) { console.log("Error", t) }
                     }
@@ -49,8 +49,8 @@
                         let utxos = await Wallet.getUtxos();
                         // for (let o in await Wallet.getUtxos(),
                         //     console.log("Here is the utxos", utxos)
-                            // document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0])
-                            try {
+                        // document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0])
+                        try {
                             //     // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
                             //     let { unsignedTx: unsignedTx } = await function (t) {
                             //         let n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
@@ -61,28 +61,30 @@
                             //     }
                             //         // ("minting", { recipentAddress: t, utxos: n })
                             //         ("signing", { recipentAddress: walletAddress, utxos});
-                                let { unsignedTx: unsignedTx } = JSON.parse(document.getElementById("unsignedTx").innerHTML);
-                                console.log("Unsigned Tx from inside react 2", unsignedTx);
-                                console.log("Unsigned Tx type", typeof(unsignedTx));
-                                let s = await Wallet.signTx(unsignedTx, !0);
-                                console.log("Signed Tx", s);
-                                let i = await Wallet.submitTx(s);
-                                console.log("Txhash", i)
-                            }
-                            catch (t) { console.log("Error", t) }
+                            let { unsignedTx: unsignedTx } = JSON.parse(document.getElementById("unsignedTx").innerHTML);
+                            console.log("Unsigned Tx from inside react 2", unsignedTx);
+                            console.log("Unsigned Tx type", typeof (unsignedTx));
+                            let s = await Wallet.signTx(unsignedTx, !0);
+                            console.log("Signed Tx", s);
+                            let i = await Wallet.submitTx(s);
+                            console.log("Txhash", i)
+                        }
+                        catch (t) { console.log("Error", t) }
                     }
                     return (0, s.jsxs)
                         (s.Fragment,
                             {
                                 children: [
-                                    (0, s.jsx)(i.tZ, {}),
-                                    (0, s.jsx)("br", {}),
-                                    (0, s.jsx)("br", {}),
-                                    (0, s.jsx)("br", {}),
-                                    (0, s.jsx)("button", { onClick: () => getwallet(), children: "Get Wallet", id: "walletButton" }),
+                                    // (0, s.jsx)(i.tZ, {}),
+                                    (0, s.jsx)("br", {}), 
+                                    (0, s.jsx)("div", {
+                                        children: [
+                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Get Wallet", id: "walletButton" }),
+                                            (0, s.jsx)(i.tZ, {})
+                                        ], id: "walletConnect"
+                                    }),
                                     // (0, s.jsx)("p", { id: "walletAddress" }),
-                                    (0, s.jsx)("br", {}),
-                                    (0, s.jsx)("p", { id: "unsignedTx",children: "UNSIGNED" }),
+                                    (0, s.jsx)("p", { id: "unsignedTx", children: "UNSIGNED" }),
                                     (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", id: "signButton" }),
                                 ]
                             })

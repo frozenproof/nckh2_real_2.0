@@ -71,7 +71,8 @@
                 </button>
                 <div hidden="" class="CardanoWallet__StyledMenuList-sc-13vl5pq-1 fQlGkr mr-menu-list"><span>No Wallet
                         Found</span></div>
-            </div><button id="walletButton">Get Wallet</button>
+            </div>
+            <button id="walletButton">LMAO</button>
             <p id="walletAddress"></p>
             <p id="utxos"></p>
         </div>
@@ -217,6 +218,8 @@
                         document.getElementById("unsignedTx").innerHTML=JSON.stringify(data);
                     }
                 });
+                var x= document.getElementById("walletConnect");
+                   x.style.display="none";
                 alert("Data are sent");
                 document.getElementById("unsignedTx").innerHTML="Awaiting ...";
                 return false; // avoid to execute the actual submit of the form.
