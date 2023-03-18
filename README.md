@@ -8,16 +8,10 @@ We have seen too many injustices with closed source apps on a supposed open syst
 
 We made the project open source , and ready for production , in this way , people can tell what is going on , even able to run and host their all servers and services locally , as long as one connection to the mainnet/testnet is available.
 
-# This was a hybrid project with  
+# What is this ?
+This is a server for minting both native tokens and NFT, you can host it anywhere with a connection !
 
-```
-
-[Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) 
-
-```
-
-# But now it's different !
-We are using Express , which actually use a very complicated system . Lessons learned : never attempt to use Nextjs template , because the integration alone took like a month and it doesn't scale well.
+We are using Express as our backend , and only used simple front end with a tiny bit of (React)
 
 ```
 
@@ -43,7 +37,7 @@ We are glad to show you the result of our working as soon as possible .
 
 As we believe only working hard will bring good results .
 
-Even if it sound typical , its truth as old as the earth.
+Even if it sound typical , its truth as old as the world.
 ```
 
 ## The general flow of the data ##
@@ -135,7 +129,8 @@ node testServer.js
 
 - And done!
 
-# This server identify each user by their wallet address upon making a request.
+# This server identify each user by their wallet address upon making a request. The clients files are stored in iClient folder upon running ! This can be tinkered a bit to change too ~
+
 # This server is ready for mainnet production as well.
 
 ## Current progress: ##
