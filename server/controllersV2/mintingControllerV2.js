@@ -1,6 +1,7 @@
 exports.__esModule = true;
 var core_1 = require("@meshsdk/core");
 var core_2 = require("@meshsdk/core");
+const { randomInt } = require("crypto");
 var fs = require('fs');
 const { parse } = require("path");
 const path = require("path");
@@ -51,9 +52,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 
 function handler(recipentAddress, utxos, res) {
-// function handler(req, res) {
+    // function handler(req, res) {
     return __awaiter(this, void 0, void 0, function () {
-        var test_names, imageAddress, test_types, koiosProvider, recipentAddress2, utxos2, appWallet, costLovelace, selectedUtxos, tx, AppWalletAddress, forgingScript, i, assetName, assetMetadata, targetedNFTasset, _unsignedTx, unsignedTx ;
+        var test_names, imageAddress, test_types, koiosProvider, recipentAddress2, utxos2, appWallet, costLovelace, selectedUtxos, tx, AppWalletAddress, forgingScript, i, assetName, assetMetadata, targetedNFTasset, _unsignedTx, unsignedTx;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -63,21 +64,24 @@ function handler(recipentAddress, utxos, res) {
                     utxos2 = utxos;
                     recipentAddress2 = recipentAddress;
                     console.log("Address is :  " + recipentAddress2);
+                    item_toolong_flag = [];
                     item_name = [];
                     item_type = [];
                     item_address = [];
-                    let buffer = fs.readFileSync( rootClient + recipentAddress2 + `/logoutIPFS/` + recipentAddress2 + `.log`);
+                    let buffer = fs.readFileSync(rootClient + recipentAddress2 + `/logoutIPFS/` + recipentAddress2 + `.log`);
                     let fileContent = buffer.toString();
                     let result = fileContent.split("\n");
-                    for (var count = 0; count < result.length - 1; count += 3) {
-                        console.log("test " + (count / 3) + 1 + " :" + result[count].toString());
-                        console.log("types " + result[count + 1].toString());
-                        console.log("Address " + result[count + 2].toString());
-                        item_name.push(result[count]);
-                        item_type.push(result[count + 1]);
-                        item_address.push(result[count + 2]);
+                    for (var count = 0; count < result.length - 1; count += 4) {
+                        console.log("Flag " + (count / 4) + 1 + " :" + result[count].toString());
+                        console.log("Name " + result[count + 1].toString());
+                        console.log("Type " + result[count + 2].toString());
+                        console.log("Address " + result[count + 3].toString());
+                        item_toolong_flag.push(result[count]);
+                        item_name.push(result[count + 1]);
+                        item_type.push(result[count + 2]);
+                        item_address.push(result[count + 3]);
                     }
-                    console.log("Actual length of items: " + (result.length - 1) / 3);
+                    console.log("Actual length of items: " + (result.length - 1) / 4);
 
                     let bufferInfo = fs.readFileSync(rootClient + recipentAddress2 + `/log/` + recipentAddress2 + `.log`);
                     let infoContent = bufferInfo.toString();
@@ -85,13 +89,6 @@ function handler(recipentAddress, utxos, res) {
                     for (var infocount = 0; infocount < resultInfo.length; infocount++) {
                         console.log("Items at " + infocount + " :" + resultInfo[infocount]);
                     }
-
-                    // for (i = 0; i < item_name.length; i++) {
-                    //     console.log(  "name"+ resultInfo[3]+" contain "+item_name[i],
-                    //     "image: ipfs://" + item_address[i]+
-                    //     "mediaType: image/" + item_type[i]+
-                    //     "description:"+ resultInfo[0].toString())
-                    // }
 
                     if (parseInt(resultInfo[1]) == 721)
                         resultInfo[2] = '1';
@@ -112,15 +109,18 @@ function handler(recipentAddress, utxos, res) {
                             words: ["solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution", "solution",]
                         }
                     });
-                    console.log("Length="+item_name.length);
+                    console.log("Length=" + item_name.length);
                     tx = new core_1.Transaction({ initiator: appWallet });
                     tx.setTxInputs(selectedUtxos);
                     // forgingScript = core_1.ForgeScript.withOneSignature(AppWalletAddress);
                     forgingScript = core_1.ForgeScript.withOneSignature(recipentAddress2);
                     for (i = 0; i < item_name.length; i++) {
-                        assetName = item_name[i];
+                        if (item_toolong_flag[i] == 0)
+                            assetName = item_name[i];
+                        else
+                            assetName = "Defaulong" + randomInt(111111111) + randomInt(123123123);
                         assetMetadata = {
-                            "name": resultInfo[3] + " contain " + item_name[i],
+                            "name": resultInfo[3] + " || " + item_name[i],
                             "image": "ipfs://" + item_address[i],
                             "mediaType": "image/" + item_type[i],
                             "description": resultInfo[0].toString()

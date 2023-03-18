@@ -85,7 +85,7 @@
             <!-- <form action="/multiple-upload" method="POST" enctype="multipart/form-data"> -->
             <form id="beginsubmit" action="/mlupload2" method="POST" enctype="multipart/form-data">
                 <div class="form-one-collection">
-                    <label>Mã request</label>
+                    <label>Identification Request Code - Wallet Address</label>
                     <span><i class="fa-solid fa-circle-plus"></i>
                         <div class="notice">Tên này là code của yêu cầu đúc</div>
                     </span>
@@ -95,9 +95,9 @@
                 <div class="form-one-collection">
                     <div class="check-value">Yêu cầu nhập thông tin</div>
                     <span class="check-value-ria"></span>
-                    <label>Tên tài sản</label>
+                    <label>Tên tài sản ( Asset Name )</label>
                     <span><i class="fa-solid fa-circle-plus"></i>
-                        <div class="notice">Tên này là một phần mô tả cho trường thông tin của tài sản đúc</div>
+                        <div class="notice">Tên này là một phần mô tả cho trường thông tin của tài sản đúc , MAX is 64 characters for both this and file name</div>
                     </span>
                     <input type="text" name="Name" id="Name" placeholder="Viết tên tài sản đúc vào đây ..."
                         value="Tên tài sản"></input>
@@ -106,7 +106,7 @@
                 <div class=" form-one-collection">
                     <div class="check-value">Yêu cầu nhập thông tin</div>
                     <span class="check-value-ria"></span>
-                    <label>Mô tả</label>
+                    <label>Mô tả ( Asset Description )</label>
                     <span><i class="fa-solid fa-circle-plus"></i>
                         <div class="notice">Một phần mô tả tài sản đúc của bạn</div>
                     </span>
@@ -122,7 +122,7 @@
                 <div class="form-one-collection" id="token-form">
                     <div class="check-value">Yêu cầu nhập thông tin</div>
                     <span class="check-value-ria"></span>
-                    <label>Số lượng token</label>
+                    <label>Số lượng token ( Asset Quantity )</label>
                     <span><i class="fa-solid fa-circle-plus"></i>
                         <div class="notice">The symbol of your token (part of the final asset ID)</div>
                     </span>

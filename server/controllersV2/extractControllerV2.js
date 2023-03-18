@@ -16,13 +16,16 @@ let extractData = async (logindir, logoutdir) => {
             continue;
         let tempcut = a.split(":");
         let typecut = result[i - 1].split(".");
-        if (result[i - 1].length > 20)
+        if (result[i - 1].length >= 31)
         {
-            var d = new Date();
-            finalresult = finalresult + result[i - 1].substring(0, 19) + d.getTime()%122347279+"\n";
+            finalresult += "1\n";
+            finalresult = finalresult + result[i - 1] + "\n";
         }
         else
+        {
+            finalresult += "0\n";
             finalresult = finalresult + result[i - 1] + "\n";
+        }     
         finalresult = finalresult + typecut[typecut.length - 1] + "\n";
         finalresult = finalresult + tempcut[1] + "\n";
     }

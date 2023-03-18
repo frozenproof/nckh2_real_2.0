@@ -116,7 +116,7 @@ Even if it sound typical , its truth as old as the earth.
 
 ## 5th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
 
-## How to run the project
+# How to run the project
 
 - To test project ,please refer to following command , type it in terminal and run:
 ```
@@ -125,9 +125,9 @@ node testServer.js
 
 - Server run at port 3001 , but you can change it inside testServer.js
 
-- Connect wallet, click Get Wallet.
+- Connect wallet, click Start Minting.
 
-- Change information in the form , pick files, current limit is 64
+- Change information in the form , pick files, current limit is 64 files per request, can be edited but not recommended for production as it may become very heavy load for multiple users.
 
 - Click Create
 
@@ -135,8 +135,8 @@ node testServer.js
 
 - And done!
 
-
-This app is ready for mainnet production as well.
+# This server identify each user by their wallet address upon making a request.
+# This server is ready for mainnet production as well.
 
 ## Current progress: ##
 
@@ -145,6 +145,8 @@ This app is ready for mainnet production as well.
 - Integrated multiple files transfering interfaces. Tests ran successfully.
 - Updated and repaired broken part due to statis pathing issues.
 - Automatic redirection to Minting after Pinning .
+- Upgraded handlers for longer names .
+- Added support for multiple users by connecting to server address.
 
 ## Progress by completion : ##
 
