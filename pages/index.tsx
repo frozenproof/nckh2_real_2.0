@@ -63,11 +63,19 @@ export default function Home() {
     }
   }
 
+
   return (
     <>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <CardanoWallet />
       <button onClick={() => otestTx()}>Test Mint</button>
-      <p id="walletAddress"></p>
+      <p id="walletAddress" style={{ display: ('none') }}>LMAO</p>
       <p id="utxos"></p>
     </>
   )

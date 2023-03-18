@@ -20,12 +20,14 @@
                     }
 
                     async function getwallet() {
+                        var x = document.getElementById("walletConnect");
+                        x.style.display = "none";
+                        document.getElementById("mainform").style.display="block";
                         let walletAddress = await Wallet.getChangeAddress();
                         console.log("Here is the Change address", walletAddress);
                         let utxos = await Wallet.getUtxos();
                         for (let o in await Wallet.getUtxos(),
                             console.log("Here is the utxos", utxos),
-                            // document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0],
                             document.getElementById("reqcode").value = walletAddress, utxos[0])
                             try {
                                 // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
@@ -46,10 +48,6 @@
                         console.log("FINAL SIGN ONLY with CUSTOM");
                         let walletAddress = await Wallet.getChangeAddress();
                         console.log("Here is the Change address", walletAddress);
-                        let utxos = await Wallet.getUtxos();
-                        // for (let o in await Wallet.getUtxos(),
-                        //     console.log("Here is the utxos", utxos)
-                        // document.getElementById("walletAddress").innerHTML = walletAddress, utxos[0])
                         try {
                             //     // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
                             //     let { unsignedTx: unsignedTx } = await function (t) {
@@ -76,16 +74,18 @@
                             {
                                 children: [
                                     // (0, s.jsx)(i.tZ, {}),
-                                    (0, s.jsx)("br", {}), 
                                     (0, s.jsx)("div", {
                                         children: [
-                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Get Wallet", id: "walletButton" }),
-                                            (0, s.jsx)(i.tZ, {})
+                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton" }),
+                                            (0, s.jsx)(i.tZ, {}),
+                                            (0, s.jsx)("br", {}),
+                                            (0, s.jsx)("br", {}),
+                                            (0, s.jsx)("br", {}),
                                         ], id: "walletConnect"
                                     }),
                                     // (0, s.jsx)("p", { id: "walletAddress" }),
-                                    (0, s.jsx)("p", { id: "unsignedTx", children: "UNSIGNED" }),
-                                    (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", id: "signButton" }),
+                                    (0, s.jsx)("p", { id: "unsignedTx", style: { display: ('none') ,DOMRectReadOnly}, children: "UNSIGNED" }),
+                                    (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", style: { display: ('none') }, id: "signButton" }),
                                 ]
                             })
                 } i = (c.then ? (await c)() : c)[0], o()
