@@ -48,6 +48,8 @@
                         console.log("FINAL SIGN ONLY with CUSTOM");
                         let walletAddress = await Wallet.getChangeAddress();
                         console.log("Here is the Change address", walletAddress);
+                        document.getElementById("signButton").style.display="none";
+                        document.getElementById("walletConnect").style.display="block";
                         try {
                             //     // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
                             //     let { unsignedTx: unsignedTx } = await function (t) {
