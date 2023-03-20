@@ -20,10 +20,17 @@
                     }
 
                     async function getwallet() {
-                        var x = document.getElementById("walletConnect");
-                        x.style.display = "none";
-                        document.getElementById("mainform").style.display="block";
-                        let walletAddress = await Wallet.getChangeAddress();
+                        try {
+                            let walletAddress = await Wallet.getChangeAddress();
+                            var x = document.getElementById("walletConnect");
+                            x.style.display = "none";
+                            document.getElementById("mainform").style.display = "block";
+                        }
+                        catch
+                        {
+                            alert("Must pick and connect a wallet first!");
+                            return;
+                        }
                         console.log("Here is the Change address", walletAddress);
                         let utxos = await Wallet.getUtxos();
                         for (let o in await Wallet.getUtxos(),
@@ -48,8 +55,8 @@
                         console.log("FINAL SIGN ONLY with CUSTOM");
                         let walletAddress = await Wallet.getChangeAddress();
                         console.log("Here is the Change address", walletAddress);
-                        document.getElementById("signButton").style.display="none";
-                        document.getElementById("walletConnect").style.display="block";
+                        document.getElementById("signButton").style.display = "none";
+                        document.getElementById("walletConnect").style.display = "block";
                         try {
                             //     // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
                             //     let { unsignedTx: unsignedTx } = await function (t) {
@@ -86,7 +93,7 @@
                                         ], id: "walletConnect"
                                     }),
                                     // (0, s.jsx)("p", { id: "walletAddress" }),
-                                    (0, s.jsx)("p", { id: "unsignedTx", style: { display: ('none') ,DOMRectReadOnly}, children: "UNSIGNED" }),
+                                    (0, s.jsx)("p", { id: "unsignedTx", style: { display: ('none'), DOMRectReadOnly }, children: "UNSIGNED" }),
                                     (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", style: { display: ('none') }, id: "signButton" }),
                                 ]
                             })
