@@ -20,8 +20,9 @@
                     }
 
                     async function getwallet() {
+                        var walletAddress;
                         try {
-                            let walletAddress = await Wallet.getChangeAddress();
+                            walletAddress = await Wallet.getChangeAddress();
                             var x = document.getElementById("walletConnect");
                             x.style.display = "none";
                             document.getElementById("mainform").style.display = "block";
