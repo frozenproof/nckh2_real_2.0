@@ -111,6 +111,10 @@ Even if it sound typical , its truth as old as the world.
 ## 5th: After minting , the original digital assets on the server will be deleted permanently to protect privacy of the customers.
 
 # How to run the project
+- To install the needed modules , please use the following command:
+```
+npm install
+```
 
 - To test project ,please refer to following command , type it in terminal and run:
 ```
