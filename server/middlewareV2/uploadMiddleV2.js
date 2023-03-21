@@ -37,11 +37,11 @@ let storage = multer.diskStorage({
   filename: (req, file, callback) => {
     // ở đây các bạn có thể làm bất kỳ điều gì với cái file nhé.
     // Mình ví dụ chỉ cho phép tải lên các loại ảnh png & jpg
-    let math = ["image/png", "image/jpg", "image/jpeg","video/mp4" ];
-    if (math.indexOf(file.mimetype) === -1) {
-      let errorMess = `The file <strong>${file.originalname}</strong> is invalid. Only allowed to upload image jpg/jpeg or png.`;
-      return callback(errorMess, null);
-    }
+    // let math = ["image/png", "image/jpg", "image/jpeg","video/mp4","image/pdf" ];
+    // if (math.indexOf(file.mimetype) === -1) {
+    //   let errorMess = `The file <strong>${file.originalname}</strong> is invalid. Only allowed to upload image jpg/jpeg or png.`;
+    //   return callback(errorMess, null);
+    // }
 
     // Tên của file thì mình nối thêm một cái nhãn thời gian để tránh bị trùng tên file.
     // let filename = `${Date.now()}--${file.originalname}`;

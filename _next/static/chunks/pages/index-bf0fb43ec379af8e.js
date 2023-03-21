@@ -86,8 +86,10 @@
                                     // (0, s.jsx)(i.tZ, {}),
                                     (0, s.jsx)("div", {
                                         children: [
-                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton" }),
-                                            (0, s.jsx)(i.tZ, {}),
+                                            (0, s.jsx)("br", {}),
+                                            (0, s.jsx)("br", {}),
+                                            // (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton" }),
+                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton", style: { display: ('flex') , width:('200px'),height:('60px'),background: ('linear-gradient(to left, #12c2e9, #c471ed, #f64f59)'),'border-radius':('20px'),'justify-content': ('center'),'align-items':('center'),'margin':('10px')} }),(0, s.jsx)(i.tZ, {}),
                                             (0, s.jsx)("br", {}),
                                             (0, s.jsx)("br", {}),
                                             (0, s.jsx)("br", {}),
