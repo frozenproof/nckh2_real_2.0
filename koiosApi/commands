@@ -1,0 +1,15 @@
+-Get original asset information including first mint
+
+ curl -X GET "https://preprod.koios.rest/api/v0/asset_info?_asset_policy=332f014f53a7eaaac26d614491c4c3a858ccc4b55165f686c0cf142f&_asset_name=7a746f72616d2e706e67" \
+ -H "accept: application/json" 
+
+-Get Tx information
+
+curl -X POST "https://preprod.koios.rest/api/v0/tx_info" \
+ -H "accept: application/json"\
+ -H "content-type: application/json" \
+ -d '{"_tx_hashes":["56c9c284772e8c05382f53a43e5367dea5faf92fe60d36cf8e3d4ca73d56b171"]}'
+
+
+
+ 
