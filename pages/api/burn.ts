@@ -24,9 +24,10 @@ export default async function handler(
     // console.log("type", typeof (address));
 
     const forgingScript = ForgeScript.withOneSignature(burnAddress);
-    console.log(forgingScript);
+    // console.log(forgingScript);
     const koiosProvider = new KoiosProvider("preprod");
-
+    console.log("Nani tf");
+    
     //create a new wallet to output the utxos 
     const appWallet = new AppWallet({
         networkId: 0,
