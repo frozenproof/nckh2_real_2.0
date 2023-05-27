@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
     <script src="/frontend/jsxtra/bootstrap.bundle.min.js"></script>
     <script src="/frontend/jsxtra/jquery-3.4.1.min.js"></script>
     <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
@@ -41,149 +42,190 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="/frontend/src/Style/Html/index.html"><img src="/frontend/src/Style/image/logoNFTnew.jpg"
-                    alt=""></a>
-        </div>
-        <div class="nav">
-            <ul class="navbar-menu">
-                <li><a href="/frontend/src/View/index.html">Trang chủ</a></li>
-                <li><a href="./document.html">Tài liệu</a></li>
-                </li>
-            </ul>
-        </div>
-        <div id="menu-btn" class="fas fa-bars"></div>
-    </header>
-    <div class="header-container-content">
-        <h1>Đúc Tài Sản</h1>
-        <p>Nếu bạn muốn đúc tài sản hãy chọn loại tài sản cần đúc và điền thông tin tài sản cần đúc</p>
-    </div>
-    <div class="form-collection col-lg-4 col-md-6 col-sm-8 col-8" id="outernext">
-        <div id="__next">
-            <div style="width:fit-content">
-                <button type="button"
-                    class="CardanoWallet__StyledMenuButton-sc-13vl5pq-0 krcbSN mr-wallet-button">Connect Wallet<!-- -->
-                    <svg fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke="currentColor"
-                        xmlns="http://www.w3.org/2000/svg" class="ChevronDown__StyledChevronDown-sc-17n3mfh-0 bTznHV">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
-                <div hidden="" class="CardanoWallet__StyledMenuList-sc-13vl5pq-1 fQlGkr mr-menu-list"><span>No Wallet
-                        Found</span></div>
+    <div class="container-body">
+        <header class="header" id="header">
+            <div class="logo">
+                <a href="/frontend/src/View/index.html"><img src="/frontend/src/Style/image/logoNFTnew.jpg" alt=""></a>
             </div>
-            <button id="walletButton">LMAO</button>
-            <p id="walletAddress"></p>
-            <p id="utxos"></p>
-        </div>
-        <script id="__NEXT_DATA__"
-            type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"JnTmV6RA-m-6DaZwGtWFo","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
-    </div>
+            <div class="nav">
+                <ul class="navbar-menu">
+                    <li><a href="/frontend/src/View/index.html">Home Page</a></li>
+                    <li><a href="/frontend/src/View/upload.html">Mint</a></li>
+                    <li><a href="./document.html">Document</a></li>
+                    </li>
+                </ul>
+            </div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </header>
+        <div class="container-main">
 
-    <div id="mainform" style="display: none;">
-        <div class="form-collection col-lg-4 col-md-6 col-sm-8 col-8">
-            <!-- <form action="/multiple-upload" method="POST" enctype="multipart/form-data"> -->
-            <form id="beginsubmit" action="/mlupload2" method="POST" enctype="multipart/form-data">
-                <div class="form-one-collection">
-                    <label>Identification Request Code - Wallet Address</label>
-                    <span><i class="fa-solid fa-circle-plus"></i>
-                        <div class="notice">Tên này là code của yêu cầu đúc</div>
-                    </span>
-                    <input type="text" name="reqcode" id="reqcode" value="" readonly></input>
-                </div>
+            <div class="container-header">
+                <div class="container_header-header">
+                    <div class="header-content ">
+                        <h2>Mint your assets Here!</h2>
+                        <ul>
+                            <li><a href="/frontend/src/View/index.html">Home</a></li>
+                            <li>/</li>
+                            <li><a href="/">Mint Page</a></li>
+                        </ul>
 
-                <div class="form-one-collection">
-                    <div class="check-value">Yêu cầu nhập thông tin</div>
-                    <span class="check-value-ria"></span>
-                    <label>Tên tài sản ( Asset Name )</label>
-                    <span><i class="fa-solid fa-circle-plus"></i>
-                        <div class="notice">Tên này là một phần mô tả cho trường thông tin của tài sản đúc , MAX is 64 characters for both this and file name</div>
-                    </span>
-                    <input type="text" name="Name" id="Name" placeholder="Viết tên tài sản đúc vào đây ..."
-                        value="Tên tài sản"></input>
-                </div>
-
-                <div class=" form-one-collection">
-                    <div class="check-value">Yêu cầu nhập thông tin</div>
-                    <span class="check-value-ria"></span>
-                    <label>Mô tả ( Asset Description )</label>
-                    <span><i class="fa-solid fa-circle-plus"></i>
-                        <div class="notice">Một phần mô tả tài sản đúc của bạn</div>
-                    </span>
-                    <input type="text" name="Description" id="Description"
-                        placeholder="Viết mô tả tài sản đúc vào đây ..." value="Mô tả đơn giản"></input>
-                </div>
-
-                <input type="radio" id="native" name="token" value="20" onclick="showTokenForm()">
-                <label for="native">Native token</label>
-                <input type="radio" id="nft" name="token" value="721" checked onclick="hideTokenForm()">
-                <label for="nft">Non-Fungible Token</label>
-
-                <div class="form-one-collection" id="token-form">
-                    <div class="check-value">Yêu cầu nhập thông tin</div>
-                    <span class="check-value-ria"></span>
-                    <label>Số lượng token ( Asset Quantity )</label>
-                    <span><i class="fa-solid fa-circle-plus"></i>
-                        <div class="notice">The symbol of your token (part of the final asset ID)</div>
-                    </span>
-                    <input type="number" name="Amount" maxlength="8" value="1" />
-                </div>
-
-                <div class="form-one-collection">
-                    <div class="check-value">Yêu cầu nhập thông tin</div>
-                    <label>Logo(Logo cho tài sản đúc)</label>
-                    <span class="check-value-ria"></span>
-                    <span>
-                        <i class="fa-solid fa-circle-plus"></i>
-                        <div class="notice">Tài sản sẽ được lưu trữ trên IPFS</div>
-                    </span>
-                    <input type="file" name="many-files" multiple id="input-many-files"
-                        class="form-control-file border file" onclick="resetImage()">
-                </div>
-                <div class="form-one-collection" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary" style="text-align: center;size: 64px;">Create</button>
-                </div>
-        </div>
-        </form>
-
-        <h2>This is images preview</h2>
-        <div id="image-container">
-            <div class="preview-images" id="targetimg"></div>
-        </div>
-        <h2>End of images preview</h2>
-    </div>
-    <footer>
-        <div class="row">
-            <div class="footer-contact col-lg-3 col-md-4 col-sm-12 row">
-                <div class="logo">
-                    <a href="#"><img src="/frontend/src/Style/image/logoNFTnew.jpg" alt=""></a>
-                </div>
-                <div class="contact">
-                    <a href=""><i class="fa-brands fa-square-facebook"></i></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <a href=""><i class="fa-brands fa-square-github"></i></a>
-                    <a href=""><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div id="outernext">
+                        <div id="__next">
+                            <div style="width:fit-content">
+                                <button type="button"
+                                    class="CardanoWallet__StyledMenuButton-sc-13vl5pq-0 krcbSN mr-wallet-button">Connect
+                                    Wallet
+                                    <svg fill="none" aria-hidden="true" viewBox="0 0 24 24" stroke="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="ChevronDown__StyledChevronDown-sc-17n3mfh-0 bTznHV">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <div hidden="" class="CardanoWallet__StyledMenuList-sc-13vl5pq-1 fQlGkr mr-menu-list">
+                                    <span>No
+                                        Wallet
+                                        Found</span>
+                                </div>
+                            </div>
+                            <button id="walletButton">LMAO</button>
+                            <p id="walletAddress"></p>
+                            <p id="utxos"></p>
+                        </div>
+                        <script id="__NEXT_DATA__"
+                            type="application/json">{"props":{"pageProps":{}},"page":"/","query":{},"buildId":"JnTmV6RA-m-6DaZwGtWFo","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
+                    </div>
                 </div>
             </div>
-            <div class="footer-plaform col-lg-9 col-md-8 col-sm-12 row">
-                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
-                    <a href="">Blockchain</a>
-                    <a href="">SmartContract</a>
-                </div>
-                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
-                    <a href="">Kiến thức về NFT</a>
-                    <a href="">Kiến Thức vè token</a>
-                </div>
-                <div class="footer-plaform-list col-lg-4 col-md-6 col-sm-6">Tài liệu
-                    <a href="">Soursce Code</a>
+
+
+            <div id="mainform" style="display: none;">
+
+                <div class="content row">
+                    <div class="left-content col-lg-4 col-md-4 col-sm-12 col-12">
+                        <div class="wrapper">
+                            <div class="background-left">
+                                <img src="/frontend/src/Style/image/Mintbackground2.jpg" alt="Background">
+                                <div class="author-background">
+                                    <img src="/frontend/src/Style/image/luffy.png" alt="author">
+                                </div>
+                            </div>
+                            <div class="about-author">
+                                <span>Morgan Wright</span>
+                                <h3>Creative NFTs Designer</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos distinctio labore.</p>
+                            </div>
+                            <div class="contact">
+                                <ul>
+                                    <li>
+                                        <a href="https://github.com/frozenproof/nckh2_real_2.0">
+                                            <i class="fab fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/frozenproof/nckh2_real_2.0">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/frozenproof/nckh2_real_2.0">
+                                            <i class="fab fa-google"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://github.com/frozenproof/nckh2_real_2.0">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-content col-lg-8 col-md-8 col-sm-12 col-12">
+                        <!-- <form action="/multiple-upload" method="POST" enctype="multipart/form-data"> -->
+                        <form id="beginsubmit" action="/mlupload2" method="POST" enctype="multipart/form-data">
+                            <h1 class="gradient-text">Mint your assets</h1>
+
+
+                            <div class="form-one-collection group-input-item">
+                                <label style="font-size: 10px; font-style: italic;margin-bottom: 0;">Identification
+                                    request code - Wallet Address</label>
+                                <span><i class="fa-solid fa-circle-plus"></i>
+                                    <div class="notice">Your Wallet Address</div>
+                                </span>
+                                <input required type="text" name="reqcode" id="reqcode" value="" readonly
+                                    placeholder="You don't need fill in here, If you connect your Wallet, input will be filled !!!"></input>
+                                <div class="message"><span id="name-error-message" style="color: red;"></span></div>
+                            </div>
+
+                            <div class="group-input-item">
+                                <input required type="text" name="Name" id="Name" placeholder="Name your asset ..."
+                                    value=""></input>
+                                <div class="message"><span id="name-error-message" style="color: red;"></span></div>
+                            </div>
+
+                            <div class=" group-input-item">
+                                <input required type="text" name="Description" id="Description"
+                                    placeholder="Description your asset ..." value=""></input>
+                                <div class="message"><span id="name-error-message" style="color: red;"></span></div>
+                            </div>
+
+                            <div class="group-input-item-checkbox ">
+                                Type of your assets:
+                                <input required type="radio" id="native" name="token" value="20"
+                                    onclick="showTokenForm()">
+                                <label for="native">Token</label>
+                                <input required type="radio" id="nft" name="token" value="721"
+                                    onclick="hideTokenForm()">
+                                <label for="nft">NFT</label>
+                                <div class="message"><span id="name-error-message" style="color: red;"></span></div>
+                            </div>
+
+                            <div class="group-input-item" id="token-form" style="display: none;">
+                                <input required type="number" name="Amount" maxlength="8" value="1"
+                                    placeholder="Number of assets" />
+                                <div class="message"><span id="name-error-message" style="color: red;"></span></div>
+                            </div>
+
+                            <div class=" group-input-item group-input-file">
+                                <span>PDF, PNG, GIF, WEBP, MP4 or MP3. Max 100mb</span>
+                                <label class='btn-input' for="input-many-files">
+                                    UPLOAD FILE
+                                </label>
+                                <input type="file" name="many-files" multiple id="input-many-files"
+                                    class="form-control-file border file" onclick="resetImage()">
+                                <div class="message"><span id="name-error-message" style="color: red;"></span></div>
+                            </div>
+                            <div class="group-input-item" style="text-align: center;">
+                                <button type="submit" class="btn btn-primary"
+                                    style="text-align: center;size: 64px;">Create</button>
+                            </div>
+
+                            <div class='group-display-files'>
+                                <div id="image-container">
+                                    <div class="preview-images" id="targetimg"></div>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
 
                 </div>
+
+
+
             </div>
-            <div class="footer-end">
+
+        </div>
+        <footer class="footer">
+            <h6>
                 © 2023 Đúc tài sản cho riêng bạn trên Cardano
-            </div>
-    </footer>
-
+            </h6>
+        </footer>
+    </div>
     <script src="/frontend/src/Style/Js/script.js"></script>
     <script>
         $(document).ready(function () {
@@ -206,6 +248,94 @@
 
             $("#beginsubmit").on('submit', function (e) {
                 // var url = "path/to/your/script.php"; // the script where you handle the form input.
+                $.ajax({
+                    type: "POST",
+                    url: `/mlupload2`,
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        document.getElementById("unsignedTx").style.display = "none";
+                        // alert("Unsigned TX is" + data); // show response from the backend function.
+                        alert("Ready for signing"); // show response from the backend function.
+                        document.getElementById("signButton").style.display = "block";
+                        document.getElementById("unsignedTx").innerHTML = JSON.stringify(data);
+                    }
+                });
+                document.getElementById("mainform").style.display = "none";
+                alert("Data are sent");
+                document.getElementById("unsignedTx").style.display = "flex";
+                document.getElementById("unsignedTx").style.width = "200px";
+                document.getElementById("unsignedTx").style.height = "30px";
+                document.getElementById("unsignedTx").style.margin = "auto";
+                document.getElementById("unsignedTx").style.background = "linear-gradient(to left, #12c2e9, #c471ed, #f64f59)";
+                document.getElementById("unsignedTx").innerHTML = "Awaiting ...";
+                document.getElementById("unsignedTx").style.padding = "0px 60px";
+                document.getElementById("unsignedTx").style.textAlign = "center";
+                document.getElementById("unsignedTx").style.borderRadius = "20px";
+                return false; // avoid to execute the actual submit of the form.
+            });
+        });
+
+    </script>
+
+    <!-- <script>
+        $(document).ready(function () {
+            let imagesPreview = function (input, placeToInsertImagePreview) {
+                if (input.files) {
+                    let filesAmount = input.files.length;
+                    for (i = 0; i < filesAmount; i++) {
+                        let reader = new FileReader();
+                        reader.onload = function (event) {
+                            $($.parseHTML("<img>")).attr("src", event.target.result).appendTo(placeToInsertImagePreview);
+                        }
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            };
+
+            $("#input-many-files").on("change", function () {
+                imagesPreview(this, "div.preview-images");
+            });
+
+            $("#beginsubmit").on('submit', function (e) {
+                // var url = "path/to/your/script.php"; // the script where you handle the form input.
+
+
+                // Kiểm tra trạng thái của các trường input
+                let nameInput = $("#Name").val();
+                let descriptionInput = $("#Description").val();
+                var inputFile = $("#input-many-files");
+                if (inputFile[0].files.length === 0) {
+                $("#name-error-message").text("Please upload your file");
+                return; // Dừng việc gửi form
+                }
+
+                // Kiểm tra trường Name
+                if (nameInput.trim() === "") {
+                $("#name-error-message").text("Please enter your name");
+                return; // Dừng việc gửi form nếu có lỗi
+                }
+
+                // Kiểm tra trường Description
+                if (descriptionInput.trim() === "") {
+                $("#name-error-message").text("Please enter a description");
+                return; // Dừng việc gửi form nếu có lỗi
+                }
+
+                // Kiểm tra độ dài của trường Name
+                if (nameInput.length > 32) {
+                $("#name-error-message").text("Name should not exceed 32 characters");
+                return; // Dừng việc gửi form nếu có lỗi
+                }
+
+                // Kiểm tra độ dài của trường Description
+                if (descriptionInput.length > 64) {
+                $("#name-error-message").text("Description should not exceed 64 characters");
+                return; // Dừng việc gửi form nếu có lỗi
+                }
+
+                $("name-error-message").text("");
 
                 $.ajax({
                     type: "POST",
@@ -226,10 +356,14 @@
                 document.getElementById("unsignedTx").style.display = "block";
                 document.getElementById("unsignedTx").innerHTML = "Awaiting ...";
                 return false; // avoid to execute the actual submit of the form.
+
+
+
             });
         });
 
-    </script>
+    </script> -->
+    <script src="/frontend/src/Style/Js/script.js"></script>
 </body>
 
 </html>

@@ -57,18 +57,8 @@
                         let walletAddress = await Wallet.getChangeAddress();
                         console.log("Here is the Change address", walletAddress);
                         document.getElementById("signButton").style.display = "none";
-                        document.getElementById("walletConnect").style.display = "block";
+                        document.getElementById("walletConnect").style.display = "flex";
                         try {
-                            //     // let { unsignedTx: unsignedTx } = await l(walletAddress, e);
-                            //     let { unsignedTx: unsignedTx } = await function (t) {
-                            //         let n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-                            //         return axios.post("".concat(t), n).then(t => {
-                            //             let { data: n } = t;
-                            //             return n
-                            //         }).catch(t => { throw t })
-                            //     }
-                            //         // ("minting", { recipentAddress: t, utxos: n })
-                            //         ("signing", { recipentAddress: walletAddress, utxos});
                             let { unsignedTx: unsignedTx } = JSON.parse(document.getElementById("unsignedTx").innerHTML);
                             console.log("Unsigned Tx from inside react 2", unsignedTx);
                             console.log("Unsigned Tx type", typeof (unsignedTx));
@@ -77,7 +67,9 @@
                             let i = await Wallet.submitTx(s);
                             console.log("Txhash", i)
                         }
-                        catch (t) { console.log("Error", t) }
+                        catch (t) { console.log("Error", t);
+                        alert("Please deposit more into your account for transaction cost.");
+                     }
                     }
                     return (0, s.jsxs)
                         (s.Fragment,
@@ -85,19 +77,20 @@
                                 children: [
                                     // (0, s.jsx)(i.tZ, {}),
                                     (0, s.jsx)("div", {
+                                        style: { display: ('flex'), 'flex-direction': ('column'), 'align-items': ('center'), 'justify-content': (' center') },
                                         children: [
-                                            (0, s.jsx)("br", {}),
-                                            (0, s.jsx)("br", {}),
+                                            // (0, s.jsx)("br", {}),
+                                            // (0, s.jsx)("br", {}),
                                             // (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton" }),
-                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton", style: { display: ('flex') , width:('200px'),height:('60px'),background: ('linear-gradient(to left, #12c2e9, #c471ed, #f64f59)'),'border-radius':('20px'),'justify-content': ('center'),'align-items':('center'),'margin':('10px')} }),(0, s.jsx)(i.tZ, {}),
-                                            (0, s.jsx)("br", {}),
-                                            (0, s.jsx)("br", {}),
-                                            (0, s.jsx)("br", {}),
+                                            (0, s.jsx)("button", { onClick: () => getwallet(), children: "Start Minting", id: "walletButton", style: { display: ('flex'), width: ('200px'), height: ('40px'), background: ('linear-gradient(to left, #12c2e9, #c471ed, #f64f59)'), 'border-radius': ('20px'), 'justify-content': ('center'), 'align-items': ('center') } }), (0, s.jsx)(i.tZ, {}),
+                                            // (0, s.jsx)("br", {}),
+                                            // (0, s.jsx)("br", {}),
+                                            // (0, s.jsx)("br", {}),
                                         ], id: "walletConnect"
                                     }),
                                     // (0, s.jsx)("p", { id: "walletAddress" }),
                                     (0, s.jsx)("p", { id: "unsignedTx", style: { display: ('none'), DOMRectReadOnly }, children: "UNSIGNED" }),
-                                    (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", style: { display: ('none') }, id: "signButton" }),
+                                    (0, s.jsx)("button", { onClick: () => finalSign(), children: "Sign", style: { display: ('none'), 'width': ('200px'), background: ('linear-gradient(to left, #12c2e9, #c471ed, #f64f59)'), 'border-radius': ('20px'), 'margin': ('auto') }, id: "signButton" }),
                                 ]
                             })
                 } i = (c.then ? (await c)() : c)[0], o()

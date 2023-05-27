@@ -1,52 +1,61 @@
-let menu_Btn=document.querySelector('#menu-btn');
-let navbar=document.querySelector('.nav');
-menu_Btn.onclick=()=>{
-    menu_Btn.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-}
 
+window.addEventListener('click', function() {
+    var menu_Btn=document.querySelector('#menu-btn');
+    var navbar=document.querySelector('.nav');
+    menu_Btn.onclick=()=>{
+        menu_Btn.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+    }
+});
 //Add inform for token:
-function Add(){
-    let group_add=document.querySelector('.root');
-    let newDiv=React.createElement(
-        'div',
-        {
-            className:"form-one-collection"
-        },
-        React.createElement(
-            'label',
-            {},
-            'Inform  ',
-        ),
-        React.createElement(
-            'span',
-            {},
-            React.createElement(
-                'i',
-                {  
-                    className:"fa-solid fa-circle-plus"
-                },
+// function Add(){
+//     let group_add=document.querySelector('.root');
+//     let newDiv=React.createElement(
+//         'div',
+//         {
+//             className:"form-one-collection"
+//         },
+//         React.createElement(
+//             'label',
+//             {},
+//             'Inform  ',
+//         ),
+//         React.createElement(
+//             'span',
+//             {},
+//             React.createElement(
+//                 'i',
+//                 {  
+//                     className:"fa-solid fa-circle-plus"
+//                 },
                 
-            ),
-            React.createElement(
-                'div',
-                {className:"notice"},
-                'This will part of the metadata sent along with your token',
-            ),
-        ),
-        React.createElement(
-            'input',
-            {type:"text",className:"name",placeholder:'Name of your inform'},       
-        ),
-        React.createElement(
-            'input',
-            {type:"text",className:"name",placeholder:"Value of your inform",},       
-        ),
+//             ),
+//             React.createElement(
+//                 'div',
+//                 {className:"notice"},
+//                 'This will part of the metadata sent along with your token',
+//             ),
+//         ),
+//         React.createElement(
+//             'input',
+//             {type:"text",className:"name",placeholder:'Name of your inform'},       
+//         ),
+//         React.createElement(
+//             'input',
+//             {type:"text",className:"name",placeholder:"Value of your inform",},       
+//         ),
     
-    );
-    ReactDOM.render(newDiv,group_add);
-}   
-
+//     );
+//     ReactDOM.render(newDiv,group_add);
+// }   
+window.addEventListener('scroll', function() {
+    var header = document.getElementById('header');
+    if (window.pageYOffset > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
 // let submit=document.querySelector('.btn-submit');
 // submit.onclick=()=>{
 //     let Display1=document.querySelectorAll(".check-value");
