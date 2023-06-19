@@ -8,12 +8,12 @@ async function findMintAddress(assetHash) {
     let asset_name = assetHash.substr(56);
     let url = `https://preprod.koios.rest/api/v0/asset_info?_asset_policy=` + assetPolicyId + `&_asset_name=` + asset_name;
     var res;
-    (res = await getTxhash(url, assetHash));
+    (res = getTxhash(url, assetHash));
     if (res != undefined) {
         // console.log("Resp in piece" + res);
         return res;
     } else if (res != Promise)
-        return await findMintAddress();
+        return findMintAddress();
     // console.log("This " + txhashReal + "  has a type of " + typeof (txhashReal));
     // console.log("THis is equal" + typeof (txhashReal) == typeof ('56c9c284772e8c05382f53a43e5367dea5faf92fe60d36cf8e3d4ca73d56b171'));
 };

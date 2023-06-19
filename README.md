@@ -172,3 +172,6 @@ All side projects are deprecated as they do not work / scale well with the curre
 I'm the leader of the devs team , and i'm responsible for all the backend programming .
 My colleagues take care of the front end.
 Feel free to contact me at tuanmoc21200@gmail.com , and I will respond as the representative for this project.
+
+# Project final words
+It has been a great point of interests for us , but as of current time, this project will now be archived and secret API keys will be removed from the project to protect privacy of the creators.
